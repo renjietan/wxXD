@@ -1,0 +1,42 @@
+<!--accountBook/pages/cldformDetails/cldformDetails.wxml-->
+<wxs src="../../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view wx:if="{{isList}}">
+    <view class='list' wx:for="{{listData}}" wx:for-item="item" wx:key="key">
+      <view class='listheight'>
+        {{index}}月
+      </view>
+      <view class='listcon' wx:for="{{item}}" wx:for-item="children" wx:key="key">
+        <van-swipe-cell id="swipe-cell" right-width="65" bind:close="onClose">
+          <navigator class='item' url='../machineryinfoAdd/machineryinfoAdd?id={{ children.miId }}'>
+            <view class='item-pic'>
+              <icon class='iconfont icon-nongjiguanli'></icon>
+            </view>
+            <view class='item-center'>
+              <text class='item-name'>{{children.machineName}}</text>
+              <text class='item-time'>{{children.purchaseTime}}</text>
+            </view>
+            <view class='item-right'>￥{{filter.parserNum(children.amount)}}</view>
+          </navigator>
+          <view slot="right" class='warpright'>
+            <!-- <view bindtap='handleEvent' data-typeid="{{ children.miId }}" class='edit'>编辑</view> -->
+            <view bindtap='handleDel' data-typeid="{{ children.miId }}" class='del'>删除</view>
+          </view>
+
+        </van-swipe-cell>
+      </view>
+    </view>
+  </view>
+  <view class='noData' wx:elif="{{!isList}}">
+    <image src='../../../images/nodata.png'></image>
+  </view>
+  <movable-area class="move" scale-area>
+    <navigator url='../machineryinfoAdd/machineryinfoAdd'>
+      <movable-view direction="horizontal" bindchange="onChange" bindscale="onScale" bindtap="add" scale-min="0.5" scale-max="4" scale-value="2" class='addbtn'>
+        <i class="iconfont icon-jiahao1"></i>
+      </movable-view>
+    </navigator>
+  </movable-area>
+  <van-toast id="van-toast" />
+  <van-dialog id="van-dialog" />
+</view>

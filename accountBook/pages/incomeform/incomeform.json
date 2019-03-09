@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "收入记录报表",
+  "usingComponents": {
+    "van-field": "../../../dist/field/index",
+    "van-icon": "../../../dist/icon/index"
+  }
+}

@@ -1,0 +1,362 @@
+/* pages/accountBook/accountBook.wxss */
+
+.container {
+  background: #efeff4;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  
+}
+
+.menubg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 410rpx;
+  background-image: linear-gradient(0deg, #1ab7f9 0%, #3b93ff 100%);
+}
+
+.menu {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.year {
+  height: 65rpx;
+  line-height: 65rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 26rpx;
+}
+
+.year text {
+  display: inline-block;
+  line-height: 65rpx;
+  color: #fefefe;
+  font-size: 24rpx;
+  position: relative;
+  padding-right: 40rpx;
+  
+}
+
+.year text::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top:28rpx;
+  width: 0;
+  height: 0;
+  border: 10rpx solid transparent;
+  border-top: 10rpx solid #fff;
+  display: inline-block;
+}
+
+.topbox {
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+
+.topboxtext {
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 20rpx;
+  color: #d4ebff;
+}
+
+.topboxvalue {
+  margin-top: 15rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-size: 58rpx;
+  color: #fff;
+  font-family: "Lato-Bold";
+}
+
+.bottombox {
+ margin-bottom: 40rpx;
+  display: flex;
+}
+
+.bottomboxitem {
+  text-align: center;
+  width: 50%;
+}
+
+.bottomboxtext {
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 20rpx;
+  color: #d4ebff;
+}
+
+.bottomboxvalue {
+  margin-top: 15rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 36rpx;
+  color: #fff;
+  font-family: "Lato-Bold";
+}
+
+.cardwarp {
+  background-color: #fff;
+  box-shadow: 0rpx 1rpx 18rpx 0rpx rgba(26, 183, 249, 0.13);
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.cardheader {
+  height: 65rpx;
+  border-bottom: 1px solid #e6e6e6;
+  line-height: 65rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardheadertext {
+  line-height: 65rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.cardheadermore {
+  font-size: 24rpx;
+  color: #666;
+}
+.cardheadermore .iconfont{
+  display: inline-block;
+  font-size: 28rpx;
+  color: #666;
+  transform: rotate(180deg);
+}
+.cardbody {
+  display: flex;
+  border-radius: 8rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.cardbody::after {
+  content: '';
+  width: 60rpx;
+  height: 60rpx;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carditem {
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+}
+
+.navigator {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.carditem:nth-child(odd) {
+  border-right: 1px solid #e6e6e6;
+  padding-right: 30rpx;
+}
+
+.carditem:nth-child(1) {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 30rpx;
+}
+
+.carditem:nth-child(2) {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 30rpx;
+  padding-left: 30rpx;
+}
+
+.carditem:nth-child(3) {
+  padding-top: 30rpx;
+}
+
+.carditem:nth-child(4) {
+  padding-top: 30rpx;
+  padding-left: 30rpx;
+}
+
+.carditemright {
+  width: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  height: 80rpx;
+}
+
+.carditemrightpic {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 80rpx;
+}
+.carditemrightpic image{
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.carditemleft {
+  flex: 1;
+  text-align: left;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+}
+
+.carditemleftt {
+  font-size: 32rpx;
+  line-height: 40rpx;
+  color: #333;
+}
+
+.carditemleftb {
+  font-size: 20rpx;
+  color: #666;
+  line-height: 40rpx;
+}
+
+.cardwarptwo {
+  background-color: #fff;
+  box-shadow: 0rpx 1rpx 18rpx 0rpx rgba(26, 183, 249, 0.13);
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.cardbodytwo {
+  display: flex;
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  position: relative;
+}
+.cardbodytwo::after {
+  content: '';
+  width: 60rpx;
+  height: 60rpx;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.cardbodytwoleft{
+  width:50%;
+}
+.cardbodytworight{
+  width:50%;
+}
+.carditemtwo {
+  height: 50%;
+  box-sizing: border-box;
+  padding-right: 30rpx;
+}
+
+.cardbodytwoleft .carditemtwo:nth-child(1) {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 30rpx;
+  border-right: 1px solid #e6e6e6;
+}
+
+.cardbodytwoleft .carditemtwo:nth-child(2) {
+  padding-top: 30rpx;
+  border-right: 1px solid #e6e6e6;
+}
+
+.cardbodytworight .carditemtwo{
+  padding-left: 30rpx;
+  height:100%;
+  padding-right:0;
+}
+.cardbodytworight .carditemtwo .navigator {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  flex-wrap: wrap; 
+  text-align: center;
+}
+.carditemtwobom {
+  font-size: 20rpx;
+  color: #666;
+  line-height: 40rpx;
+}
+.carditemtwotop{
+  font-size: 32rpx;
+  line-height: 40rpx;
+  color: #333;
+}
+.carditemtwopic {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin:0 auto;
+}
+.cardbodytworight .carditemtwopic{
+  width: 80rpx;
+  height: 80rpx;
+  margin:40rpx auto; 
+}
+.cardbodytworight .carditemtwopic image{
+display: block;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.cardbodytworight .carditemrightpic {
+  width: 80rpx;
+  height: 80rpx;
+  margin:40rpx auto; 
+  border-radius: 50%;
+}
+.cardbodythree{
+  display: flex;
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  position: relative;
+}
+.carditemthree{
+  width: 50%;
+}
+.carditemthree .navigator{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  flex-wrap: wrap; 
+  text-align: center;
+}
+.carditemthree .carditemtwopic {
+  width: 80rpx;
+  height: 80rpx;
+  margin:40rpx auto; 
+} 
+.carditemthree .carditemtwopic image{
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}

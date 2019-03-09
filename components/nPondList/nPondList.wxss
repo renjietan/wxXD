@@ -1,0 +1,210 @@
+/* pages/pondList/pondList.wxss */
+@import '../../lib/font/iconfont.wxss';
+.container {
+  background: #edeef4;
+  min-height: 100%;
+  overflow: hidden;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+}
+
+.layout {
+  width: 94%;
+  background-color: white;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  box-shadow: 10rpx 6rpx  10rpx 6rpx #e0ebf6;
+ 
+}
+.header {
+  padding: 0 8rpx 0 14rpx;
+  line-height: 80rpx;
+  display: flex;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  color: #323333;
+  height: 80rpx;
+}
+.downicon {
+  transform: rotate(180deg);
+}
+
+.collapsebody {
+  overflow: hidden;
+  transition: height 0.4s;
+  padding: 0px 20rpx;
+}
+.icon-collapse{
+color: #737373;
+}
+
+.hide {
+  height: 0rpx;
+  border-bottom: none;
+}
+.setPond {
+  flex: 1;
+  font-size: 15px;
+}
+
+
+.content {
+  padding-bottom: 10rpx;
+  line-height: 50rpx;
+  border-top: 0;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  
+}
+
+.content_T {
+  display: flex;
+  padding: 20rpx 0;
+}
+
+.content_c {
+  flex: 1;
+ 
+}
+
+.h_class {
+  display: block;
+  color: #8f8f8f;
+}
+li {
+  padding: 30rpx 10rpx;
+  font-size: 16px;
+  line-height: 20rpx;
+}
+
+.content_left {
+  display: flex;
+}
+
+.content_right {
+  display: flex;
+}
+
+.h_val {
+   color: #8f8f8f;
+}
+
+van-switch {
+  padding-left: 10rpx;
+}
+
+.switchbox {
+  vertical-align: middle;
+}
+
+.pond1 {
+  margin-top: 20rpx;
+}
+
+.address {
+  padding-left: 10rpx;
+  padding-bottom: 20rpx;
+  font-size: 16px;
+   color: #8f8f8f;
+}
+
+.addAddress {
+  padding-left: 18rpx;
+  font-size: 16px;
+  color: #8f8f8f;
+}
+ .addRress{
+    padding-left: 60rpx;
+  }
+.addDevice_l {
+  border-right: 1px solid #ccc;
+   color: #8f8f8f;
+}
+
+/* .addDevice_r {
+  color: #3A93FF;
+} */
+
+
+/* 图标 */
+.setIcon {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  padding-bottom: 9rpx;
+}
+
+.amend {
+  padding-left: 15rpx;
+}
+
+.defPond {
+  font-size: 16px;
+}
+
+.addDevice {
+  line-height: 70rpx;
+  display: flex;
+  font-size: 16px;
+  color: #8f8f8f;
+}
+
+.addDev {
+  flex: 1;
+  text-align: center;
+}
+
+/* 关注图标 */
+.icon-guanzhu {
+  color: #ccc;
+  padding-right: 20rpx;
+  font-size: 18px;
+}
+
+/* 添加塘口图标 */
+.icon-jiahao {
+  font-size: 70px;
+  color: #3A93FF;
+  position:fixed;
+  bottom: 70rpx;
+  right: 40rpx;
+}
+
+/* 修改塘口图标 */
+.icon-shuru{
+  padding-left: 16rpx;
+  font-size: 18px;
+  color:#4d4d4b;
+}
+
+.kinds{
+  display: inline-block;
+  padding-left: 60rpx;
+}
+
+.guanzhuicon {
+  color: #ffd822;
+}
+
+.noguanzhuicon {
+  color: #ccc;
+}
+/* 添加塘口按钮 */
+.image-style{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 100;
+}
+.noPond{
+  font-size: 16px;
+  color:#888;
+  position: absolute;
+  top:300rpx;
+  left:50%;
+  transform: translateX(-50%);
+}
+ 

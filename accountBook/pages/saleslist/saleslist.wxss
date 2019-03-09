@@ -1,0 +1,129 @@
+/* accountBook/pages/saleslist/saleslist.wxss */
+
+.container {
+  /* background: #efeff4; */
+  height: 100vw;
+  width: 100vh;
+  transform: rotate(90deg) translate(-100vw, 0);
+  transform-origin: left bottom;
+}
+
+.table {
+  display: flex;
+  height: calc(100vw - 45px);
+  overflow-y: scroll;
+  width: 100vh;
+}
+
+.table-left {
+  min-width: 25%;
+}
+
+.table-left>view {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: #333;
+  text-align: center;
+  border-bottom: 1rpx solid #e6e6e6;
+  border-right: 1rpx solid #e6e6e6;
+}
+
+.table-left>view:nth-child(odd) {
+  background: #fff;
+}
+
+.table-left>view:nth-child(even) {
+  background: #efefef;
+}
+
+.table-left>view:nth-child(2) {
+  color: #666;
+  font-size: 24rpx;
+  background: #fff;
+}
+
+.table-left>view:nth-child(3) {
+  font-size: 28rpx;
+  color: #3a93ff;
+}
+
+.table-right {
+  width: 75%;
+}
+
+.warp {
+  height: 100%;
+  display: flex;
+}
+
+.widtha {
+  width: 200%;
+}
+
+.widthb {
+  width: 100%;
+}
+
+.table-tk {
+  width: calc(100vh * 0.75);
+}
+
+.table-th {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  border-bottom: 1rpx solid #e6e6e6;
+  border-right: 1rpx solid #e6e6e6;
+  line-height: 80rpx;
+}
+
+.table-con {
+  display: flex;
+}
+
+.table-tl {
+  width: 100%;
+}
+
+.table-tl>view {
+  text-align: center;
+  font-size: 26rpx;
+  color: #333;
+  border-bottom: 1rpx solid #e6e6e6;
+  border-right: 1rpx solid #e6e6e6;
+  line-height: 80rpx;
+}
+
+.table-tl>view:nth-child(even) {
+  background: #fff;
+}
+
+.table-tl>view:nth-child(odd) {
+  background: #efefef;
+}
+
+.table-tl>view:nth-child(1) {
+  color: #666;
+  font-size: 24rpx;
+  background: #fff;
+}
+
+.table-tl>view:nth-child(2) {
+  font-size: 28rpx;
+  color: #3a93ff;
+}
+.table-tl:nth-child(2)>view {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.table-tl:nth-child(3)>view {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.mytabs .van-tab--active {
+  color: #3a93ff !important;
+  border-bottom: 1px solid #3a93ff !important;
+}

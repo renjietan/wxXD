@@ -1,0 +1,154 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/allCurve/allCurve",
+    "pages/calendar/calendar",
+    "pages/editpassword/editpassword",
+    "pages/forgetPassWord/forgetPassWord",
+    "pages/index/index",
+    "pages/more/more",
+    "pages/newLogin/newLogin",
+    "pages/personInfo/personInfo",
+    "pages/pondList/pondList",
+    "pages/register/register",
+    "pages/use/use",
+    "pages/warningMessage/warningMessage",
+    "pages/warningMessageList/warningMessageList",
+    "pages/newWarningMessageList/newWarningMessageList",
+    "pages/wxLogin/wxLogin",
+    "pages/becomeFormal/becomeFormal",
+    "pages/guideTK/guideTK",
+    "pages/newIndex/newIndex",
+    "pages/newWeather/newWeather",
+    "pages/farmingHome/farmingHome",
+    "pages/accountBook/accountBook"
+    
+  ],
+  "subPackages": [
+    {
+      "root": "device",
+      "pages": [
+        "pages/add/add",
+        "pages/addDevice/addDevice",
+        "pages/addEnd/addEnd",
+        "pages/changeDevice/changeDevice",
+        "pages/choosePond/choosePond",
+        "pages/seeDevice/seeDevice"
+      ]
+    },
+    {
+      "root": "pond",
+      "pages": [
+        "pages/addPond/addPond",
+        "pages/clearPond/clearPond",
+        "pages/modifyPond/modifyPond"
+      ]
+    },
+    {
+      "root": "calendar",
+      "pages": [
+        "pages/fodder/fodder",
+        "pages/seedling/seedling",
+        "pages/drug/drug"
+      ]
+    },
+    {
+      "root": "farmingCarlendar",
+      "pages": [
+        "pages/addPond/addPond",
+        "pages/handle/handle",
+        "pages/addWorker/addWorker",
+        "pages/farmingRecord/farmingRecord",
+        "pages/pondList/pondList",
+        "pages/workerList/workerList"
+      ]
+    },
+    {
+      "root": "accountBook",
+      "pages": [
+        "pages/accountBookList/accountBookList",
+        "pages/totalCost/totalCost",
+        "pages/estimatedIncome/estimatedIncome",
+        "pages/totalReturnAmount/totalReturnAmount",
+        "pages/list/list",
+        "pages/craylist/craylist",
+        "pages/crayadd/crayadd",
+        "pages/riceadd/riceadd",
+        "pages/otherslist/otherslist",
+        "pages/othersadd/othersadd",
+        "pages/saleslist/saleslist",
+        "pages/ricelist/ricelist",
+        "pages/handleHoliday/handleHoliday",
+        "pages/subsidyHandle/subsidyHandle",
+        "pages/holidayList/holidayList",
+        "pages/workerCompList/workerCompList",
+        "pages/workerCompHandle/workerCompHandle",
+        "pages/payerYZ/payerYZ",
+        "pages/payerHandle/payerHandle",
+        "pages/payerLSG/payerLSG",
+        "pages/payerCG/payerCG",
+        "pages/payerLSGHandle/payerLSGHandle",
+        "pages/payerCGHandle/payerCGHandle",
+        "pages/workerCompDetail/workerCompDetail",
+        "pages/fodderAdd/fodderAdd",
+        "pages/drugAdd/drugAdd",
+        "pages/seedAdd/seedAdd",
+        "pages/fertilizerAdd/fertilizerAdd",
+        "pages/machineryAdd/machineryAdd",
+        "pages/cldform/cldform",
+        "pages/cldformDetails/cldformDetails",
+        "pages/subsidyAdd/subsidyAdd",
+        "pages/machineryinfoAdd/machineryinfoAdd",
+        "pages/machineryinfolist/machineryinfolist",
+        "pages/incomeform/incomeform",
+        "pages/incomeformDetails/incomeformDetails",
+        "pages/workerCompTable/workerCompTable"
+      ]
+      }
+    ],
+    "usingComponents": {
+      "van-notify": "dist/notify/index",
+      "i-message": "dist1/message/index",
+      "van-toast": "dist/toast/index"
+    },
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#3A93FF",
+      "navigationBarTitleText": "虾道",
+      "navigationBarTextStyle": "white",
+      "backgroundColor": "#f2f2f2"
+    },
+    
+    "tabBar": {
+      "color": "#949494",
+      "selectedColor": "#3A93FF",
+      "borderStyle": "black",
+      "backgroundColor": "#ffffff",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "环境",
+          "iconPath": "images/index1.png",
+          "selectedIconPath": "images/index1c.png"
+        },
+        {
+          "pagePath": "pages/farmingHome/farmingHome",
+          "text": "农事",
+          "iconPath": "images/index4.png",
+          "selectedIconPath": "images/index3c.png"
+        },
+        {
+          "pagePath": "pages/accountBook/accountBook",
+          "text": "账本",
+          "iconPath": "images/index2.png",
+          "selectedIconPath": "images/index2c.png"
+        },
+        {
+          "pagePath": "pages/more/more",
+          "text": "更多",
+          "iconPath": "images/index3.png",
+          "selectedIconPath": "images/index4c.png"
+        }
+      ]
+    }
+  }

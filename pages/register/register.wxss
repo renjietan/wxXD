@@ -1,0 +1,60 @@
+/* pages/login/login.wxss */
+
+.wrapper {
+  height: 100vh;
+  background-color: #f2f2f2;
+  overflow: hidden;
+}
+
+.container {
+  width: 80%;
+  padding: 40rpx 20rpx;
+  margin: 100rpx auto;
+}
+
+.main {
+  margin-bottom: 40rpx;
+}
+
+.inputItem {
+  margin-bottom: 40rpx;
+  border-radius: 60rpx;
+  box-shadow: 0 8rpx 16rpx rgba(153, 153, 153, 0.18);
+  padding: 15rpx 20rpx;
+  background: #fff;
+}
+.inputradio{
+  margin-bottom: 40rpx;
+  border-radius: 60rpx;
+  padding: 15rpx 20rpx;
+  display: flex;
+}
+.radiotext{
+  font-size:30rpx;
+  margin-right:30rpx;
+}
+.radiobox{
+  height:48rpx;
+  flex:1;
+}
+.mygroupradio{
+  width:1000rpx;
+}
+.myradio{
+  /* width:200rpx; */
+  display:inline-block;
+  margin-right:20rpx;
+}
+.righttext {
+  color: #333;
+}
+.disabled{
+  color: #999!important;
+}
+.loginbth {
+  box-shadow: 0 8rpx 16rpx rgba(153, 153, 153, 0.18);
+  background-color: #2D8CF0 !important;
+  border: 1px solid #2D8CF0 !important;
+  letter-spacing: 4rpx;
+}
+

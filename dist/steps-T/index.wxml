@@ -1,0 +1,21 @@
+<view class="custom-class van-steps van-steps--{{ direction }}">
+  <view class="van-step__wrapper"> 
+    <view wx:for="{{ steps }}" wx:key="index" class="van-step van-hairline van-step--{{ direction }} {{ item.status ? 'van-step--' + item.status : '' }}" style="{{ width ? 'width:' + width + 'px' : '' }}">
+      <view class='deleteIcon' wx:if="{{ item.isDelete }}">
+      </view>
+      <view class="van-step__title" style="{{ item.status === 'process' ? 'color: ' + activeColor : '' }}">
+        <view>{{ item.text + "(" + item.weather + ")---" + item.operation_typeName}}</view>
+        <view class='title'>{{ item.desc }}</view>
+      </view>
+      <view class="van-step__circle-container">
+        <view class="van-step__circle" wx:if="{{ item.status !== 'process' }}" style="{{ item.status === 'finish' ? 'background-color: ' + activeColor : '' }}" />
+        <van-icon wx:else name="checked" color="{{ activeColor }}" custom-class="van-step__active" />
+      </view>
+      <view>
+        <van-button size='small' class='steps_submit' data-index="{{ index }}" data-name="修改" bind:click="handleEditStatus" plain  type="primary">修改</van-button>
+        <van-button size='small' class='steps_delete' data-index="{{ index }}" data-name="作废" plain bind:click="handleEditStatus" type="danger">作废</van-button>
+      </view>
+      <view wx:if="{{ index !== steps.length - 1 }}" class="van-step__line" style="{{ item.status === 'finish' ? 'background-color: ' + activeColor : '' }}" />
+    </view>
+  </view>
+</view>

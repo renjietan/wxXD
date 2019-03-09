@@ -1,0 +1,23 @@
+/* pages/becomeFormal/becomeFormal.wxss */
+.container {
+  padding: 20rpx 30rpx;
+  background: #efeff4;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.textcon{
+  background-color: #fff;
+  box-shadow: 0 2rpx 9rpx rgba(26, 183, 249, 0.13);
+  padding: 20rpx;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.container text{
+  display: inline-block;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color:#333;
+  text-indent: 2em;
+  margin: 10rpx 0;
+}

@@ -1,0 +1,48 @@
+/* accountBook/pages/cldform/cldform.wxss */
+
+/* 表格代码   */
+.table{
+  width: 100%;
+}
+.tr{
+  width:100%;
+  line-height: 86rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.th2,.th3,.td2,.td3{
+  width: 50%;
+}
+.th1,.td1{
+  width: 70%;
+}
+.thead{
+  color: #3a93ff;
+}
+.tbody{
+  color: #333333;
+}
+.th,.td{
+  /* padding: 10px; */
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  box-sizing: border-box
+}
+.th{
+  font-size: 24rpx;
+  color: #999999;
+}
+.td{
+  font-size: 28rpx;
+  /* color: #333333; */
+}
+.tbody .td{
+  font-size: 22rpx
+}
+.td_head{
+  text-align: left;
+}
+.isShow{
+  display: none
+}

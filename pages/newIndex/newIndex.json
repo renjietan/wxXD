@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-tabbar": "../../dist/tabbar/index",
+    "van-tabbar-item": "../../dist/tabbar-item/index",
+    "my-index": "../../components/nindex/nindex",
+    "my-nPondList": "../../components/nPondList/nPondList",
+    "i-toast": "../../dist1/toast/index",
+    "van-cell": "../../dist/cell/index",
+    "van-cell-group": "../../dist/cell-group/index",
+    "i-button": "../../dist1/button/index"
+  },
+  "navigationBarTitleText": "体验首页"
+}

@@ -1,0 +1,146 @@
+<!--pages/accountBookList/accountBookList.wxml-->
+<view class='container'>
+  <view class='warp'>
+    <view class='header'>成本支出</view>
+    <view class='warpbody'>
+      <navigator url="../list/list?type=drug" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book1.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>药品</view>
+        </view>
+      </navigator>
+      <navigator url="../list/list?type=fodder" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book2.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>饲料</view>
+        </view>
+      </navigator>
+      <navigator url="../list/list?type=seed" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book4.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>苗种</view>
+        </view>
+      </navigator>
+      <navigator url="../list/list?type=fertilizer" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book5.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>肥料</view>
+        </view>
+      </navigator>
+      <navigator url="../list/list?type=machinery" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book6.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>农机费用</view>
+        </view>
+      </navigator>
+      <navigator url="../cldform/cldform?type=cldform" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book7.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>报表</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class='warp'>
+    <view class='header'>销售记录</view>
+    <view class='warpbody'>
+      <navigator url="../craylist/craylist" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book8.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>小龙虾</view>
+        </view>
+      </navigator>
+      <navigator url="../ricelist/ricelist" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book9.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>水稻</view>
+        </view>
+      </navigator>
+      <navigator url="../otherslist/otherslist" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book10.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>其它</view>
+        </view>
+      </navigator>
+      <navigator url="../saleslist/saleslist" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book7.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>报表</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class='warp'>
+    <view class='header'>收入记录</view>
+    <view class='warpbody'>
+      <navigator url="../list/list?type=subsidy" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book11.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>补贴</view>
+        </view>
+      </navigator>
+      <navigator url="../list/list?type=returnedMoney" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book12.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>回款记录</view>
+        </view>
+      </navigator>
+      <navigator url="../incomeform/incomeform" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book7.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>报表</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class='warp'>
+    <view class='header'>用工</view>
+    <view class='warpbody'>
+      <view class='item' data-type="workerList" bindtap='handleEventNav'>
+        <view class='itempic'><image src='../../images/book13.png' mode='aspectFit'></image></view>
+        <view class='itemtext'>人员登记</view>
+      </view>
+      <view class='item' data-type="holiday" bindtap='handleEventNav'>
+        <view class='itempic'><image src='../../images/book14.png' mode='aspectFit'></image></view>
+        <view class='itemtext'>长工请假</view>
+      </view>
+      <view class='item' data-type="workerCompList" bindtap='handleEventNav'>
+        <view class='itempic'><image src='../../images/book15.png' mode='aspectFit'></image></view>
+        <view class='itemtext'>临时工工时</view>
+      </view>
+      <view class='item' data-type="payerYZ" bindtap='handleEventNav'>
+        <view class='itempic'><image src='../../images/book16.png' mode='aspectFit'></image></view>
+        <view class='itemtext'>预支费用</view>
+      </view>
+      <view class='item' data-type="payerLSG" bindtap='handleEventNav'>
+        <view class='itempic'><image src='../../images/book17.png' mode='aspectFit'></image></view>
+        <view class='itemtext'>临时工结算</view>
+      </view>
+      <view class='item' data-type="payerCG" bindtap='handleEventNav'>
+        <view class='itempic'><image src='../../images/book18.png' mode='aspectFit'></image></view>
+        <view class='itemtext'>长工结算</view>
+      </view>
+      <view class='item' data-type="cost" bindtap='handleEventNav'>
+        <view class='itempic'><image src='../../images/book7.png' mode='aspectFit'></image></view>
+        <view class='itemtext'>报表</view>
+      </view>
+    </view>
+  </view>
+  <view class='warp'>
+    <view class='header'>固定资产</view>
+    <view class='warpbody'>
+    <navigator url="../../../pages/pondList/pondList" class='navigator'>
+      <view class='item'>
+        <view class='itempic'><image src='../../images/book19.png' mode='aspectFit'></image></view>
+        <view class='itemtext'>塘口管理</view>
+      </view>
+       </navigator>
+      <navigator url="../machineryinfolist/machineryinfolist?type=machineryinfo" class='navigator'>
+        <view class='item'>
+          <view class='itempic'><image src='../../images/book20.png' mode='aspectFit'></image></view>
+          <view class='itemtext'>农机管理</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

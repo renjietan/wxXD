@@ -1,0 +1,20 @@
+{
+  "navigationBarTitleText": "药品投放",
+  "usingComponents": {
+    "van-field": "../../../dist/field/index",
+    "van-cell": "../../../dist/cell/index",
+    "van-cell-group": "../../../dist/cell-group/index",
+    "i-button": "../../../dist1/button/index",
+    "i-checkbox-group": "../../../dist1/checkbox-group/index",
+    "i-checkbox": "../../../dist1/checkbox/index",
+    "van-action-sheet": "../../../dist/action-sheet/index",
+    "van-popup": "../../../dist/popup/index",
+    "van-badge": "../../../dist/badge/index",
+    "van-tag": "../../../dist/tag/index",
+    "van-badge-group": "../../../dist/badge-group/index",
+    "van-button": "../../../dist/button/index",
+    "van-checkbox": "../../../dist/checkbox/index",
+    "van-datetime-picker": "../../../dist/datetime-picker/index",
+    "van-checkbox-group": "../../../dist/checkbox-group/index"
+  }
+}

@@ -1,0 +1,17 @@
+<!--accountBook/pages/cldform/cldform.wxml-->
+<wxs src="../../../utils/filter.wxs" module="filter" />
+<view class='history-table-wrap'>
+    <view class="table">
+      <view class="tr">
+          <view class="th th1">名称</view>
+          <view class="th th2" style='padding-right:30rpx;'>{{nowYear}}年</view>
+          <view class="th th3" wx:if="{{havePre}}" style='padding-right:30rpx;'>{{preYear}}年</view>
+      </view>
+      <view class="tr {{index&&index%2==0?'zebra':''}}" wx:for="{{table}}" wx:for-item="item" wx:for-index="index" wx:key="key">
+          <view class="td td1"  style="{{item.name=='合计'?'color:#3a93ff':''}}">{{item.name}}</view>
+          <view class="td td2" data-type="{{item.type}}" data-year="{{nowYear}}" bindtap='handleClick'  style="text-align:right;padding-right:30rpx;{{item.name=='合计'?'color:#3a93ff':''}}">¥{{filter.parserNum(item.nowYear)}}</view>
+          <view class="td td3" data-type="{{item.type}}" data-year="{{preYear}}" bindtap='handleClick' wx:if="{{havePre}}"  style="text-align:right;padding-right:30rpx;{{item.name=='合计'?'color:#3a93ff':''}}">¥{{item.preYear}}</view>
+      </view>
+    </view>
+    <i-message id="message" />
+ </view>

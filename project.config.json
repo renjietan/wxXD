@@ -1,0 +1,125 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wxdd15c478fa121bec",
+	"projectname": "%E8%B4%A6%E6%9C%AC",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": 0,
+					"name": "账本主页面",
+					"pathName": "pages/accountBook/accountBook",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "长工结算",
+					"pathName": "accountBook/pages/payerCGHandle/payerCGHandle",
+					"query": "type=add&wsid=",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "预支结算主页面",
+					"pathName": "accountBook/pages/payerYZ/payerYZ",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "长工请假-新增&编辑",
+					"pathName": "accountBook/pages/handleHoliday/handleHoliday",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "临时工-工时记录",
+					"pathName": "accountBook/pages/workerCompHandle/workerCompHandle",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "预支费用",
+					"pathName": "accountBook/pages/payerYZ/payerYZ",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "长工结算",
+					"pathName": "accountBook/pages/payerCG/payerCG",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "预知费用",
+					"pathName": "accountBook/pages/payerYZ/payerYZ",
+					"query": "id=-1654252810"
+				},
+				{
+					"id": 8,
+					"name": "预支费用编辑--新增",
+					"pathName": "accountBook/pages/payerHandle/payerHandle",
+					"query": "id=-1743612229&type=edit"
+				},
+				{
+					"id": 9,
+					"name": "长工结算添加",
+					"pathName": "accountBook/pages/payerCGHandle/payerCGHandle",
+					"query": "type=add&wsid="
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/accountBook/accountBook",
+					"query": ""
+				},
+				{
+					"id": 11,
+					"name": "报表",
+					"pathName": "accountBook/pages/workerCompTable/workerCompTable",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "临时工结算",
+					"pathName": "accountBook/pages/payerLSGHandle/payerLSGHandle",
+					"query": "type=add&wsid="
+				}
+			]
+		}
+	}
+}

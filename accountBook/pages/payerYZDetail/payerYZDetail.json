@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-swipe-cell": "../../../dist/swipe-cell/index",
+    "i-message": "../../../dist1/message/index",
+    "van-dialog": "../../../dist/dialog/index",
+    "van-toast": "../../../dist/toast/index",
+    "van-search": "../../../dist/search/index"
+  }
+}

@@ -1,0 +1,21 @@
+/* pages/addDevice/addDevice.wxss */
+
+
+.container {
+  background: #efeff4;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.content{
+  width:90%;
+  line-height: 70rpx;
+  background-color: white;
+  margin: 20rpx auto;
+  border-radius: 16rpx;
+  font-size: 16px;
+  padding-left: 80rpx;
+  box-sizing: border-box;
+  color: #9b9ba0;
+}
+
+ 

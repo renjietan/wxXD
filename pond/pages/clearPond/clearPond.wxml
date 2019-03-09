@@ -1,0 +1,15 @@
+
+<view class='container'>
+  <view class='layout' wx:for="{{items}}" wx:key="{{item.id}}">
+    <view class='header'>
+      <view class='setPond'>
+        <text class='defPond'>{{item.name}}</text>
+        <i class='iconfont myicon icon-shanchu' bindtap="clearPond" data-groupid="{{item.id}}" data-index="{{index}}"></i>
+      </view>
+    </view>
+  </view>
+  </view>
+  <i-modal title="删除确认" visible="{{ visible }}" actions="{{ actions }}" bind:click="handleClick">
+    <view>删除后无法恢复哦</view>
+</i-modal>
+<i-toast id="toast" />

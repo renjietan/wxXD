@@ -1,0 +1,36 @@
+<view class="custom-class van-steps van-steps--{{ direction }}">
+  <view class="van-step__wrapper">
+    <view wx:for="{{ steps }}" wx:key="index" class="van-step van-hairline van-step--{{ direction }}" style="{{ width ? 'width:' + width + 'px' : '' }}">
+      <!-- 内容 -->
+      <view class="van-step__title">
+        <view class="title">{{ item.operation_typeName }}</view>
+        <view wx:if="{{ item.farm }}" class='content'>
+          <van-tag wx:if="{{ item.operation_type != 3 }}" plain wx:for="{{item.farm}}" wx:for-item="child" custom-class="tagChild" wx:key="{{ child.ooperation_id }}">
+            {{ child.operation_num != null && child.operation_name !=null ? child.operation_name + "：" + child.operation_num + child.unit : child.operation_name != null ? child.operation_name : item.operation_typeName + child.operation_num + child.unit}}
+          </van-tag>
+          <view wx:if="{{ item.operation_type == 3 && item.farm.length > 0 }}" wx:for="{{item.farm}}" wx:for-item="child" wx:key="{{ child.ooperation_id }}">
+              {{ child.drug_name + "：       使用" + child.operation_name + child.operation_num + child.unit}}
+          </view>
+          <image wx:if="{{ item.foId && item.status == '0' }}" class='deleteIcon' src='../../images/delete.svg'></image>
+        </view>
+      </view>
+      <view style='line-height:82rpx'>{{ item.snames ? "操作人：" + item.snames : "" }}</view>
+      <!-- 标记圆圈 -->
+      <view class="van-step__circle-container">
+        <view wx:if="{{ item.foId }}" class="van-step__circle">
+          <view class='yearMonth'>{{ item.Day }}</view>
+        </view>
+        <van-icon wx:else name="checked" color="rgb(254,138,61)" custom-class="van-step__active">
+          <view class='active_text' style='height:32rpx' slot="text">{{ item.Month }}</view>
+        </van-icon>
+      </view>
+      <!-- 操作按钮 -->
+      <view class='handle'>
+        <van-button size='small' wx:if="{{ item.foId && item.status == 1 }}" custom-class='steps_submitBtn' data-id="{{  item.foId  }}" data-status="0" plain bind:click="handleIsDelete" type="danger">作废</van-button>
+        <van-button size='small' wx:if="{{ item.foId && item.status == 0 }}" custom-class='steps_recover' data-id="{{  item.foId  }}" data-status="1" plain bind:click="handleIsDelete" type="warning">恢复</van-button>
+        <van-button size='small' wx:if="{{ item.foId && item.status == 1 }}" custom-class='steps_submitBtn' data-id="{{ item.foId }}" data-type="{{ item.farm[0].operation_type }}" bind:click="handleIsEdit" plain type="primary">修改</van-button>
+      </view>
+      <view wx:if="{{ index !== steps.length - 1 }}" class="van-step__line" style="{{ item.status === 'finish' ? 'background-color: ' + activeColor : '' }}" />
+    </view>
+  </view>
+</view>

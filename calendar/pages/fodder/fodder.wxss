@@ -1,0 +1,289 @@
+/* calendar/pages/fodder/fodder.wxss */
+
+.warp {
+  padding: 20rpx;
+  background: #efeff4;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.boxwarp {
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  box-shadow: 0 2rpx 9rpx rgba(26, 183, 249, 0.13);
+}
+
+.title {
+  height: 90rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.title text {
+  font-size: 28rpx;
+  line-height: 90rpx;
+}
+
+.addbtn {
+  height: 90rpx;
+  width: 90rpx;
+  text-align: right;
+  line-height: 90rpx;
+  float: right;
+  color: #339bfe;
+  
+}
+.addbtn .iconfont {
+font-size:40rpx;
+}
+.con {
+  padding: 30rpx 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nodata {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 50rpx auto;
+}
+
+.nodatabj {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 0 auto;
+  background-color: #ccc;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 5rpx;
+}
+
+.nodatabj .iconfont {
+  font-size: 60rpx;
+  color: #fff;
+}
+
+.nodatatext {
+  text-align: center;
+  display: block;
+  margin-top: 10rpx;
+  height: 20rpx;
+  font-size: 24rpx;
+  color: #b3b3b3;
+}
+
+.list {
+  min-width: 300rpx;
+	height: 60rpx;
+  margin-bottom:20rpx;
+	background-color: #3a93ff;
+	border-radius: 4rpx;
+  font-size: 28rpx;
+	color: #ffffff;
+  text-align: center;
+  line-height: 60rpx;
+  padding:0 10rpx;
+}
+.dlebtn{
+  	line-height: 60rpx;
+    width:40rpx;
+    display: inline-block;
+}
+
+.category {
+  flex: 1;
+  border-radius: 30rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  background: #f2f2f2;
+  color: #333;
+  min-width: 100rpx;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.isclick {
+  background: #5fb878;
+  color: #fff;
+}
+
+.value {
+  width: 30%;
+}
+
+.valuebtn {
+  border-radius: 30rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.valuebtnclick {
+  border: 1px solid #1089ff;
+  background: #d0e9ff;
+  color: #1089ff;
+}
+
+.inputwarp {
+  margin: 10px;
+  display: flex;
+}
+
+.inputwarpleft {
+  flex: 1;
+  display: flex;
+  margin-right: 10px;
+}
+
+.inputborder {
+  flex: 1;
+  height: 50rpx;
+  line-height: 50rpx;
+  border: 1px solid #f2f2f2;
+  border-radius: 50rpx;
+  font-size: 24rpx;
+  color: #666;
+  padding: 0 20rpx;
+  margin: 5rpx 0;
+}
+
+.inputwarp text {
+  font-size: 24rpx;
+  color: #666;
+  line-height: 60rpx;
+}
+
+.inputbtn {
+  width: 30%;
+  box-sizing: border-box;
+  border-radius: 30rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 240rpx !important;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding: 10rpx;
+}
+
+.mybutton {
+  margin: 0 !important;
+  background-color: #3A93FF !important;
+  border: none !important;
+}
+
+.boxwarp-dialog {
+  padding: 15rpx 0;
+}
+
+.boxwarp-dialog .con {
+  border-top: 1px solid #f3f3f3;
+  padding-top: 20rpx;
+  padding-bottom: 0px;
+}
+
+.boxwarp-dialog .con .category {
+  display: inline-block;
+  margin: 6rpx;
+}
+
+.van-cell-text {
+  min-width: 100rpx;
+  display: inline-block;
+}
+
+.rightwarp {
+  width: 90vw;
+  height: 100vh;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.addbox {
+}
+
+.addboxheader {
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #333;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.addboxbody {
+  padding: 40rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fodderlist {
+  width: 220rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-bottom: 40rpx;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  border: solid 1rpx #b2b2b2;
+}
+
+.valuelist {
+  width: 150rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-bottom: 40rpx;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  border: solid 1rpx #b2b2b2;
+}
+.active {
+  border: solid 2rpx #3a93ff!important;
+  color: #3a93ff!important;
+}
+.zdylist {
+  display: flex;
+   height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.valueinput {
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-bottom: 40rpx;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  border: solid 1rpx #b2b2b2;
+  margin-left:20rpx;
+  padding:0 10rpx;
+}
+.van-cell__value{
+width:25px;
+height:25px;
+}
+.right{
+  width:25px;
+  height:25px;
+  flex:0 1 auto!important;
+  -webkit-flex:0 1 auto!important;
+}

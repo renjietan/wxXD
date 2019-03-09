@@ -1,0 +1,65 @@
+/* pages/newLogin/newLogin.wxss */
+
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: #efeff4;
+}
+.header{
+  width:100%;
+  height:138rpx;
+  background-color: #3A93FF;
+}
+.loginImg{
+  width: 94%;
+  height: 1140rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  position: absolute;
+  top:0;
+  left:50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  overflow: hidden;
+}
+.loginImage{
+  width: 100%;
+  height: 100%;
+}
+.btn{
+  height: 110rpx;
+  width: 100%;
+  /* background-color: pink; */
+  z-index: 999;
+  position: absolute;
+  bottom:105rpx;
+  display: flex;
+   
+}
+.setBtn{
+  flex: 1;
+  text-align: center;
+  /* background-color: pink; */
+
+}
+.experience,
+.use{
+  width: 70%;
+  height: 110rpx;
+  line-height: 110rpx;
+ background-color: #3A93FF;
+  color: white;
+  font-size: 16px; 
+  border-radius: 60rpx 0 0 60rpx;
+  box-sizing: border-box;
+}
+.use{
+  border-radius: 0 60rpx 60rpx 0;
+  /* padding-right: 20rpx; */
+  margin-right: 60rpx;
+  border-left: 2rpx solid #fff;
+}
+.experience{
+ margin-left: 112rpx;
+
+}

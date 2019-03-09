@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "van-field": "../../../dist/field/index",
+    "i-button": "../../../dist1/button/index",
+    "van-cell-group": "../../../dist/cell-group/index",
+    "van-cell": "../../../dist/cell/index",
+    "van-popup": "../../../dist/popup/index",
+    "van-Notify": "../../../dist/notify/index",
+    "i-message": "../../../dist1/message/index",
+    "van-toast": "../../../dist/toast/index",
+    "van-datetime-picker": "../../../dist/datetime-picker/index",
+    "i-drawer": "../../../dist1/drawer/index",
+    "van-checkbox": "../../../dist/checkbox/index",
+    "van-tag": "../../../dist/tag/index"
+  }
+}

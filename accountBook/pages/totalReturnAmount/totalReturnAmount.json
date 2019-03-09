@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "回款额",
+  "usingComponents": {
+    "van-picker": "../../../dist/picker/index",
+    "van-popup": "../../../dist/popup/index",
+    "dateTime": "../../../dist/datetime-picker_T/index"
+  }
+}

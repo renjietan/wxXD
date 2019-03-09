@@ -1,0 +1,41 @@
+/* pages/calendar/calendar.wxss */
+.container {
+  background: #efeff4;
+  min-height: 100vh;
+  /* justify-content: center; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.layout {
+  width: 94%;
+  background-color: white;
+  border-radius: 10rpx;
+  margin: 20rpx auto;
+  box-shadow: 10rpx 6rpx  10rpx 6rpx #e0ebf6;
+  text-align: center;
+}
+.infoCount{
+  line-height: 70rpx;
+  color: rgb(114,114,114);
+  font-size: 18px
+}
+.footer{
+  font-size: 16px;
+  color: rgb(72,196,249);
+  display: flex;
+  justify-content: center;
+}
+.footer text{
+  line-height:20px;
+}
+.img{
+  width: 248rpx;
+  height: 253rpx;
+  margin-top: 30rpx
+}
+.icon{
+  display: block;
+  height:20px;
+}

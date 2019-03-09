@@ -1,0 +1,27 @@
+<!--pages/addEnd/addEnd.wxml-->
+<!-- <view>
+  <van-nav-bar title="添加设备" left-text="返回" right-text="" left-arrow bind:click-left="back" bind:click-right="" />
+</view> -->
+<view class="card note" hidden='{{noteShow}}'>
+  <!-- <van-notice-bar text="本页面进行设备的添加工作，选好塘口告警等级后，点击完成即可添加设备" speed="30" /> -->
+  本页面进行设备的添加工作，选好塘口告警等级后，点击完成即可添加设备
+</view>
+<view class='card'>
+  <van-cell-group>
+    <van-field value="{{ param.data_level == '1'?'高':(param.data_level=='2'?'中':'低') }}" clearable label="告警等级" input-align="right" disabled bindtap="typeClick" icon="arrow" />
+  </van-cell-group>
+</view>
+<view class='card img' wx:for="{{zjjy}}" wx:for-item="item" wx:key="{{ index }}">
+  <van-panel title="{{item.title}}">
+    <view style='padding:10px 20px;'>{{item.content}}</view>
+  </van-panel>
+</view>
+<view style='margin-bottom:50px'></view>
+<view class='down'>
+  <view>
+    <van-button class='btn' size="large" bind:click="submit">完 成</van-button>
+  </view>
+</view>
+<!-- 下拉菜单 -->
+<van-action-sheet show="{{ typeShow }}" actions="{{ typeActions }}" bind:select="typeSelect" bind:close="onClose" />
+<i-toast id="toast" />

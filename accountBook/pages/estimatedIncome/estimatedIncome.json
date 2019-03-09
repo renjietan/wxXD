@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "预计总收入",
+  "usingComponents": {
+    "van-picker": "../../../dist/picker/index",
+    "van-popup": "../../../dist/popup/index",
+    "dateTime": "../../../dist/datetime-picker_T/index"
+  }
+}

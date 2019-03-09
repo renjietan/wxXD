@@ -1,0 +1,41 @@
+<!--accountBook/pages/craylist/craylist.wxml-->
+<view class='container'>
+  <view class='header'>
+    <view class='headert'>当年总销量（斤）</view>
+    <view class='headerb'>{{sum}}</view>
+  </view>
+  <view class='list' wx:if="{{data.length>0}}">
+    <view class='listheight'>明细</view>
+    <view class='listcon'>
+      <block wx:for="{{data}}" wx:key="{{index}}">
+        <van-swipe-cell id="swipe-cell" right-width="{{ 65}}" async-close bind:close="onClose" data-id="{{item.id}}">
+          <navigator url="../riceadd/riceadd?type=edit&id={{item.id}}" class='item'>
+            <view class='item-pic'><i class="iconfont icon-shuidao"></i></view>
+            <view class='item-center'>
+              <text class='item-name'>水稻</text>
+              <text class='item-time'>{{item.sales_time}}</text>
+            </view>
+            <view class='item-right'>{{item.output}}</view>
+          </navigator>
+          <view slot="right" class='warpright'>
+            <view class='del'>删除</view>
+          </view>
+        </van-swipe-cell>
+      </block>
+    </view>
+  </view>
+  <view class='nodata' wx:else>
+    <image src='../../../images/nodata.png' class='nodata-pic'></image>
+  </view>
+  <movable-area class="move" scale-area>
+    <navigator url="../riceadd/riceadd">
+      <movable-view direction="horizontal" bindchange="onChange" bindscale="onScale" data-type="add" bindtap="handleEvent" scale-min="0.5" scale-max="4" scale-value="2" class='addbtn'>
+        <i class="iconfont icon-jiahao1"></i>
+      </movable-view>
+    </navigator>
+  </movable-area>
+</view>
+<i-message id="message" />
+<i-toast id="toast" />
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />

@@ -1,0 +1,56 @@
+<!--pages/newIndex.wxml-->
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item>
+    <span>首页</span>
+    <image slot="icon" src="../../images/index1.png" class="icon" mode="aspectFit" />
+    <image slot="icon-active" src="../../images/index1c.png" mode="aspectFit" />
+  </van-tabbar-item>
+  <van-tabbar-item>
+    <span>塘口</span>
+    <image slot="icon" src="../../images/index2.png" class="icon" mode="aspectFit" />
+    <image slot="icon-active" src="../../images/index2c.png" mode="aspectFit" />
+  </van-tabbar-item>
+  <van-tabbar-item>
+    <span>农事</span>
+    <image slot="icon" src="../../images/index4.png" class="icon" mode="aspectFit" />
+    <image slot="icon-active" src="../../images/index3c.png" mode="aspectFit" />
+  </van-tabbar-item>
+  <van-tabbar-item>
+    <span>更多</span>
+    <image slot="icon" src="../../images/index3.png" class="icon" mode="aspectFit" />
+    <image slot="icon-active" src="../../images/index4c.png" mode="aspectFit" />
+  </van-tabbar-item>
+</van-tabbar>
+<view class='warp'>
+  <view class='itemwarp' wx:if="{{active==0}}">
+    <my-index bindshow="showToast" bindhide="hideToast"></my-index>
+  </view>
+  <view class='itemwarp' wx:if="{{active==1}}">
+    <my-nPondList></my-nPondList>
+  </view>
+  <view class='itemwarp' wx:if="{{active==2}}">
+    <view class='con3'>
+      <image src='../../images/calendar.jpg' class='image'  mode='aspectFit'></image>
+    </view>
+  </view>
+  <view class='itemwarp' wx:if="{{active==3}}">
+    <view class="con4">
+      <van-cell-group>
+        <van-cell title="我的信息" is-link url="../personInfo/personInfo">
+          <i slot="icon" class="iconfont icon-wodexinxi myicon"></i>
+        </van-cell>
+        <van-cell title="删除塘口" is-link custom-class='noclick'>
+          <i slot="icon" class="iconfont icon-shanchu myicon"></i>
+        </van-cell>
+        <van-cell title="修改设备" is-link custom-class='noclick'>
+          <i slot="icon" class="iconfont icon-shebei1 myicon"></i>
+        </van-cell>
+        <van-cell title="修改密码" is-link border="{{ false }}" url="../editpassword/editpassword">
+          <i slot="icon" class="iconfont icon-weibaoxitongshangchuanlogo- myicon"></i>
+        </van-cell>
+      </van-cell-group>
+    </view>
+  </view>
+</view>
+<i-toast id="toast" />
+<i-message id="message" />

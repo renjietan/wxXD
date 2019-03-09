@@ -1,0 +1,60 @@
+/* farmingCarlendar/pages/pondList/pondList.wxss */
+
+.container_pondList {
+  background: #efeff4;
+  min-height: 100vh;
+  /* justify-content: center; */
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  position: relative;
+  padding: 20rpx 25rpx;
+}
+
+.pondList_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: rgba(80, 81, 82, 1);
+  font-weight: bold
+}
+
+.pondList_content {
+  margin-top: 20rpx;
+}
+
+.card_icon_handleEdit {
+  position: absolute !important;
+  top: 50%;
+  margin-top: -20rpx;
+  margin-left: 30rpx;
+}
+
+.card_icon_handleDelete{
+  position: absolute !important;
+  top: 50%;
+  right: 0;
+  margin-top: -20rpx;
+}
+.card_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 50rpx;
+  color: rgba(80, 81, 82, 1);
+}
+.card_content_child{
+  color: rgba(80, 81, 82, .7);
+}
+.card_label{
+  text-align: justify;
+  text-align-last: justify;
+  width: 120rpx;
+  display: inline-block;
+}
+
+.card_T{
+  margin-bottom: 10rpx !important
+}

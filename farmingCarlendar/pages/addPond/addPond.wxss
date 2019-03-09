@@ -1,0 +1,189 @@
+/* farmingCarlendar/pages/addWorker/addWorker.wxss */
+
+.container {
+  background: #efeff4;
+  min-height: 100vh;
+  /* justify-content: center; */
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  position: relative;
+}
+
+.vanCell_T {
+  margin: 15rpx 15rpx 30rpx 15rpx;
+}
+
+.vantArea_Active_T {
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+  z-index: 2;
+}
+
+.vantArea_T {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  z-index: 2;
+  display: none;
+}
+
+.cover {
+  position: absolute;
+  z-index: 1;
+  background: rgba(76, 76, 76, 0.9);
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+}
+
+.table {
+  border: 0px solid darkgray;
+  font-size: 30rpx;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 75rpx;
+  align-items: center;
+}
+
+.td {
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.th {
+  width: 40%;
+  justify-content: center;
+  background: rgba(58, 147, 255, 0.7);
+  color: #fff;
+  display: flex;
+  height: 75rpx;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hide{
+  display: none
+}
+
+
+.scroll-view_H {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.scroll-view-item_H {
+  width: 200px;
+  height: 100px;
+  display: inline-block;
+}
+
+.list {
+  display: inline-block;
+  text-align: center;
+}
+
+.list_content {
+  line-height: 40px;
+  font-size: 16px;
+  border: 1px solid #efeff4;
+  padding: 0 30rpx;
+  color: white;
+  overflow: hidden;
+  background: #2d8cf0;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.list_content_l {
+  max-width: 300rpx;
+  text-align: left;
+  background: white;
+  color: #80848f;
+  box-sizing: border-box;
+}
+
+.list_content_active {
+  background: #f8f8f9;
+}
+
+.btn_T {
+  width: 96%;
+  left: 2%;
+  position: absolute !important;
+  bottom: 0;
+  margin: 10rpx
+}
+
+.girdItem_T {
+  padding: 0 !important;
+}
+
+.noHasData {
+  line-height: 300rpx;
+  font-size: 16px;
+  border: 1px solid #efeff4;
+  padding: 0 30rpx;
+  color: #80848f;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.tags_T {
+  padding: 0.4em 0.7em;
+}
+
+.toolbar {
+  box-sizing: border-box;
+  text-decoration: underline;
+  color: red
+}
+
+.grid_TT {
+  width: 100%;
+  padding: 0 !important
+}
+
+.btn_TT {
+  width: 90%;
+}
+.btn_TTT {
+  position: absolute !important;
+  bottom: 10rpx;
+  width: 96%;
+}
+
+.grid_TTT {
+  position: absolute;
+  bottom: 10rpx;
+  width: 100%;
+}
+.grid_TT {
+  width: 100%;
+  padding: 0 !important;
+}
+
+
+.cellValue_TTT{
+  min-width:450rpx
+}

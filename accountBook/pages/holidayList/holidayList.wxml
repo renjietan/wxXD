@@ -1,0 +1,39 @@
+<!--accountBook/pages/craylist/craylist.wxml-->
+<view class='container'>
+  <view class='header'>
+    <view class='headert'>当年请假天数 </view>
+    <view class='headerb'>{{listData.subCount}}天</view>
+  </view>
+  <view wx:for="{{listData.data}}" wx:for-item="item" wx:key="{{index}}">
+    <view class='listheight'>
+      {{index }} 月
+    </view>
+    <view wx:for="{{item}}" data-type="edit" bindtap='handleEvent' data-typeid="{{ children.id }}" style='background:white' wx:for-item="children" wx:key="{{ index }}">
+      <van-swipe-cell id="swipe-cell" right-width="65" bind:close="onClose">
+        <view class='item'>
+          <view class='item-pic'>
+            <icon class='iconfont icon-qingjia'></icon>
+          </view>
+          <view class='item-center'>
+            <view class='item-name'>{{children.name}}
+            </view>
+            <text class='item-time'>{{children.time}}</text>
+          </view>
+          <view class='item-right'>{{children.days}}天</view>
+        </view>
+        <view slot="right" class='warpright'>
+          <!-- <view data-type="edit" bindtap='handleEvent' data-typeid="{{ children.id }}" class='edit'>编辑</view> -->
+          <view data-type="del" bindtap='handleEvent' data-typeid="{{ children.id }}" class='del'>删除</view>
+        </view>
+      </van-swipe-cell>
+    </view>
+  </view>
+  <!-- <movable-area class="move" scale-area>
+    <movable-view direction="horizontal" bindchange="onChange" bindscale="onScale" data-type="add" bindtap="handleEvent" scale-min="0.5" scale-max="4" scale-value="2" class='addbtn'>
+      <i class="iconfont icon-jiahao1"></i>
+    </movable-view>
+  </movable-area> -->
+</view>
+<van-dialog id="van-dialog" />
+<i-message id="message" />
+<van-toast id="van-toast" />

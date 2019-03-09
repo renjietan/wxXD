@@ -1,0 +1,207 @@
+<!--pages/calendar/calendar.wxml-->
+<view class='container' wx:if="{{ groupCount == 0 || workerCount == 0  }}">
+  <view class='layout'>
+    <van-panel use-footer-slot>
+      <image mode="aspectFit" bindtap='navGroupList' class='img' src='../../images/pond.png'></image>
+      <view class='infoCount'>已有塘口({{ groupCount }})</view>
+      <view slot="footer" class="footer" bindtap="navAddGroup">
+        <text style='margin-right:10rpx'>添加塘口</text>
+        <van-icon class='icon' color="rgb(72,196,249)" name="plus" size="20px" />
+      </view>
+    </van-panel>
+  </view>
+  <view class='layout'>
+    <van-panel use-footer-slot>
+      <image mode="aspectFit" bindtap='navWorkerList' class='img' src='../../images/pond.png'></image>
+      <view class='infoCount'>已有工人({{ workerCount }})</view>
+      <view slot="footer" class="footer" bindtap="navAddWorker">
+        <text style='margin-right:10rpx'>添加工人</text>
+        <van-icon class='icon' color="rgb(72,196,249)" name="plus" size="20px" />
+      </view>
+    </van-panel>
+  </view>
+</view>
+<view class='container' wx:else>
+  <!--第一个菜单开始-->
+  <view class='menu'>
+    <view class='menubg'></view>
+    <!--塘口开始-->
+    <view class='groupname' bindtap='showpondfunc'>
+      <text class='text'>{{datapond.name}}</text>
+    </view>
+    <view class='groupwarp'>
+      <view class='grouplist'>
+        <text class='grouplisttop'>塘口面积</text>
+        <text class='grouplistbottom'>{{datapond.area}}亩</text>
+      </view>
+      <view class='grouplist'>
+        <text class='grouplisttop'>塘口地址</text>
+        <text class='grouplistbottom'>{{datapond.city}}-{{datapond.county}}</text>
+      </view>
+    </view>
+    <!--塘口结束-->
+    <!--天气菜单开始-->
+    <view class='weather'>
+      <scroll-view class="weatherbody" scroll-x bindtap='gotoWeather'>
+        <view class="weatheritem">
+          <view class='itemtips'>
+            <text>今</text>
+            <text>天</text> </view>
+          <view class='weatheritemcon'>
+            <view class='weatheritemleft'>
+              <text class='weatheritemlefta'>{{nowTemperatureQ}}</text>
+              <text class='weatheritemleftb'>{{nowPopValue}}</text>
+              <text class='weatheritemleftb'>{{nowWindValue}}</text>
+            </view>
+            <view class='weatheritemright'>
+              <image class='weatherpic' src='../../img/{{nowWeatherImg}}.png'></image>
+            </view>
+          </view>
+        </view>
+        <view class="weatheritem">
+          <view class='itemtips'>
+            <text>明</text>
+            <text>天</text>
+          </view>
+          <view class='weatheritemcon'>
+            <view class='weatheritemleft'>
+              <text class='weatheritemlefta'>{{nowTemperatureQm}}</text>
+              <text class='weatheritemleftb'>{{nowPopValueM}}</text>
+              <text class='weatheritemleftb'>{{nowWindValueM}}</text>
+            </view>
+            <view class='weatheritemright'>
+              <image class='weatherpic' src='../../img/{{nowWeatherImgM}}.png' mode='aspectFit'></image>
+            </view>
+          </view>
+        </view>
+        <view class="weatheritem">
+          <view class='itemtips'>
+            <text>后</text>
+            <text>天</text>
+          </view>
+          <view class='weatheritemcon'>
+            <view class='weatheritemleft'>
+              <text class='weatheritemlefta'>{{nowTemperatureQh}}</text>
+              <text class='weatheritemleftb'>{{nowPopValueH}}</text>
+              <text class='weatheritemleftb'>{{nowWindValueH}}</text>
+            </view>
+            <view class='weatheritemright'>
+              <image class='weatherpic' src='../../img/{{nowWeatherImgH}}.png' mode='aspectFit'></image>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+
+    </view>
+    <!--天气菜单结束-->
+    <!--环境信息开始-->
+    <view class='environment'>
+      <view class='boxheader'>环境信息</view>
+      <view class='environmentbox'>
+        <view class='environmentlist'>
+          <view class='environmentlistname'>水温
+            <i class="{{['iconfont  myicon ',listDevice.TP_W.value>listDevice.TP_W.upper_limit||listDevice.TP_W.value<listDevice.TP_W.lower_limit?'red icon-shangsheng':'green icon-xiajiang ']}}" wx:if="{{listDevice.TP_W}}"></i>
+          </view>
+          <view class='environmentlistvalue' wx:if="{{listDevice.TP_W}}">{{listDevice.TP_W.value}}℃</view>
+          <view wx:else class='nodata'>暂无此传感器</view>
+        </view>
+        <view class='environmentlist'>
+          <view class='environmentlistname'>PH值
+            <i class="{{['iconfont  myicon ',listDevice.PH_W.value>listDevice.PH_W.upper_limit||listDevice.PH_W.value<listDevice.PH_W.lower_limit?'red icon-shangsheng':'green icon-xiajiang ']}}" wx:if="{{listDevice.PH_W}}"></i>
+          </view>
+          <view class='environmentlistvalue' wx:if="{{listDevice.PH_W}}">{{listDevice.PH_W.value}}</view>
+          <view wx:else class='nodata'>暂无此传感器</view>
+        </view>
+        <view class='environmentlist'>
+          <view class='environmentlistname'>溶氧
+            <i class="{{['iconfont  myicon ',listDevice.O2_W.value>listDevice.O2_W.upper_limit||listDevice.O2_W.value<listDevice.O2_W.lower_limit?'red icon-shangsheng':'green icon-xiajiang ']}}" wx:if="{{listDevice.O2_W}}"></i>
+          </view>
+          <view class='environmentlistvalue' wx:if="{{listDevice.O2_W}}">{{listDevice.O2_W.value}}mg/L</view>
+          <view wx:else class='nodata'>暂无此传感器</view>
+        </view>
+      </view>
+    </view>
+    <!--环境信息结束-->
+    <!--农事记录开始-->
+    <view class='farming'>
+      <view class='boxheader'>
+        <text>农事记录</text>
+      </view>
+      <view class='farmingbox'>
+        <view bindtap='navfodder' class='farminglist'>
+            <view class='farminglistleft'>
+              <image src='../../images/farming-a.png' class='farmingpic'></image>
+            </view>
+            <view class='farminglistright'>
+              <view class='farminglistrightt'>饲料</view>
+              <view class='farminglistrightb'>记录每次投放饲料</view>
+            </view>
+        </view>
+        <view bindtap='navseedling' class='farminglist'>
+          <view class='farminglistleft'>
+            <image src='../../images/farming-b.png' class='farmingpic'></image>
+          </view>
+          <view class='farminglistright'>
+            <view class='farminglistrightt'>苗种</view>
+            <view class='farminglistrightb'>记录每次投放苗种</view>
+          </view>
+        </view>
+        <view bindtap='navdrug' class='farminglist'>
+          <view class='farminglistleft'>
+            <image src='../../images/farming-c.png' class='farmingpic'></image>
+          </view>
+          <view class='farminglistright'>
+            <view class='farminglistrightt'>药品</view>
+            <view class='farminglistrightb'>记录每次药品投放</view>
+          </view>
+        </view>
+        <view bindtap='navhandle' class='farminglist'>
+          <view class='farminglistleft'>
+            <image src='../../images/farming-d.png' class='farmingpic'></image>
+          </view>
+          <view class='farminglistright'>
+            <view class='farminglistrightt'>操作</view>
+            <view class='farminglistrightb'>记录日常工作</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--农事记录结束-->
+    <!--操作记录开始-->
+    <view class='list'>
+      <view class='nodatas'  wx:if="{{farmlist==null}}">
+        <view class='nodataleft'>
+          <view class='nodatalefta'>您还未记录农事</view>
+          <view class='nodataleftb'>农事随手记 问题好追溯 经验好总结</view>
+        </view>
+        <view class='nodatarightn'>
+          <navigator url="{{'../../calendar/pages/fodder/fodder?groupid='+datapond.groupid+'&lon='+datapond.lon+'&lat='+datapond.lat}}">
+            <view class='nodatabtnn'>记录</view>
+          </navigator>
+        </view>
+      </view>
+      <view class='nodatas' wx:else>
+        <view class='nodataleft'>
+          <view class='nodatalefta'>
+            <text class='nodataleftatext'>最近一次记录</text>
+            <text class='nodataleftatime'>（{{farmlist.time}}）</text>
+          </view>
+          <view class='nodataleftb'><text wx:for="{{farmlist.type}}" wx:key='{{index}}'>{{item}}</text></view>
+        </view>
+        <view class='nodataright'>
+          <navigator url="{{'../../farmingCarlendar/pages/farmingRecord/farmingRecord?groupid='+datapond.groupid +'&lon=' + datapond.lon + '&lat=' + datapond.lat}}">
+            <view class='nodatabtn'>
+              <i class="iconfont icon-hm-collapse-o"></i>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>   
+    <!--操作记录结束-->
+  </view>
+  <van-action-sheet show="{{ showpond }}" title="请选择塘口" actions="{{ listpond }}" bind:select="onChange" close-on-click-overlay bind:close="cancelfunc">
+  </van-action-sheet>
+</view>
+<i-message id="message" />
+<i-toast id="toast" />
+<van-toast id="van-toast" />

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "水稻产销记录",
+  "usingComponents": {
+    "van-swipe-cell": "../../../dist/swipe-cell/index",
+    "van-popup": "../../../dist/popup/index",
+    "van-action-sheet": "../../../dist/action-sheet/index",
+    "i-toast": "../../../dist1/toast/index",
+    "van-dialog": "../../../dist/dialog/index",
+    "van-toast": "../../../dist/toast/index"
+  }
+}

@@ -1,0 +1,100 @@
+<!--pages/warningMessage/warningMessage.wxml-->
+<view class="container" bindtouchstart="touchStart" bindtouchend="touchEnd">
+  <view class='top'>
+    <text>{{groupName}}-{{deviceType}}监测情况</text>
+  </view>
+  <view class='center'>
+    <!-- 24小时监控开始 -->
+    <view class='warp'>
+      <text class='warptitle'>最近24小时</text>
+      <view class='warpbody'>
+        <view class='con'>
+          <view style='width:100%;height:100%;'>
+            <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+          </view>
+        </view>
+        <view class='echarttitle'>
+          <view class='echartwarp'>
+            <view class='echartline'></view>
+            <text class='echarttext'>适宜{{deviceType}}上限</text>
+          </view>
+          <view class='echartwarp'>
+            <view class='echartline linegreend'></view>
+            <text class='echarttext'>适宜{{deviceType}}下限</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 24小时监控结束 -->
+    <!-- 报警分布开始 -->
+    <view class='warp'>
+      <text class='warptitle'>报警分布</text>
+      <view class='warpbody'>
+        <view class='selestWarp'>
+          <view class='selestTime'>
+            <view class="{{['selestBtn',index===selestBtnIs?'selestBtnIs':null]}}" wx:for="{{search}}" wx:key="{{index}}" bindtap='searchBtn' data-index="{{index}}">{{item}}</view>
+          </view>
+          <view class='datawarp'>
+            <view class='databox'>
+              <picker mode="date" value="{{startData}}" start="2015-09-01" end="{{maxDatas}}" bindchange="bindDatestart">
+                <text class='dataText'>{{startData}}</text>
+              </picker>
+            </view>
+            <text>-</text>
+            <view class='databox'>
+              <picker mode="date" value="{{endData}}" start="2015-09-01" end="{{maxDatas}}" bindchange="bindDateend">
+                <text class='dataText'>{{endData}}</text>
+              </picker>
+            </view>
+            <view class='databoxBtn' bindtap='queryDate'>确定</view>
+          </view>
+        </view>
+        <view class='con'>
+
+
+          <view class='nodata' wx:if="{{x2data.length<=0}}">
+            <text>当前时间暂无数据</text>
+          </view>
+          <view class="{{x2data.length?'echartbox':'echartbox hide'}}">
+            <ec-canvas id="mychart-dom-bars" canvas-id="mychart-bars" ec="{{ ec }}"></ec-canvas>
+          </view>
+
+        </view>
+        <view class='echarttitle' wx:if="{{x2data.length}}">
+          <view class='echartwarp'>
+            <view class='echartline'></view>
+            <text class='echarttext'>适宜{{deviceType}}上限</text>
+          </view>
+          <view class='echartwarp'>
+            <view class='echartline linegreend'></view>
+            <text class='echarttext'>适宜{{deviceType}}下限</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 报警分布结束 -->
+    <!-- 详细记录开始 -->
+    <view class='warp'>
+      <text class='warptitle'>详细记录</text>
+      <view class='warpbody'>
+        <view class='listcon'>
+          <view class='listItemTop'>
+            <text class='listItemTopa'>时间</text>
+            <text class='listItemTopb'>当前值</text>
+          </view>
+          <view class='listItem' wx:for="{{ListInfo}}" wx:key="{{index}}">
+            <text class='listItema'>{{item.UploadTime}}</text>
+            <text class='listItemb'>{{item.Value}}</text>
+          </view>
+
+        </view>
+      </view>
+      <view wx-if="{{ListInfoShow}}" class='ListInfoShow'>
+        <i-spin></i-spin>
+      </view>
+    </view>
+    <!-- 详细记录结束 -->
+  </view>
+</view>
+<i-toast id="toast" />
+<i-message id="message" />

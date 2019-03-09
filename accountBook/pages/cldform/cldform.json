@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "成本支出报表",
+  "usingComponents": {
+    "van-field": "../../../dist/field/index"
+  }
+}

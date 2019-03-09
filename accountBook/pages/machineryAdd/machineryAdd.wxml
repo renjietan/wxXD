@@ -1,0 +1,35 @@
+<view>
+  <view class='form'>
+    <van-cell-group>
+      <van-field input-class="font1" value="{{ form.amount }}" clearable label="农机费(元)" maxlength="8" type="digit" bind:change="changeIn" data-name="amount" placeholder="0.00" required/>
+      <van-field value="{{ form.billing_time }}" clearable label="账单时间" disabled bindtap="handleClick" data-name="farmingMode" icon="arrow" />
+      <!-- <van-field value="{{ form.drug_name }}" label="农机名称" maxlength="50" placeholder="请输入名称" bind:change="changeIn" data-name="drug_name"/> -->
+      <van-field value="{{ kindName }}" label="使用类型" placeholder="请输入使用类型" disabled bindtap="handleClick" data-name="kindId" icon="arrow" required />
+    </van-cell-group>
+  </view>
+  <view class='remark'>
+    <van-field label="补充说明" disabled/>
+    <textarea wx:if="{{ !show&&!showKindId }}" placeholder='记录一些备注（限200字）' maxlength='200' bindinput="changeInn" data-name="remarks" value='{{form.remarks}}'></textarea>
+  </view>
+  <view class='down'>
+    <van-button custom-class='btn' size="large" bind:click="submit">确 定</van-button>
+  </view>
+  <van-action-sheet show="{{ show }}">
+  <van-datetime-picker
+  type="date"
+  value="{{ currentDate }}"
+  bind:confirm="onOk"
+  bind:cancel="onNo"
+/>
+</van-action-sheet>
+<van-action-sheet
+  show="{{ showKindId }}"
+  actions="{{ actions }}"
+  cancel-text="取消"
+  bind:cancel="onClose"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>
+<i-message id="message" />
+<van-toast id="van-toast" />
+</view>

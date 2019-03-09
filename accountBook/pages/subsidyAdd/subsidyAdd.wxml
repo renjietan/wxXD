@@ -1,0 +1,35 @@
+<view>
+  <view class='form'>
+    <van-cell-group>
+      <van-field input-class="font1" value="{{ form.amount }}" clearable label="补贴金额(元)" maxlength="8" type="number" bind:change="changeIn" data-name="amount"/>
+      <van-field value="{{ form.get_time }}" clearable label="领取时间" disabled bindtap="handleClick" data-name="farmingMode" icon="arrow" />
+      <!-- <van-field value="{{ form.drug_name }}" label="农机名称" maxlength="50" placeholder="请输入名称" bind:change="changeIn" data-name="drug_name"/> -->
+      <van-field value="{{ kindName }}" label="补贴原因" placeholder="请输入补贴原因" disabled bindtap="handleClick" data-name="kindName" icon="arrow" />
+    </van-cell-group>
+  </view>
+  <view class='remark'>
+    <van-field label="补充说明" disabled/>
+    <textarea placeholder='记录一些备注（限200字）' maxlength='200' bindinput="changeInn" data-name="remarks" value='{{form.remarks}}'></textarea>
+  </view>
+  <view class='down'>
+    <van-button custom-class='btn' size="large" bind:click="submit">确 定</van-button>
+  </view>
+  <van-action-sheet show="{{ show }}">
+  <van-datetime-picker
+  type="date"
+  value="{{ currentDate }}"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+  bind:confirm="onOk"
+  bind:cancel="onNo"
+/>
+</van-action-sheet>
+<van-action-sheet
+  show="{{ showKindId }}"
+  actions="{{ actions }}"
+  cancel-text="取消"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>
+<i-message id="message" />
+</view>

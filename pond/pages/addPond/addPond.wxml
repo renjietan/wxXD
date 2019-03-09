@@ -1,0 +1,30 @@
+<view class='card'>
+  <van-cell-group>
+    <van-field value="{{ param.groupname }}"  required clearable label="塘口名称" placeholder="请输入塘口名称" bind:change="changeIn" data-name="groupname"/>
+    <van-field value="{{ param.area }}" required clearable label="面积（亩）"  placeholder="请输入面积..." bind:change="changeIn" data-name="area"/>
+    <van-field value="{{ param.type }}" required clearable label="品种" placeholder="请选择品种"  disabled bindtap="dcnameClick" data-name="dcname" icon="arrow" />
+    <van-field value="{{ param.farmingMode }}" required clearable label="养殖模式"  placeholder="请选择养殖模式" disabled bindtap="modelClick" data-name="farmingMode" icon="arrow" />
+    <van-field value="{{ param.tangling }}" required clearable label="塘龄（年）"  type="number" placeholder="请输入塘龄" bind:change="changeIn" data-name="tangling"/>
+   <view class="section">
+  <picker mode="region" bindchange="bindRegionChange" value="{{address}}" custom-item="{{customItem}}">
+    <view class="picker">
+    <van-cell is-link id="provinces"  required title="地址"  clearable value=" {{param.provinces[0] + '-' +  param.provinces[1] + '-' + param.provinces[2]}}" placeholder="请选择地址" border="{{ false }}" bind:change="changeIn" />
+    </view>
+  </picker>
+</view>
+    
+    <van-field id="address" label="详细地址" clearable value="{{ address }}" placeholder="请输入详细地址" border="{{ false }}" />
+  </van-cell-group>
+</view>
+<view class='down'>
+  <van-button custom-class='btn' loading='{{btnloading}}' size="large" bind:click="submit">确  定</van-button>
+</view>
+<van-action-sheet show="{{ dcnameShow }}" actions="{{ dcnameActions }}" bind:select="dcnameSelect" bind:close="onClose" />
+<van-action-sheet show="{{ breedShow }}" actions="{{ breedActions }}" bind:select="breedSelect" bind:close="onClose" />
+<van-notify id="van-notify" />
+<i-toast id="toast" />
+
+<!-- 品种下拉菜单 -->
+<van-action-sheet show="{{ KindInfo.isVisiable }}" title="请选择品种" actions="{{ KindInfo.data }}" bind:select="handleChangeKind" bind:close="isOpenKind" />
+<!-- 养殖模式下拉菜单 -->
+<van-action-sheet show="{{ BreedInfo.isVisiable }}" title="请选择养殖模式" actions="{{ BreedInfo.data }}" bind:select="handleChangeBreed" bind:close="isOpenBreed" /> 

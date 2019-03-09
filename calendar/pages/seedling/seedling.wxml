@@ -1,0 +1,65 @@
+<!--calendar/pages/fodder/fodder.wxml-->
+<view class='warp'>
+  <van-cell-group>
+    <van-cell required title="操作时间" value="{{date}}" is-link bind:click="isOpenDate" />
+    <van-cell  title="当前天气" value="{{weather}}" />
+    <van-cell  title="投放品种" value="{{listVariety}}" />
+  </van-cell-group>
+  <view class='boxwarp'>
+    <view class='title'>
+      <text><text style='color:red;margin-right:5rpx'>*</text>投放规格</text>
+    </view>
+    <view class='con'>
+      <view class="{{['category ',index==unitValue?'isclick':null]}}" wx:for="{{listunit}}" wx:key="{{index}}" bindtap="clickunit" data-id="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class='boxwarp'>
+    <view class='title'>
+      <text><text style='color:red;margin-right:5rpx'>*</text>投放量</text>
+    </view>
+    <view class='con'>
+      <view class="{{['category',value==index?'isclick':null]}}" wx:for="{{listValue}}" wx:key="{{index}}" bindtap="clickvalue" data-id="{{index}}">{{item}}</view>
+      <view class='zdylist'>自定义
+        <input class="{{['valueinput',value==null?'isclick':null]}}" value="{{inputValue}}" bindinput="bindKeyInput" bindfocus="bindKeyInput" type='number' />
+      </view>
+
+    </view>
+  </view>
+  <van-cell-group>
+    <van-cell title="操作人" required value="{{personstring}}" is-link border="{{ false }}" onclick="choosePerson" />
+  </van-cell-group>
+  <view class='boxwarp'>
+    <view class='title'>
+      <text>补充说明</text>
+    </view>
+    <textarea hidden="{{showPerson||show||isShowDate}}" value="{{explanation}}" class='textarea' placeholder="有哪些备注可以记录下来。。。" auto-height="true" maxlength="-1" bindinput='textareafunc' />
+  </view>
+  <van-button loading="{{btnloading}}" type="primary" bind:click="handleClick" block custom-class='mybutton'>保存</van-button>
+</view>
+<!--选择员工弹窗开始-->
+<van-popup show="{{ showPerson }}" title="选择操作人员" position="right" bind:close="cancelfunc" close-on-click-overlay="true">
+  <view class='rightwarp' catch:touchmove="noop">
+    <scroll-view scroll-y style='height:calc(100% - 60px)'  catch:touchmove="noop">
+      <van-checkbox-group value="{{ dataPerson }}" bind:change="onChange">
+        <van-cell-group>
+          <van-cell wx:for="{{ listPerson }}" wx:key="{{item.sId}}" clickable data-name="{{item.sId}}" bind:click="toggle" value-class="right">
+            <van-checkbox catch:tap="noops" class="{{'checkboxes-'+item.sId }}" name="{{item.sname}}" data-name="{{item.sId}}" />
+            <view slot="title">
+              <text class="van-cell-text">{{item.sname}}</text>
+              <van-tag color="#2d8cf0" wx:if="{{item.stype==1}}">正式工</van-tag>
+              <van-tag color="#f2826a" wx:else>临时工</van-tag>
+            </view>
+          </van-cell>
+        </van-cell-group>
+      </van-checkbox-group>
+    </scroll-view>
+    <i-button bind:click="cancelfunc" type="primary"  size="small">确定</i-button>
+  </view>
+</van-popup>
+<!--选择员工弹窗结束-->
+<!-- 操作时间 -->
+<van-popup show="{{ isShowDate }}" position="bottom" overlay bind:close="isOpenDate">
+  <van-datetime-picker type="date" value="{{ datatime }}" bind:cancel="isOpenDate" bind:change="handleDateChange" bind:confirm="handleDateConfirm" />
+</van-popup>
+<i-message id="message" />
+<van-toast id="van-toast" />

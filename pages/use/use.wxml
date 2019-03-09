@@ -1,0 +1,14 @@
+
+<view class='container'>
+<image src='../../images/add.jpg' class='useImg'></image>
+<view class='skip' bindtap='skip'>跳过</view>
+ <view class='btn'>
+    <view class='btnSet'>
+      <view class='experience' bindtap='goTo'>添加塘口</view>
+    </view>
+    <view class='btnSet'>
+      <view class='experience' bindtap='scanCode'>添加设备</view>
+    </view>
+  </view>
+</view>
+<i-toast id="toast" />

@@ -1,0 +1,13 @@
+<!--pages/becomeFormal/becomeFormal.wxml-->
+<view class='container'>
+<view class='textcon'>
+<text>1、购买设备，您可以通过我们的电子商城购买传感器设备成为正式用户。
+</text>
+<text>2、接受分享设备，您可以通过朋友分享给您传感器设备，成为正式用户</text>
+</view>
+<i-button bind:click="handleClick" type="primary">成为正式用户</i-button>
+
+<!-- <image src='../../images/add.png'></image> -->
+</view>
+<i-toast id="toast" />
+<i-message id="message" />

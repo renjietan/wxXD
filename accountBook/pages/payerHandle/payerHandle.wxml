@@ -1,0 +1,46 @@
+<view class='container'>
+  <view class='form'>
+    <van-cell-group >
+      <van-cell title='{{ currentRouter[type].workerName }}'   custom-class="cell_T" required value="{{ formData.workerName }}" is-link bind:click="handleIsVisableWorker"/>
+      <van-field value="{{ formData.amount }}" input-class="input_T" bind:change="handleChangeText"  placeholder="请输入金额..." required border="{{ false }}" >
+        <view slot="label" class='input_T_label'>
+         {{ currentRouter[type].money }}
+        </view>
+      </van-field>
+      <van-cell custom-class="cell_T" title='{{ currentRouter[type].date }}' required value="{{ formData.date }}" is-link bind:click="handleIsVisableDate"/>
+    </van-cell-group>
+  </view>
+
+  <view class='footer'>
+    <i-button bind:click="handleSubmit" i-class='vanButton_T handleBtn_T' type="primary" long="true">确定</i-button>
+  </view>
+</view>
+
+<!-- 日期 -->
+<van-popup overlay="{{ true }}" show="{{ isVisiableDate }}" position="bottom">
+  <van-datetime-picker type="date" value="{{ currentDate }}" min-date="{{ minDate }}" bind:change="onChange" bind:confirm="handleChangeDate" bind:cancel = "handleIsVisableDate"/>
+</van-popup>
+
+<!-- 人员列表 -->
+<van-popup show="{{ workerList.isVisiable }}" position="right" overlay bind:close="handleIsVisableWorker">
+  <view class='container view_T'>
+    <van-cell-group>
+      <van-cell wx:for="{{  workerList.data  }}" wx:key="{{ worker.sId }}" bind:click="handleWorkerCheck" data-name="{{ worker.sname }}" wx:for-item="worker" data-id='{{ worker.sId }}'>
+        <view slot="title">
+          <view class="van-cell-text_T">{{ worker.sname }}</view>
+          <van-tag wx:if="{{ worker.type == 2}}" type="success">临时工</van-tag>
+          <van-tag wx:if="{{ worker.type == 1}}" type="primary">正式工</van-tag>
+          <!-- <van-tag color="#2d8cf0">正式工</van-tag> -->
+          <!-- <van-tag color="#f2826a" wx:else>临时工</van-tag> -->
+        </view>
+        <view slot="right-icon">
+          <van-checkbox data-name='{{ worker.sId }}' data-checkvalue="{{ worker.sname }}" value="{{ worker.checked }}"></van-checkbox>
+        </view>
+      </van-cell>
+    </van-cell-group>
+    <i-button bind:click="handleIsVisableWorker" i-class='vanButton_T handleBtn_T' type="primary" long="true">保存</i-button>
+  </view>
+</van-popup>
+<i-message id="message" />
+<van-toast id="van-toast" />
+<van-Notify id="van-notify" />

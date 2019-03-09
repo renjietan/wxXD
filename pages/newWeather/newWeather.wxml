@@ -1,0 +1,103 @@
+<!--pages/weather/weather.wxml-->
+<wxs module="m1">
+  var getLast = function(index, str) {
+    if (index == 0) {
+      return "现在";
+    } else {
+      return str.split(" ")[0];
+    }
+  }
+  var getDailyDate = function(index, str) {
+    if (index == 0) {
+      return "今天";
+    } else if (index == 1) {
+      return "明天";
+    } else {
+      return str.split("-")[1] + "/" + str.split("-")[2];
+    }
+  }
+  module.exports.getLast = getLast;
+  module.exports.getDailyDate = getDailyDate;
+</wxs>
+<view class='container'>
+  <!-- 选择塘口名称 -->
+
+
+  <view class='pondName' bindtap='choosePond' value="{{index}}">
+    <text class='.text'>{{pondName}}</text>
+  </view>
+
+  <view class='nowDate'>
+    <text>{{nowToday}}  </text>
+    <text>{{nowWeek}} </text>
+  </view>
+  <view class='nowWeather'>
+    <view class='nowWeatherImg nowWea'>
+      <image class='nowImg' src='../../img/{{nowHour>=17 || nowHour<=5? nowImgNight:nowImg}}.png' mode='aspectFit'></image>
+      <text class='nowCond'>{{nowCond}}</text>
+    </view>
+    <view class='nowTemp nowWea'>{{nowTemperature}}</view>
+  </view>
+  <view class='nowWind'>
+    <view class='nowWindWea'>
+      <i class="iconfont icon-dian"></i>
+      {{nowWindValue}}</view>
+    <view class='nowWindWea'>
+      <i class="iconfont icon-dian"></i>
+      {{nowPopValue}}</view>
+    <view class='nowWindWea'>
+      <i class="iconfont icon-dian"></i>
+      {{nowHumidity}}</view>
+  </view>
+  <view class='nowHour'>
+    <view class='everyDay'>
+      <view class='everyDay2'>
+        每小时
+      </view>
+    </view>
+    <scroll-view class='hourly' scroll-x="true">
+      <block wx:for="{{hourlyArr}}" wx:key="unique" style="display: block;">
+        <view class='oneHourly'>
+          <view class='oneHourlyFlex'>
+            <view class='hourlyDate'>{{item.hour+':00'}}</view>
+            <image class='hourlyImg' src='../../img/W{{item.hour>=17 || item.hour<= 5?item.iconNight:item.iconDay}}.png' mode='aspectFit'></image>
+            <view class='hourlyWind'>{{item.condition}}</view>
+            <view class='hourlyTmp'>{{item.temp}}°C</view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <view class='nowDay'>
+    <view class='everyDay'>
+      <view class='everyDay2'>
+        每天
+      </view>
+
+      <scroll-view class='canvas-container' scroll-x='{{true}}' bindscroll="scroll">
+      
+        <image src="../../images/canvas.png"  class="{{['canvasImg',pondNameShow? '':'hide']}}"></image>
+      
+        <view wx:if="{{!radarImg}}" id="main" style="width:2130rpx;height:200rpx;" style='width:{{dataLength*70}}px;min-width:100%;translateX:-{{scrollLeft}}px'>
+          <ec-canvas style='width:{{dataLength*70}}px' disable-scroll="true" id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"  class="{{pondNameShow? 'hide':''}}" >
+          </ec-canvas>
+        </view>
+        <view class='scrollwarp'>
+          <block wx:for="{{dailyForecast}}" wx:key="unique" style="display: block;">
+            <view class='oneDay'>
+              <view class='oneDayFlex'>
+                <view class='dayDate'>{{m1.getDailyDate(index,item.predictDate)}}</view>
+                <image class='dayImg' src='../../img/W{{item.conditionIdDay}}.png' mode='aspectFit'></image>
+                <view class='dayTmp'>{{item.conditionDay}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <image src='../../img/bg.png' class='bgImag'></image>
+</view>
+<i-toast id="toast" />
+<van-action-sheet show="{{ pondNameShow }}" title="请选择塘口" actions="{{ pondNameActions }}" bind:select="pondNameSelect" bind:close="onClose" close-on-click-overlay custom-class='selectPond'>
+</van-action-sheet>

@@ -1,0 +1,23 @@
+/* pages/seeDevice/seeDevice.wxss */
+page{
+  background-color: #efeff4
+}
+.getPosition{
+  text-align: center
+}
+.card{
+  margin: 10rpx 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  font-size: 28rpx
+}
+.card .van-tabs__line{
+  background-color: #3995FF
+}
+.card .van-tab{
+  background-color: #fff;
+  color:#333
+}
+.card .van-tab--active{
+  color: #3995FF
+}

@@ -1,0 +1,31 @@
+<!--accountBook/pages/cldformDetails/cldformDetails.wxml-->
+<view class='container'>
+  <view wx:if="{{!noData}}">
+    <view class='list' wx:for="{{listData}}" wx:for-item="item" wx:key="key">
+      <view class='listheight'>
+        {{index}}月
+      </view>
+      <view class='listcon' wx:for="{{item}}" wx:for-item="children" wx:key="key">
+        <view class='item'>
+          <view class='item-pic'>
+            <icon class='iconfont {{icon}}'></icon>
+          </view>
+          <view class='item-center'>
+            <text class='item-name'>{{children.name}} {{children.quantity==null?"":children.quantity}} {{children.unit==null?"":children.unit}}</text>
+            <text class='item-time'>{{children.billing_time}}</text>
+          </view>
+          <view class='item-right'>￥{{children.amount}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='noData' wx:elif="{{noData}}">
+    <image src='../../../images/nodata.png'></image>
+  </view>
+  <movable-area class="move" scale-area>
+    <movable-view direction="horizontal" bindchange="onChange" bindscale="onScale" bindtap="add" scale-min="0.5" scale-max="4" scale-value="2" class='addbtn' bindtap='add'>
+      <i class="iconfont icon-jiahao1"></i>
+    </movable-view>
+  </movable-area>
+</view>

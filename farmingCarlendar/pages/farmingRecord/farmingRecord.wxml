@@ -1,0 +1,44 @@
+<view class='container'>
+  <van-tabs active="{{ active }}" bind:change="handleTabChange" color="#5cadff">
+    <van-tab type="card" title="全部">
+      <scroll-view scroll-y style='height:calc(100vh - 75rpx)'>
+        <view class='vantStepsView_T'>
+          <van-steps custom-class="vantSteps_T" steps="{{ steps }}" bind:delete="handleIsDelete" bind:edit="handleIsEdit" direction="vertical" />
+        </view>
+      </scroll-view>
+
+    </van-tab>
+    <van-tab type="card" title="饲料">
+      <scroll-view scroll-y style='height:calc(100vh - 75rpx)'>
+        <view class='vantStepsView_T'>
+          <van-steps custom-class="vantSteps_T" steps="{{ steps }}" bind:delete="handleIsDelete" bind:edit="handleIsEdit" direction="vertical" />
+        </view>
+      </scroll-view>
+    </van-tab>
+    <van-tab type="card" title="苗种">
+      <scroll-view scroll-y style='height:calc(100vh - 75rpx)'>
+        <view class='vantStepsView_T'>
+          <van-steps custom-class="vantSteps_T" steps="{{ steps }}" bind:delete="handleIsDelete" bind:edit="handleIsEdit" direction="vertical" />
+        </view>
+      </scroll-view>
+    </van-tab>
+    <van-tab type="card" title="药品">
+      <scroll-view scroll-y style='height:calc(100vh - 75rpx)'>
+        <view class='vantStepsView_T'>
+          <van-steps custom-class="vantSteps_T" steps="{{ steps }}" bind:delete="handleIsDelete" bind:edit="handleIsEdit" direction="vertical" />
+        </view>
+      </scroll-view>
+    </van-tab>
+    <van-tab type="card" title="操作">
+      <scroll-view scroll-y style='height:calc(100vh - 75rpx)'>
+        <view class='vantStepsView_T'>
+          <van-steps custom-class="vantSteps_T" steps="{{ steps }}" bind:delete="handleIsDelete" bind:edit="handleIsEdit" direction="vertical" />
+        </view>
+      </scroll-view>
+    </van-tab>
+  </van-tabs>
+</view>
+
+<van-notify id="van-notify" />
+<i-message id="message" />
+<van-toast id="van-toast" />

@@ -1,0 +1,23 @@
+<view>
+  <view class='form'>
+    <van-cell-group>
+      <van-field input-class="font1" required value="{{ formData.amount }}" data-type="amount" bind:change="handleChangeText" clearable label="补贴金额（元）" placeholder="0.00"/>
+      <van-field value="{{ formData.currentDate }}" required clearable label="领取时间" disabled bindtap="handleisVisiableDate" data-name="farmingMode" icon="arrow" />
+      <van-field value="{{ formData.cause }}" required clearable label="补贴原因" disabled bindtap="handleisVisiableCause" data-name="farmingMode" icon="arrow" placeholder="请输入补贴原因"/> </van-cell-group>
+  </view>
+  <view class='remark'>
+    <van-field label="补充说明" disabled/>
+    <textarea wx:if="{{ isVisiableText && !isVisiableDate && !isVisiableCause}}" data-type="remarks" bindinput="handleChangeText" placeholder='记录一些备注（限200字）' maxlength='200' value='{{formData.remarks}}'></textarea>
+  </view>
+  <view class='down'>
+    <van-button custom-class='btn' size="large" bind:click="handleSubmit">确 定</van-button>
+  </view>
+  <van-action-sheet show="{{ isVisiableDate }}">
+    <van-datetime-picker type="date" value="{{ currentDate }}" bind:confirm="handleChangeDate" bind:cancel="handleisVisiableDate" />
+  </van-action-sheet>
+  <van-action-sheet show="{{ isVisiableCause }}" actions="{{ causeList }}" bind:close="handleisVisiableCause" bind:select="handleChangeCause" />
+</view>
+
+<van-notify id="van-notify" />
+<i-message id="message" />
+<van-toast id="van-toast" />

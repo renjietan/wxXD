@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-spin": "../../dist1/spin/index",
+    "van-toast": "../../dist/toast/index",
+    "i-button": "../../dist1/button/index"
+  }
+}

@@ -1,0 +1,36 @@
+<!--accountBook/pages/summary/summary.wxml-->
+<view class='wrapper'>
+  <view class='dropyear'>
+    <text bindtap='isVisiableDate'>{{parserCurrentDate}}年</text>
+  </view>
+  <view class='bannerpic'>
+    <image src='../../images/topbj3.jpg'></image>
+    <view class='bannertext'>
+      <view class='bannertextt'>预估总收入（元）</view>
+      <view class='bannertextb' wx:if="{{sum}}">￥{{sum}}</view>
+      <view class='bannertextb' wx:else>暂无数据</view>
+    </view>
+  </view>
+  <view class='warp' wx:if="{{data}}">
+    <view class='header'>预估收入（{{data.length}}）</view>
+    <view class='listwarp'>
+      <view class='list' wx:for="{{data}}" wx:key="{{index}}">
+        <view class='listicon'>
+          <i class="{{['iconfont',icondata[item.name]]}}"></i>
+        </view>
+        <view class='listright'>
+          <view class='listrightt'>{{item.name}}：￥{{item.data}}</view>
+          <view class='listrightb'>
+            <view class='progressbg'>
+              <view class='progressvalue' style="width:{{item.databl+'%'}}"></view>
+            </view>
+            <view class='progresstext'>{{item.databl}}%</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<van-popup show="{{ show }}" position="bottom" overlay="{{ true }}" bind:close="isVisiableDate">
+  <dateTime type="year" value="{{ currentDate }}" bind:confirm="handleChangeDate" bind:cancel="isVisiableDate"/>
+</van-popup>

@@ -1,0 +1,77 @@
+<!--accountBook/pages/craylist/craylist.wxml-->
+<wxs src="../../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='header'>
+    <view class='headert'> {{ currentRouter.title }} </view>
+    <view class='headerb'>￥{{filter.parserNum(listData.subCount)}}</view>
+  </view>
+  <!-- <view class='list' wx:for="{{listData.data}}" wx:for-item="item" wx:key="{{index}}">
+    <view class='listheight'>
+      {{index + '月')}}
+    </view>
+    <view class='listcon' wx:if="{{ children.amount != 0 }}" wx:for="{{item}}" wx:for-item="children" wx:key="{{ index }}">
+      <van-swipe-cell id="swipe-cell" right-width="65" bind:close="onClose">
+        <view class='item'>
+          <view class='item-pic'></view>
+          <view class='item-center'>
+            <text class='item-name'>{{children.name}}</text>
+            <text class='item-time'>{{children.time}}</text>
+          </view>
+          <view class='item-right'>￥{{children.amount}}</view>
+        </view>
+        <view slot="right" class='warpright'>
+          <view data-type="edit" bindtap='handleEvent' data-typeid="{{ children.id }}" class='edit'>编辑</view>
+          <view data-type="del" bindtap='handleEvent'  data-typeid="{{ children.id }}" class='del'>删除</view>
+        </view>
+      </van-swipe-cell>
+    </view>
+  </view> -->
+
+  <view class='list' wx:for="{{listData.data}}" wx:for-item="item" wx:key="{{index}}">
+    <view class='listheight'>
+      {{index}} 月
+    </view>
+    <view class='listcon' wx:for="{{item}}" wx:for-item="children" wx:if="{{ currentRouter.name=='预支总金额' }}" wx:key="{{ index }}">
+      <van-swipe-cell id="swipe-cell" right-width="65" bind:close="onClose">
+        <view class='item'>
+          <view class='item-pic'></view>
+          <view class='item-center'>
+            <text class='item-name'>{{ children.name }}</text>
+            <text class='item-time'>{{ children.time }}</text>
+          </view>
+          <view class='item-right'>￥{{ filter.parserNum(children.advanceFee) }}</view>
+        </view>
+        <view slot="right" class='warpright'>
+          <!-- <view data-type="edit" bindtap='handleEvent' wx:if="{{ currentRouter.name=='预支总金额' }}" data-typeid="{{ children.sId }}" class='edit'>编辑</view> -->
+          <view data-type="del" bindtap='handleEvent' data-afid="{{ children.afId }}"  class='del'>删除</view>
+        </view>
+      </van-swipe-cell>
+    </view>
+
+    
+    <view class='listcon' wx:if="{{ currentRouter.name !='预支总金额' }}" wx:for="{{item}}" wx:for-item="children" wx:key="{{ index }}">
+      <van-swipe-cell id="swipe-cell" right-width="65" bind:close="onClose">
+        <view class='item'>
+          <view class='item-pic'></view>
+          <view class='item-center'>
+            <text class='item-name'>{{ children.name }}</text>
+            <text class='item-time'>{{ children.time }}</text>
+          </view>
+          <view class='item-right'>￥{{ filter.parserNum(children.advanceFee) }}</view>
+        </view>
+        <view slot="right" class='warpright'>
+          <!-- <view data-type="edit" bindtap='handleEvent' wx:if="{{ currentRouter.name=='预支总金额' }}" data-typeid="{{ children.sId }}" class='edit'>编辑</view> -->
+          <view data-type="del" bindtap='handleEvent' data-afid="{{ children.afId }}" data-wsid= "{{ children.wsId }}" class='del'>删除</view>
+        </view>
+      </van-swipe-cell>
+    </view>
+  </view>
+  <!-- <movable-area class="move" scale-area>
+    <movable-view direction="horizontal" bindchange="onChange" bindscale="onScale" data-type="add" bindtap="handleEvent" scale-min="0.5" scale-max="4" scale-value="2" class='addbtn'>
+      <i class="iconfont icon-jiahao1"></i>
+    </movable-view>
+  </movable-area> -->
+</view>
+<van-dialog id="van-dialog" />
+<i-message id="message" />
+<van-toast id="van-toast" />

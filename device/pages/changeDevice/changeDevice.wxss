@@ -1,0 +1,84 @@
+/* pages/changeDevice/changeDevice.wxss */
+
+page{
+  background-color: #efeff4
+}
+.card{
+  background-color: #fff;
+  padding: 10rpx 20rpx;
+  margin: 20rpx 20rpx;
+  border-radius: 10rpx;
+}
+.t_left{
+  font-size:32rpx;
+  border-bottom: 1px solid #efeff4;
+  padding: 20rpx 0;
+  min-height: 42rpx;
+}
+.t_right{
+  font-size: 24rpx;
+  float: right;
+  line-height: 50rpx;
+}
+.device{
+  padding: 20rpx 0;
+}
+.device>view{
+  font-size: 20rpx; 
+  display: inline-block;
+  vertical-align: middle
+}
+.deviceName{
+  font-size: 28rpx;
+  color: #808080
+}
+.deviceCode{
+  color: #c5c5c5
+}
+.d1{
+  width: 200rpx
+}
+.d2{
+  text-align: center
+}
+.d2 i{
+  font-size: 18rpx;
+}
+.d3{
+
+}
+.d3>view{
+  display: inline-block;
+  font-size:20rpx;
+  border-radius: 8rpx;
+  margin-left:30rpx;
+  padding: 10rpx 12rpx
+}
+.d3>view:first-child{
+  margin-left: 80rpx;
+  border:1rpx solid #1ab7f9;
+}
+.d3>view:nth-child(2){
+  border:1rpx solid #fe8a3d;
+}
+.d3>view:last-child{
+  border:1rpx solid #c4c4c4;
+}
+.d3>view>i{
+  font-size: 20rpx
+}
+.green{
+  color: #17e114
+}
+.blue{
+  color: #1ab7f9
+}
+.silver{
+  color: #c4c4c4
+}
+.orange{
+  color: #fe8a3d
+}
+.delbtn button[plain]{
+  border: none
+}

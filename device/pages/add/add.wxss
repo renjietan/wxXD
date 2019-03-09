@@ -1,0 +1,31 @@
+/* pages/add/add.wxss */
+page{
+  background-color: #efeff4
+}
+.getPosition{
+  text-align: center
+}
+.down{
+  width: 710rpx;
+  position: fixed;
+  bottom: 0;
+  margin: 10rpx 20rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+  font-size: 32rpx;
+}
+.card{
+  margin: 10rpx 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  font-size: 28rpx
+}
+.down button{
+  background-color: #3A93FF;
+  color:#fff
+}
+.note{
+  background-color: #fff8e1;
+  color:#807f7a;
+  padding: 10px 15px
+}

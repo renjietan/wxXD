@@ -1,0 +1,49 @@
+<!--accountBook/pages/craylist/craylist.wxml-->
+<wxs src="../../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='search_box' wx:if="{{ currentRouter.search != '' }}">
+    <van-search custom-class="search_T" value="{{ searchVal }}" placeholder="{{ currentRouter.search != '' && currentRouter.search }}" bind:change="handleTextChange" use-action-slot bind:search="handleSearch">
+      <view slot="action" bindtap='handleSearch'>搜索</view>
+    </van-search>
+  </view>
+  <view wx:else class='header'>
+    <view class='headert'> {{ currentRouter.title }} </view>
+    <view class='headerb'>￥{{filter.parserNum(listData.subCount)}}</view>
+  </view>
+  <view class='{{ ["list", index.length > 2 ? "list_T" : "" ] }}' wx:for="{{listData.data}}" wx:for-item="item" wx:key="{{index}}">
+    <view class='listheight'>
+      {{index + (index.length > 2 ? '' : '月')}}
+    </view>
+    <view class='{{ ["listcon",  !children.time ? "swipeCell_T" : "" ] }}' wx:if="{{ children.amount != 0 }}" wx:for="{{item}}" wx:for-item="children" wx:key="{{ index }}">
+      <van-swipe-cell id="swipe-cell" right-width="{{ currentRouter.rightwidth}}" bind:close="onClose">
+        <view class='item' data-type="{{currentRouter.isEdit?'edit':'detail'}}" bindtap='handleEvent' data-typeid="{{ currentRouter.isEdit?children.id: children.sId}}">
+          <view class='item-pic'>
+            <icon class='{{icon}}'></icon>
+          </view>
+          <view class='item-center'>
+            <view class='item-name'>{{children.name}}  {{children.quantity==null?"":children.quantity}} {{children.unit==null?"":children.unit}}
+            <van-tag custom-class="tag_workerType" type="primary" wx:if="{{!children.quantity && children.quantity != null}}">正式工</van-tag>
+            <van-tag custom-class="tag_workerType" type="primary" wx:if="{{ currentRouter.name == '请假记录' }}">正式工</van-tag>
+            </view>
+            
+            <text wx:if="{{ children.time }}" class='item-time'>{{children.time}}</text>
+          </view>
+          <view class='item-right'>{{  type=="holiday" ?children.amount + "天": "￥"+ filter.parserNum(children.amount)}}</view>
+        </view>
+        <view slot="right" class='warpright'>
+          <!-- <view data-type="edit" bindtap='handleEvent' wx:if="{{ currentRouter.isEdit }}" data-typeid="{{ children.id }}" class='edit'>编辑</view> -->
+          <view data-type="del" bindtap='handleEvent' wx:if="{{ currentRouter.isDelete }}" data-typeid="{{ children.id }}" class='del'>删除</view>
+          <!-- <view data-type="detail" bindtap='handleEvent' wx:if="{{ currentRouter.isDetail }}" data-typeid="{{ children.sId }}" class='detail'>详情</view> -->
+        </view>
+      </van-swipe-cell>
+    </view>
+  </view>
+  <movable-area class="move" scale-area>
+    <movable-view direction="horizontal" bindchange="onChange" bindscale="onScale" data-type="add" bindtap="handleEvent" scale-min="0.5" scale-max="4" scale-value="2" class='addbtn'>
+      <i class="iconfont icon-jiahao1"></i>
+    </movable-view>
+  </movable-area>
+</view>
+<van-dialog id="van-dialog" />
+<i-message id="message" />
+<van-toast id="van-toast" />

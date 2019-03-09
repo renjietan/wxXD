@@ -1,0 +1,83 @@
+<!--pages/pondList/pondList.wxml-->
+<view class='container'>
+<view class="{{['allPond',allPond==0?'hide1':null]}}">已有塘口({{allPond}})</view>
+  <view class='layout' wx:for="{{array}}" wx:key="{{index}}">
+    <view class='header'>
+      <view class='setPond'>
+        <!-- 关注图标 -->
+        <i class="{{['iconfont icon-guanzhu',item.iscare==0?'guanzhuicon':'noguanzhuicon']}}" bindtap="focusFunc" data-groupid="{{item.groupid}}"></i>
+        <!-- 修改塘口信息 -->
+        <text class='defPond' bindtap='modifyPond' data-id="{{item.groupid}}">{{item.groupname}}</text>
+        <i class="iconfont icon-shuru" bindtap='modifyPond' data-id="{{item.groupid}}"></i>
+      </view>
+      <i class="{{['iconfont myicon icon-collapse',show!==index?'downicon':false]}}" bindtap="togglefunc" data-groupid="{{item.groupid}}" data-index="{{index}}"></i>
+    </view>
+    
+    <view class="{{['collapsebody',show!==index?'hide':null]}}"   data-id="{{item.groupid}}">
+      <view class="collapsecon">
+        <view class='content'>
+          <view class='content_T'>
+            <view class='content_c content_left'>
+              <ul class='h_uu h_name'>
+                <li class='h_class'>养殖模式 :</li>
+                <li class='h_class'>
+                  <text>品</text>
+                  <text class='kinds'>种 :</text>
+                </li>
+              </ul>
+              <ul class='h_uu h_value'>
+                <li class='h_class h_val'>
+                  <text>{{ item.farmingMode }}</text>
+                </li>
+                <li class='h_class h_val'>
+                  <text>{{ item.dcName }}</text>
+                </li>
+              </ul>
+            </view>
+            <view class='content_c content_right'>
+              <ul class='h_uu h_name'>
+                <li class='h_class'>面积(亩) :</li>
+                <li class='h_class'>塘龄(年) :</li>
+              </ul>
+              <ul class='h_uu h_value'>
+                <li class='h_class h_val'>
+                  <text>{{ item.area }}</text>
+                </li>
+                <li class='h_class h_val'>
+                  <text>{{ item.tangling }}</text>
+                </li>
+              </ul>
+            </view>
+            <view class='content_c content_delect'>
+            <!-- 删除塘口 -->
+            <!-- <van-icon name="delete" catchtap="handleDelete" data-groupid="{{item.groupid}}" data-index="{{index}}" color='#f74555' custom-class="card_icon_handleDelete" size='36rpx' slot="icon" /> -->
+            </view>
+          </view>
+          <view class='address'>
+            <text>地</text>
+            <text class='addRress'>址 :</text>
+            <text class='addAddress'>{{item.province}}{{item.city}}{{item.county}}<text wx:if="{{item.address=='null'}}"></text ><block wx:else>{{item.address}}</block></text>
+          </view>
+        </view>
+        <view class='addDevice'>
+          <view class='addDevice_l addDev' bindtap='show' data-id="{{item.groupid}}">
+            <text>已添加设备:</text>
+            <text>{{ devicecount }}</text>
+          </view>
+          <view class='addDevice_r addDev'>
+            <i class="iconfont icon-jiahao1"></i>
+            <text bindtap='scanCode' data-id="{{item.groupid}}" data-groupname="{{item.groupname}}">添加设备</text>
+          </view>
+        </view>
+    </view>
+    </view>
+  </view>
+  <view class='noPond'>{{noPond}}</view>
+  <image class="image-style" src="../../images/jiahao.png" bindtap="ballClickEvent" style="bottom:{{ballBottom}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent">
+  </image>
+</view>
+<van-notify id="van-notify" />
+<i-toast id="toast" />
+<i-modal title="删除确认" visible="{{ visible }}" actions="{{ actions }}" bind:click="handleClick">
+    <view>删除后无法恢复哦</view>
+</i-modal>

@@ -1,0 +1,42 @@
+var parserNum = function(x){
+  // return x + "aaa"
+  var f = parseFloat(x);
+  if (isNaN(f)) return "";
+  var f = Math.round(x * 100) / 100;
+  var s = f.toString();
+  var rs = s.indexOf('.');
+  if (rs < 0) {
+    rs = s.length;
+    s += '.';
+  }
+  while (s.length < (rs + 1) + 2) {
+    s += '0';
+  }
+  var leftNum = s.split(".")[0];
+  var rightNum = "." + s.split(".")[1];
+  var result;
+  var resultArray = [];
+  if (leftNum.length > 3) {
+    var i = true;
+    while (i) {
+      resultArray.push(leftNum.slice(-3));
+      leftNum = leftNum.slice(0, leftNum.length - 3);
+      if (leftNum.length < 4) {
+        i = false;
+      }
+    }
+    var sortArray = [];
+    for (var i = resultArray.length - 1; i >= 0; i--) {
+      sortArray.push(resultArray[i]);
+    }
+    result = leftNum + "," + sortArray.join(",") + rightNum;
+  } else {
+    result = s;
+  }
+  return result;
+}
+
+
+module.exports = {
+  parserNum: parserNum,
+}

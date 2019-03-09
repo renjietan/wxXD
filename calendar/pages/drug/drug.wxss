@@ -1,0 +1,219 @@
+.warp {
+  padding: 20rpx;
+  background: #efeff4;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.boxwarp {
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  box-shadow: 0 2rpx 9rpx rgba(26, 183, 249, 0.13);
+}
+
+.title {
+  height: 90rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.title text {
+  font-size: 28rpx;
+  line-height: 90rpx;
+}
+
+.addbtn {
+  height: 90rpx;
+  width: 90rpx;
+  text-align: right;
+  line-height: 90rpx;
+  float: right;
+  color: #339bfe;
+}
+
+.addbtn .iconfont {
+  font-size: 40rpx;
+}
+
+.con {
+  padding: 30rpx 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nodata {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 50rpx auto;
+}
+
+.nodatabj {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 0 auto;
+  background-color: #ccc;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 5rpx;
+}
+
+.nodatabj .iconfont {
+  font-size: 60rpx;
+  color: #fff;
+}
+
+.nodatatext {
+  text-align: center;
+  display: block;
+  margin-top: 10rpx;
+  height: 20rpx;
+  font-size: 24rpx;
+  color: #b3b3b3;
+}
+
+
+
+.category {
+  min-width:170rpx;
+  padding:0 50rpx;
+	height: 60rpx;
+  margin-bottom:20rpx;
+	background-color: #3a93ff;
+	border-radius: 4rpx;
+  font-size: 28rpx;
+	color: #ffffff;
+  text-align: center;
+  line-height: 60rpx;
+}
+.dlebtn{
+  	line-height: 60rpx;
+    width:40rpx;
+    display: inline-block;
+}
+
+
+.list {
+  width:100%;
+  box-sizing: border-box;
+  padding: 30rpx 30rpx;
+  margin-bottom:30rpx;
+	background-image: linear-gradient(270deg, 
+		#ffffff 0%, 
+		#f1f1f1 100%);
+	border-radius: 4rpx;
+	border: solid 1px #cccccc;
+  position: relative;
+}
+
+.list .delbtn {
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  background: #fff;
+  position:absolute;
+  right:20rpx;
+  top:20rpx;
+}
+
+.list .delbtn .iconfont {
+  font-size:30rpx;
+  color: #666666;
+}
+
+.listtop {
+  height: 60rpx;
+  font-size: 28rpx;
+	color: #666666;
+}
+
+.listbottom {
+  display: flex;
+  line-height: 60rpx;
+  font-size: 28rpx;
+	color: #666666;
+}
+
+.listbottominput {
+  border: 1px solid #ddd;
+  padding: 0px 10rpx;
+  width: 120rpx;
+  height: 60rpx;
+  margin: 0px 10rpx;
+  box-sizing: border-box;
+}
+
+.categorylist {
+  border-right: 1px solid #3a93ff;
+  border-top: 1px solid #3a93ff;
+  border-bottom: 1px solid #3a93ff;
+}
+
+.item {
+  width: 80rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  text-align: center;
+  display: inline-block;
+  font-size: 24rpx;
+  color: #3a93ff;
+  border-left: 1px solid #3a93ff;
+  float:left;
+}
+
+.isclick {
+  background: #3a93ff;
+  color: #fff;
+}
+
+.inputwarp {
+  margin: 20rpx 10rpx 0;
+  display: flex;
+}
+
+.mybutton {
+  margin: 0 !important;
+  background-color: #3a93ff !important;
+  border: none !important;
+}
+
+.rightwarp {
+  width: 90vw;
+  height: 100vh;
+}
+
+.rightcon {
+  display: flex;
+}
+
+.rightbox {
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
+
+.box-con {
+  width: 100%;
+  height: 100%;
+}
+
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 240rpx !important;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding: 10rpx;
+}
+
+.van-cell-text {
+  min-width: 100rpx;
+  display: inline-block;
+}
+.right{
+  width:25px;
+  height:25px;
+  flex:0 1 auto!important;
+  -webkit-flex:0 1 auto!important;
+}

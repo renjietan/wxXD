@@ -1,0 +1,27 @@
+<!--accountBook/pages/crayadd/crayadd.wxml-->
+<view class='container'>
+  <van-cell-group>
+    <van-field value="{{ formdata.output }}" type="digit" label="销量(斤)"  required  placeholder="0.00" placeholder-style="color:#3b93ff"  input-class='font1' bind:input="changeIn" data-name="output" clearable/>
+    <van-cell value="{{formdata.sales_time}}" is-link title="产销时间" bind:click="isOpenDate" required title-width="90px" value-class="righttext" />
+    <van-field value="{{ formdata.product_name }}" type="text" label="名称" required placeholder="请输入商品名称" bind:input="changeIn" data-name="product_name" input-class='inputtext' clearable/>
+    <van-field value="{{ formdata.unit_price }}" type="digit" label="单价(元/斤)" required placeholder="请输入预估价" bind:input="changeIn" data-name="unit_price" input-class='inputtext' clearable/>
+    <van-field value="{{ formdata.purchaser }}" type="text" label="购买方" required placeholder="请输入购买方" bind:input="changeIn" data-name="purchaser" input-class='inputtext' clearable/>
+  </van-cell-group>
+  <view class='cardwarp'>
+    <view class='title'>
+      <text>补充说明</text>
+    </view>
+    <view hidden="{{isVisiableText||isShowDate||isShowGroup||isShowType}}">
+    <van-field input-class='textarea' value="{{ formdata.remarks }}" type="textarea" placeholder="有哪些备注可以记录下来。。。" autosize border="{{ false }}" bind:input="changeIn" data-name="remarks" />
+    </view>
+  </view>
+  <van-button loading="{{btnloading}}" type="primary" bind:click="handleClick" block custom-class='mybutton'>保存</van-button>
+</view>
+<!-- 操作时间开始 -->
+<van-popup show="{{ isShowDate }}" position="bottom" overlay bind:close="isOpenDate">
+  <van-datetime-picker type="date" value="{{ datatime }}" bind:cancel="isOpenDate" bind:confirm="handleDateConfirm" />
+</van-popup>
+<!-- 操作时间结束 -->
+<i-message id="message" />
+<i-toast id="toast" />
+<van-toast id="van-toast" />

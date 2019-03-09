@@ -1,0 +1,24 @@
+/* pages/modifyPond/modifyPond.wxss */
+
+page{
+  background-color: #efeff4
+}
+.down{
+  width: 710rpx;
+  position: fixed;
+  bottom: 0;
+  margin: 20rpx 20rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+  font-size: 32rpx;
+}
+.card{
+  margin: 26rpx 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  font-size: 28rpx
+}
+.btn{
+   background-color:#3A93FF !important;
+   color: white !important;
+}

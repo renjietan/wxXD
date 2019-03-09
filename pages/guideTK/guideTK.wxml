@@ -1,0 +1,17 @@
+<view wx:for="{{ 16 }}"  wx:key="{{index}}" catchtap='coverClick' wx:for-item="coverItem" id='{{coverItem}}' class='cover'>
+  <!-- <view class='swiperTK_footer' wx:if="{{ coverItem == 15 }}">
+    <van-button class='button' catchtap="goBackTK" size='small' type="default">返回</van-button>
+  </view> -->
+</view>
+<view style='height:100%;background:#5B5B5B'>
+  <swiper bindchange="changeAutoplayTK" class='guideTK_swiper' current="{{currIndex}}" indicator-dots="{{indicatorDotsTK}}" duration="{{durationTK}}">
+    <block wx:for="{{imgUrlsTK}}" wx:key="{{index}}">
+      <!-- catchtouchmove="stopTouchMove" -->
+      <swiper-item class="guideTK_swiper_item">
+        <image src="{{item.src}}" class="slide-image guideTK_swiper_img" height="100%" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<i-toast id="toast" />
+<i-message id="message" />

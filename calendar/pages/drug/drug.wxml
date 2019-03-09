@@ -1,0 +1,134 @@
+<!--pages/drug/drug.wxml-->
+<view class='warp'>
+  <van-cell-group>
+    <van-cell required title="操作时间" value="{{date}}" is-link bind:click="isOpenDate" />
+    <van-cell  title="当前天气" value="{{weather}}" />
+  </van-cell-group>
+  <view class='boxwarp'>
+    <view class='title'>
+      <text><text style='color:red;margin-right:5rpx'>*</text>疾病防治</text>
+      <view class='addbtn' bindtap='diseasefunc' wx:if="{{dataDisease.length>0}}">
+        <i class="iconfont icon-jiahao1"></i>
+      </view>
+    </view>
+    <view class='con'>
+      <view class='nodata' bindtap='diseasefunc' wx:if="{{dataDisease.length==0}}">
+        <view class='nodatabj'>
+          <i class="iconfont icon-jiahao1"></i>
+        </view>
+        <text class='nodatatext'> 新建记录</text>
+      </view>
+      <view class='category' wx:for="{{dataDisease}}" wx:key="{{index}}">
+        <text>{{item}}</text>
+        <view class='dlebtn' bindtap="onDelDisease" data-name="{{item}}">
+          <i class="iconfont icon-shanchu11"></i>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='boxwarp'>
+    <view class='title'>
+      <text><text style='color:red;margin-right:5rpx'>*</text>药剂投放</text>
+      <view class='addbtn' bindtap='drugfunc' wx:if="{{drug.length>0}}">
+        <i class="iconfont icon-jiahao1"></i>
+      </view>
+    </view>
+    <view class='con'>
+      <view class='nodata' bindtap='drugfunc' wx:if="{{drug.length==0}}">
+        <view class='nodatabj'>
+          <i class="iconfont icon-jiahao1"></i>
+        </view>
+        <text class='nodatatext'> 新建记录</text>
+      </view>
+      <view class='list' wx:for="{{drug}}" wx:key="{{index}}">
+        <view class='listtop'>
+          <text>药品：</text>
+          <text>{{item.name}}</text>
+        </view>
+        <view class='listbottom'>
+          <text>用量：</text>
+          <input class='listbottominput' type='number' value="{{item.operation_num}}" bindinput="bindKeyInput" data-id="{{item.operation_id}}" data-ids="{{item.disease}}" />
+          <view class='categorylist'>
+            <view class="{{['item',item.unit==itemName?'isclick':null]}}" wx:for="{{unitlist}}" wx:key="{{idx}}" wx:for-index="idx" wx:for-item="itemName" bindtap='clickunit' data-name="{{itemName}}" data-index="{{index}}">{{itemName}}</view>
+          </view>
+        </view>
+        <view class='delbtn' bindtap="onDelDrug" data-id="{{index}}">
+          <i class="iconfont icon-shanchu11"></i>
+        </view>
+      </view>
+    </view>
+  </view>
+  <van-cell-group>
+  <van-cell title="操作人" required value="{{personstring}}" is-link border="{{ false }}" onclick="choosePerson" />
+  </van-cell-group>
+  <view class='boxwarp'>
+    <view class='title titletextarea'>
+      <text>补充说明</text>
+    </view>
+    <textarea hidden="{{diseaseshow||showPerson||showDrug||isShowDate}}"  value="{{explanation}}" class='textarea' placeholder="有哪些备注可以记录下来。。。" auto-height="true" maxlength="-1" bindinput='textareafunc' />
+  </view>
+  <van-button loading="{{btnloading}}" type="primary" bind:click="handleClick" block custom-class='mybutton'>保存</van-button>
+</view>
+
+<!--选择员工弹窗开始-->
+<van-popup  show="{{ showPerson }}" title="选择操作人员（可多选）"  position="right"  bind:close="cancelfunc" close-on-click-overlay="true">
+ <view class='rightwarp' catch:touchmove="noop">
+  <scroll-view scroll-y  style='height:calc(100vh - 60px)' catch:touchmove="noop">
+    <van-checkbox-group value="{{ dataPerson }}" bind:change="onChangePerson">
+      <van-cell-group>
+        <van-cell wx:for="{{ listPerson }}" wx:key="{{item.sId}}" clickable data-name="{{item.sId}}" bind:click="toggle" value-class="right">
+          <van-checkbox bind:tap="noops" class="{{'checkboxes-'+item.sId }}" name="{{item.sname}}" data-name="{{item.sId}}" />
+          <view slot="title">
+            <text class="van-cell-text">{{item.sname}}</text>
+            <van-tag color="#2d8cf0" wx:if="{{item.stype==1}}">正式工</van-tag>
+            <van-tag color="#f2826a" wx:else>临时工</van-tag>
+          </view>
+        </van-cell>
+      </van-cell-group>
+    </van-checkbox-group>
+  </scroll-view>
+  <i-button bind:click="cancelfunc" type="primary"  size="small">确定</i-button>
+  </view>
+</van-popup >
+<!--选择员工弹窗结束-->
+<!--添加饲料品种开始-->
+<van-popup show="{{  diseaseshow }}" position="right" bind:close="onDiseaseClose" close-on-click-overlay="true">
+  <view class='rightwarp' catch:touchmove="noop">
+    <scroll-view scroll-y style='height:calc(100vh - 60px)'>
+      <i-checkbox-group current="{{dataDisease}}" bindchange="onChangeDisease">
+        <i-checkbox wx:for="{{listDisease}}" position="{{left}}" wx:key="{{index}}" value="{{item.dcName}}"></i-checkbox>
+      </i-checkbox-group>
+    </scroll-view>
+    <i-button bind:click="onDiseaseClose" type="primary" shape="circle" size="small">确定</i-button>
+  </view>
+</van-popup>
+<!--选择员工弹窗结束-->
+<!--添加饲料品种开始-->
+<van-popup show="{{  showDrug }}" position="right" bind:close="onDrugClose" close-on-click-overlay="true">
+  <view class='rightwarp' catch:touchmove="noop">
+    <scroll-view scroll-y style='height:calc(100% - 60px)'>
+      <view class='rightcon'>
+        <van-badge-group :active="{{active}}" bind:change="onChange">
+          <van-badge title="{{item.diseaseName}}" wx:for="{{drugarr}}" wx:key="{{index}}" />
+        </van-badge-group>
+        <view class='rightbox'>
+          <view class='box-con' wx:for="{{drugarr}}" wx:if="{{index==active}}" wx:key="{{index}}">
+            <i-checkbox-group current="{{dataDrug}}" bindchange="onChangeDrug">
+              <i-checkbox wx:for="{{item.drugs}}" wx:for-index="idx" wx:for-item="itemName" position="{{left}}" wx:key="{{idx}}" value="{{item.diseaseName+'-'+itemName.dcName}}">
+              </i-checkbox>
+            </i-checkbox-group>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <i-button bind:click="onDrugClose" type="primary" shape="circle" size="small">确定</i-button>
+  </view>
+</van-popup>
+<!--选择员工弹窗结束-->
+<!-- 操作时间开始 -->
+<van-popup show="{{ isShowDate }}" position="bottom" overlay bind:close="isOpenDate">
+  <van-datetime-picker type="date" value="{{ datatime }}" bind:cancel="isOpenDate" bind:change="handleDateChange" bind:confirm="handleDateConfirm" />
+</van-popup>
+<!-- 操作时间结束 -->
+<i-message id="message" />
+<van-toast id="van-toast" />

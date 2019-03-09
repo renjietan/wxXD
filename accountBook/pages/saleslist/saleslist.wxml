@@ -1,0 +1,105 @@
+<!--accountBook/pages/saleslist/saleslist.wxml-->
+<view class='container'>
+  <van-tabs active="{{ active }}" color="#3A93FF" custom-class="mytabs" line-width="0">
+    <van-tab title="小龙虾报表">
+      <view class='table'>
+        <view class='table-left'>
+          <view></view>
+          <view>名称</view>
+          <view>总计</view>
+          <view wx:for="{{dataname}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class='table-right'>
+          <scroll-view scroll-x   style="width: 100%" >
+            <view class="{{['warp',flag==1?'widtha':'widthb']}}">
+              <view class='table-tk'>
+                <view class='table-th'>{{yeardata[0]}}年</view>
+                <view class='table-con'>
+                  <view class='table-tl'>
+                    <view>总销量（斤）</view>
+                    <view>{{this_year_zxl_sum}}</view>
+                    <view wx:for="{{this_year_zxl}}" wx:key="{{index}}">{{item}}</view>
+                  </view>
+                  <view class='table-tl'>
+                    <view>预估总收入（元）</view>
+                    <view>￥{{this_year_zsr_sum}}</view>
+                    <view wx:for="{{this_year_zsr}}" wx:key="{{index}}">￥{{item}}</view>
+                  </view>
+                  <view class='table-tl'>
+                    <view>平均价（元）</view>
+                    <view>￥{{this_year_pjj_sum}}</view>
+                    <view wx:for="{{this_year_pjj}}" wx:key="{{index}}">￥{{item}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class='table-tk' wx:if="{{flag==1}}">
+                <view class='table-th'>{{yeardata[1]}}年</view>
+                <view class='table-con'>
+                  <view class='table-tl'>
+                    <view>总销量（斤）</view>
+                    <view>{{last_year_zxl_sum}}</view>
+                    <view wx:for="{{last_year_zxl}}" wx:key="{{index}}">{{item}}</view>
+                  </view>
+                  <view class='table-tl'>
+                    <view>预估总收入（元）</view>
+                    <view>￥{{last_year_zsr_sum}}</view>
+                    <view wx:for="{{last_year_zsr}}" wx:key="{{index}}">￥{{item}}</view>
+                  </view>
+                  <view class='table-tl'>
+                    <view>平均价（元）</view>
+                    <view>￥{{last_year_pjj_sum}}</view>
+                    <view wx:for="{{last_year_pjj}}" wx:key="{{index}}">￥{{item}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="塘口报表">
+      <view class='table'>
+        <view class='table-left'>
+          <view></view>
+          <view>塘口名称</view>
+          <view>总计</view>
+          <view wx:for="{{groupname}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class='table-right'>
+          <scroll-view scroll-x style="width: 100%">
+            <view class='warp'>
+              <view class='table-tk'>
+                <view class='table-th'>{{yeardata[0]}}年</view>
+                <view class='table-con'>
+                  <view class='table-tl'>
+                    <view>总销量（斤）</view>
+                    <view>{{zxltksum}}</view>
+                    <view wx:for="{{zxltk}}" wx:key="{{index}}">{{item}}</view>
+                  </view>
+                  <view class='table-tl'>
+                    <view>预估总收入(元)</view>
+                    <view>￥{{ygzsrtksum}}</view>
+                    <view wx:for="{{ygzsrtk}}" wx:key="{{index}}">￥{{item}}</view>
+                  </view>
+                  <view class='table-tl'>
+                    <view>平均价（元）</view>
+                    <view>￥{{pjjtksum}}</view>
+                    <view wx:for="{{pjjtk}}" wx:key="{{index}}">￥{{item}}</view>
+                  </view>
+                  <view class='table-tl'>
+                    <view>收成总批次</view>
+                    <view>{{sczpcsum}}</view>
+                    <view wx:for="{{sczpc}}" wx:key="{{index}}">{{item}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>
+<i-message id="message" />
+<i-toast id="toast" />
+<van-dialog id="van-dialog" />

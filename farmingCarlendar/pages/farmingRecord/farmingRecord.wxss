@@ -1,0 +1,16 @@
+/* pages/my/farmingRecord/farmingRecord.wxss */
+.container{
+  position: relative;
+  min-height: 100vh;
+}
+/* .vantSteps_T{
+  margin-top: 40rpx
+} */
+.vantStepsView_T{
+  background: white;
+  padding: 40rpx 0 0 0
+}
+
+.van-tab--active{
+  color: inherit !important
+}

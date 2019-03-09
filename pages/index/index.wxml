@@ -1,0 +1,171 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 日历开始 -->
+  <view class=' calendar'>
+    <view class='header'>
+      <view class='headerLeft'>
+        <i class="iconfont icon-rili1"></i>
+        <text>农事日历</text>
+      </view>
+    </view>
+    <view class='calendarbody'>
+      <view class='calendarcon'>
+        <view class='calendarconHeader'>
+          <view class='headeritem'>{{year}}年</view>
+          <view class='headeritem hcen'>{{days}}</view>
+          <view class='headeritem'>{{month}}月</view>
+        </view>
+        <view class='calendarconBottom'>
+          <view class='bottomLeft'>
+            <text class='texta'>{{day}}</text>
+            <text class='textb'>{{calendarDate.LunarTime._month}}月{{calendarDate.LunarTime._date}}</text>
+            <text class='textc' wx:if="{{calendarDate.distance>0}}">距离【{{calendarDate.NextSolarTerms}}】还有【{{calendarDate.distance}}】天</text>
+            <text class='textc' wx:else>今日【{{calendarDate.NextSolarTerms}}】</text>
+          </view>
+          <view class='bottomRight'>
+            <text class='texta'>本月农事</text>
+            <text class='textb'>{{farming}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 日历结束 -->
+  <!-- 告警信息开始 -->
+  <view class='alertinfowarp'>
+    <view class='header'>
+      <view class='headerLeft'>
+        <i class="iconfont icon-iconfontjinggao"></i>
+        <text>告警信息</text>
+        <text wx:if="{{alarmCount}}"> ({{alarmCount}})</text>
+        <text wx:else> (暂无告警)</text>
+      </view>
+      <navigator url="../warningMessageList/warningMessageList">
+        <view class='headerRight' wx:if="{{alarmCount}}">
+          <text>更多</text>
+          <i class="iconfont icon-hm-collapse-o moreicon"></i>
+        </view>
+      </navigator>
+    </view>
+    <view class='alertinfo'>
+      <view class='infolist' wx:for="{{warnMsgList}}" wx:key="{{this}}">
+        <navigator url="{{'../warningMessage/warningMessage?deviceId='+item.deviceId+'&groupName='+item.groupName+'&deviceType='+item.device_type_name+'&create_time='+item.create_time}}">
+          <view class='infolistTop'>
+            <i class="iconfont icon-iconfontjinggao iconred"></i>
+            <text>{{item.groupName}}{{item.device_type_name}}{{item.alarm_content}}</text>
+          </view>
+          <view class='infolistBottom'>
+            <view>
+              <text>{{item.create_time}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <!-- <view class='noalertInfo' wx:if="{{warnMsgList.length==0}}">
+        <text>暂无告警信息</text>
+      </view> -->
+    </view>
+  </view>
+  <!-- 告警信息结束 -->
+  <!-- 塘口列表开始 -->
+  <view class='pondwarp'>
+    <view class='header'>
+      <view class='headerLeft'>
+        <i class="iconfont icon-shantang"></i>
+        <text>塘口信息</text>
+        <text wx:if="{{pondArray.length==0}}"> (暂无塘口信息)</text>
+      </view>
+    </view>
+    <view class='collapse' wx:for="{{pondArray}}" wx:key="{{index}}">
+      <view class='collapseheader' bindtap="togglefunc" data-index="{{index}}" data-groupid="{{item.groupId}}">
+        <view class='collapseHeaderLeft' catchtap="focusFunc" data-groupid="{{item.groupId}}" data-isCare="{{item.isCare}}">
+          <i class="{{['iconfont icon-guanzhu guanzhubtn',item.isCare==0?'guanzhuicon':'noguanzhuicon']}}"></i>
+          <text class='collapseHeaderLeftText'>{{item.groupName}}</text>
+        </view>
+        <view class='collapseHeaderRight'>
+          <view class='collapseHeaderRightBtn'>
+            <view class='headerBtnItem'>
+              <i class="iconfont icon-iconfontjinggao headerBtnItemIcon iconred"></i>
+              <text class='headerBtnItemText'>告警:{{item.alarmCount?item.alarmCount:0}}</text>
+            </view>
+            <view class='headerBtnItem'>
+              <i class="iconfont icon-shebei headerBtnItemIcon iconblue"></i>
+              <text class='headerBtnItemText'>设备:{{item.deviceCount?item.deviceCount:0}}</text>
+            </view>
+            <view class='headerBtnItem'>
+              <i class="iconfont icon-zaixian headerBtnItemIcon icongreen"></i>
+              <text class='headerBtnItemText'>在线:{{item.onlineCount?item.onlineCount:0}}</text>
+            </view>
+          </view>
+          <view class='collapseBtn'>
+            <i class="{{['iconfont collapseBtnIcon icon-collapse',show!==index?'downIcon':false]}}"></i>
+          </view>
+        </view>
+      </view>
+      <view class="{{['collapsebody',show!==index?'hide':null]}}">
+        <view class="collapsecon">
+          <view class='nodevice' wx:if="{{deviceData.length==0}}">
+            <text>该塘口暂无设备</text>
+          </view>
+          <view class='itemList' wx:for="{{deviceData}}" wx:key="{{index}}" wx:for-item="deviceItem">
+            <view class='itemListLeft'>
+              <i class="{{['iconfont itemListLeftIcon',codeType[deviceItem.deviceType]+'']}}"></i>
+            </view>
+            <view class='itemListContent'>
+              <view class='itemListContentTop'>
+                <view>
+                  <text class='deviceName'>{{deviceItem.deviceInfo.device_type_name}}</text>
+                  <text class='deviceValue'>{{deviceItem.value}}{{deviceItem.deviceInfo.unit}}</text>
+                  <view class='itemstate'>
+                    <i class="iconfont icon-up" wx:if="{{deviceItem.value>deviceItem.deviceAlarm.upper_limit}}"></i>
+                    <i class="iconfont icon-lowdown" wx:if="{{deviceItem.value<deviceItem.deviceAlarm.lower_limit}}"></i>
+                  </view>
+                </view>
+                <view class='state' wx:if="{{deviceItem.isOnline==1}}">
+                  <i class="iconfont icon-On-line icongreen"></i>
+                  <text>在线</text>
+                </view>
+                <view class='state nostate' wx:else>
+                  <i class="iconfont icon-Off-line icongray"></i>
+                  <text>离线</text>
+                </view>
+              </view>
+              <view class='itemListContentBottom'>
+                <navigator url="{{'../warningMessage/warningMessage?deviceId='+deviceItem.deviceId+'&groupName='+item.groupName+'&deviceType='+deviceItem.deviceInfo.device_type_name}}">
+                  <view class='itemListView'>
+                    <view class='minValue' style="left:{{deviceItem.deviceAlarm.lower_limit/(deviceItem.deviceInfo.upperLimit-deviceItem.deviceInfo.lowerLimit)*100+'%'}}"></view>
+                    <view class="{{['itemListViewValue',deviceItem.value<deviceItem.deviceAlarm.lower_limit||deviceItem.value>deviceItem.deviceAlarm.upper_limit?'errorbox':null]}}" style="width:{{deviceItem.value/(deviceItem.deviceInfo.upperLimit-deviceItem.deviceInfo.lowerLimit)*100+'%'}}"></view>
+                    <view class='maxValue' style="left:{{deviceItem.deviceAlarm.upper_limit/(deviceItem.deviceInfo.upperLimit-deviceItem.deviceInfo.lowerLimit)*100+'%'}}"></view>
+                  </view>
+                </navigator>
+              </view>
+            </view>
+            <view class='itemListRight'>
+              <text class='itemListRightTime'>{{deviceItem.uptime}}</text>
+            </view>
+          </view>
+          <view class='itembtn' wx:if="{{deviceData.length!=0}}">
+            <navigator url="{{'../allCurve/allCurve?groupId='+item.groupId+'&groupName='+item.groupName}}" hover-class="navigator-hover">
+              <text>查看养殖环境</text>
+            </navigator>
+          </view>
+        </view>
+        <i-spin size="large" fix wx:if="{{ deviceshow }}"></i-spin>
+      </view>
+    </view>
+    <!-- <view class='nogroup' wx:if="{{pondArray.length==0}}">
+      <text>暂无塘口</text>
+    </view> -->
+  </view>
+  <!-- 塘口列表结束 -->
+  <!-- 添加按钮开始 -->
+  <view bindtap='addbtnfunc' class="{{['addbtn',btnhide?'addbtnhide':null]}}">
+    <view class='iconbox'>
+      <i class="iconfont icon-xingzhuang addbtnIcon"></i>
+    </view>
+    <text class='addText'> 添加设备</text>
+  </view>
+  <!-- 添加按钮结束 -->
+</view>
+<i-toast id="toast" />
+<i-message id="message" />

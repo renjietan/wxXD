@@ -1,0 +1,63 @@
+<!--pages/more/more.wxml-->
+<view class="i-toast-mask" wx:if="{{ visible }}" bindtap="handleHide"></view>
+<view class="container">
+  <van-cell-group>
+    <van-cell title="我的信息" is-link url="../personInfo/personInfo">
+      <i slot="icon" class="iconfont icon-wodexinxi myicon"></i>
+    </van-cell>
+    <!-- <button class='bindWX' wx:if="{{ loginMethod == 'tel' && loginMethod != 'wt'}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      <i class="iconfont icon-weixin" bind:click="encryLogin"></i>
+      绑定微信
+    </button>
+    <van-cell wx:if="{{ loginMethod == 'wt'}}" title="手机号，微信均绑定">
+      <i slot="icon" class="iconfont icon-weibaoxitongshangchuanlogo- myicon"></i>
+    </van-cell>
+    <van-cell wx:if="{{ loginMethod == 'wx' && loginMethod != 'wt'}}" title="绑定手机号" is-link url="../bindTel/bindTel">
+      <i slot="icon" class="iconfont icon-weibaoxitongshangchuanlogo- myicon"></i>
+    </van-cell> -->
+    <van-cell title="删除塘口" is-link url="../../pond/pages/clearPond/clearPond?id=1">
+      <i slot="icon" class="iconfont icon-shanchu myicon"></i>
+    </van-cell>
+    <!-- <van-cell wx:if="{{ loginMethod == 'tel' && loginMethod != 'wt'}}" title="绑定微信" border="{{ false }}">
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        <i class="iconfont icon-icon-" bind:click="encryLogin"></i>
+      </button>
+    </van-cell> -->
+    <van-cell title="修改设备" is-link url="../../device/pages/changeDevice/changeDevice">
+      <i slot="icon" class="iconfont icon-shebei1 myicon"></i>
+    </van-cell>
+    <van-cell title="修改密码" is-link url="../editpassword/editpassword" >
+      <i slot="icon" class="iconfont icon-weibaoxitongshangchuanlogo- myicon"></i>
+    </van-cell>
+    <!-- <van-cell title="关于" is-link url="../about/about"  border="{{ false }}">
+      <i slot="icon" class="iconfont icon-guanyu myicon"></i>
+    </van-cell> -->
+    <button class='bindWX' wx:if="{{ loginMethod == 'tel' && loginMethod != 'wt'}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      <i class="iconfont icon-weixin" bind:click="encryLogin"></i>
+      绑定微信
+    </button>
+    <van-cell wx:if="{{ loginMethod == 'wt'}}" title="手机号，微信均绑定">
+      <i slot="icon" class="iconfont icon-weibaoxitongshangchuanlogo- myicon"></i>
+    </van-cell>
+    <van-cell wx:if="{{ loginMethod == 'wx' && loginMethod != 'wt'}}" title="绑定手机号" is-link url="../bindTel/bindTel">
+      <i slot="icon" class="iconfont icon-weibaoxitongshangchuanlogo- myicon"></i>
+    </van-cell>
+  </van-cell-group>
+  <view class='btn'>
+    <i-button bind:click="handleClick" type="primary">退出登录</i-button>
+    <i-button bind:click="handleClick2">再次体验</i-button>
+  </view>
+  <i-toast id="toast" />
+  <i-action-sheet visible="{{ visible }}" actions="{{ actions }}" show-cancel bind:cancel="handleCancel" bind:click="handleClickItem" mask-closable="{{ true }}">
+    <view slot="header" style="padding: 16px">
+      <view style="color: #444;font-size: 16px">确定退出登录吗？</view>
+    </view>
+  </i-action-sheet>
+
+  <i-action-sheet visible="{{ visible2 }}" actions="{{ actions2 }}" show-cancel bind:cancel="handleCancel" bind:click="handleClickItem2" mask-closable="{{ true }}">
+    <view slot="header" style="padding: 16px">
+      <view style="color: #444;font-size: 16px">确定再次体验吗？</view>
+    </view>
+  </i-action-sheet>
+</view>
+<i-toast id="toast" />

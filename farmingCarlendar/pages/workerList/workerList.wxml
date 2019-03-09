@@ -1,0 +1,75 @@
+<view class='container_pondList'>
+  <view class='pondList_title'>
+    <view>{{ "已有工人(" + workerListInfo.length + ")" }}</view>
+  </view>
+
+
+  <van-collapse custom-class="van-collapse_t" value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item name="{{ index }}" border wx:for="{{ workerListInfo }}">
+      <view class='content_title' slot="title">
+        <view class='content_title_name'>{{ item.sname }}</view>
+        <van-tag wx:if="{{ item.type == 2 }}" type="success">临时工</van-tag>
+        <van-tag wx:else type="primary">正式工</van-tag>
+      </view>
+      <view class='content_box' bindtap='handleRouter'  data-sid="{{ item }}">
+        <van-icon name="delete" catchtap="handleDelete" data-sid="{{ item.sId }}" color='#ed3f14' custom-class="card_icon_handleEdit" size='40rpx' slot="icon" />
+        <!-- <van-icon name="edit" bindtap="handleRouter" data-name="{{ item }}" custom-class="card_icon_handleEdit" size='40rpx' slot="icon" /> -->
+        <!-- <van-icon name="delete" catchtap="handleDelete" data-sid="{{ item.sId }}" color='#ed3f14' custom-class="card_icon_handleDelete" size='40rpx' slot="icon" /> -->
+        <view class='card_row card_content_child'>
+          <text class='card_label'>{{ "固定假期(天)"}}</text>
+          <text>{{ item.Holiday +  "天"}}</text>
+        </view>
+
+        <view class='card_row card_content_child'>
+          <text class='card_label'>{{ "手机号码"}}</text>
+          <text class='card_value'>{{ item.stelephone}}</text>
+        </view>
+
+        <view class='card_row card_content_child'>
+          <text class='card_label'>{{ "工资结算方式"}}</text>
+          <text class='card_value'>{{ item.stype == 1 ? '按年结算' : '按日结算'  }}</text>
+        </view>
+        <view class='card_row card_content_child'>
+          <text class='card_label'>{{ "预计上工时间"}}</text>
+          <text class='card_value'>{{ item.expected_time }}</text>
+        </view>
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+  <!-- <view class='pondList_content'>
+    <i-card i-class="card_T" wx:for="{{ workerListInfo }}" title="{{ item.sname }}" full>
+      <van-icon name="edit" bind:click="handleRouter" data-name="{{ item }}" custom-class="card_icon_handleEdit" size='40rpx' slot="icon" />
+      <van-icon name="delete" bind:click="handleDelete" data-sid="{{ item.sId }}" color='#ed3f14' custom-class="card_icon_handleDelete" size='40rpx' slot="icon" />
+      <view slot="content">
+        <view class='card_row card_content_child'>
+          <text class='card_label'>{{ "固定假期(天)"}}</text>
+          <text>{{ item.Holiday +  "天"}}</text>
+        </view>
+
+        <view class='card_row card_content_child'>
+          <text class='card_label'>{{ "手机号码"}}</text>
+          <text class='card_value'>{{ item.stelephone }}</text>
+        </view>
+
+        <view class='card_row card_content_child'>
+          <text class='card_label'>{{ "工资结算方式"}}</text>
+          <text class='card_value'>{{ item.stype == 1 ? '按年结算' : '按日结算'  }}</text>
+        </view>
+        <view class='card_row card_content_child'>
+          <text class='card_label'>{{ "预计上工时间"}}</text>
+          <text class='card_value'>{{ item.expected_time }}</text>
+        </view>
+      </view>
+    </i-card>
+  </view> -->
+</view>
+<movable-area class="move" scale-area>
+  <movable-view direction="horizontal" data-sid="" bindchange="onChange" bindscale="onScale" bindtap="handleRouter" scale-min="0.5" scale-max="4" scale-value="2" class='addbtn'>
+    <i class="iconfont icon-jiahao1"></i>
+  </movable-view>
+</movable-area>
+<!-- 弹出框 -->
+<van-notify id="van-notify" />
+<i-message id="message" />
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />

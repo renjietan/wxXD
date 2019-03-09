@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "临时工结算",
+  "usingComponents": {
+    "van-swipe-cell": "../../../dist/swipe-cell/index",
+    "i-message": "../../../dist1/message/index",
+    "van-dialog": "../../../dist/dialog/index",
+    "van-toast": "../../../dist/toast/index",
+    "van-search": "../../../dist/search/index",
+    "van-panel": "../../../dist/panel/index",
+    "van-tag": "../../../dist/tag/index",
+    "van-button": "../../../dist/button/index",
+    "i-grid": "../../../dist1/grid/index",
+    "i-grid-item": "../../../dist1/grid-item/index",
+    "i-grid-icon": "../../../dist1/grid-icon/index",
+    "i-grid-label": "../../../dist1/grid-label/index"
+  }
+}

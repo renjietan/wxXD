@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-spin": "../../dist1/spin/index",
+    "i-toast": "../../dist1/toast/index"
+  },
+  "navigationBarTitleText": "首页"
+}

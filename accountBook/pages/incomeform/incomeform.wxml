@@ -1,0 +1,44 @@
+<!--accountBook/pages/cldform/cldform.wxml-->
+<view class='history-table-wrap'>
+  <view class="table">
+    <view class="tr">
+      <view class="th th1">名称</view>
+      <view class="th th2">{{nowYear}}年</view>
+      <view class="th th3" wx:if="{{havePre}}">{{preYear}}年</view>
+    </view>
+    <!-- 总收入金额 -->
+    <view class="tr thead">
+      <view class="td td1 td_head"><text space="emsp"> {{total.name}}</text></view>
+      <view class="td td2">¥{{total.nowYear}}</view>
+      <view class="td td3" wx:if="{{havePre}}">¥{{total.preYear}}</view>
+    </view>
+    <!-- 补贴总金额 -->
+    <view class="tr thead" bindtap='slide'>
+      <view class="td td1 td_head" data-type="1"><text space='emsp'>  补贴总金额</text></view>
+      <view class="td td2" data-type="1">¥{{tbody.subsidy.sum[nowYear]}}</view>
+      <view class="td td3" data-type="1" wx:if="{{havePre}}">¥{{tbody.subsidy.sum[preYear]}}</view>
+    </view>
+    <view class="{{isShow1?'':'isShow'}}">
+      <view class="tr tbody" wx:for="{{tbody.subsidy.data}}" wx:for-item="item1" wx:key="key1" wx:for-index="index1">
+        <view class="td td1 td_head"><text space='emsp'>    {{index1}}</text></view>
+        <view class="td td2" data-name="{{index1}}" data-type="1" data-year="{{nowYear}}" bindtap='handleClick'>{{item1[nowYear]}}</view>
+        <view class="td td3" data-name="{{index1}}" data-type="1" data-year="{{preYear}}" bindtap='handleClick' wx:if="{{havePre}}">{{item1[preYear]}}</view>
+      </view>
+    </view>
+
+    <!-- 收款总金额 -->
+    <view class="tr thead" bindtap='slide'>
+      <view class="td td1 td_head" data-type="2"> <text space='emsp'>  回款总金额</text></view>
+      <view class="td td2" data-type="2">¥{{tbody.return_money.sum[nowYear]}}</view>
+      <view class="td td3" data-type="2" wx:if="{{havePre}}">¥{{tbody.return_money.sum[preYear]}}</view>
+    </view>
+    <view class="{{isShow2?'':'isShow'}}">
+      <view class="tr tbody" wx:for="{{tbody.return_money.data}}" wx:for-item="item1" wx:key="key1" wx:for-index="index1">
+        <view class="td td1 td_head"> <text space='emsp'>    {{index1}}</text></view>
+        <view class="td td2" data-name="{{index1}}" data-type="2" data-year="{{nowYear}}" bindtap='handleClick'>{{item1[nowYear]}}</view>
+        <view class="td td3" data-name="{{index1}}" data-type="2" data-year="{{preYear}}" bindtap='handleClick' wx:if="{{havePre}}">{{item1[preYear]}}</view>
+      </view>
+    </view>
+  </view>
+  <i-message id="message" />
+</view>

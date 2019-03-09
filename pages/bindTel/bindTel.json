@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "用户注册",
+  "backgroundColor": "#ff0000",
+  "usingComponents": {
+    "van-field": "../../dist/field/index",
+    "van-button": "../../dist/button/index",
+    "van-radio": "../../dist/radio/index",
+    "van-radio-group": "../../dist/radio-group/index",
+    "van-notify": "../../dist/notify/index",
+    "i-toast": "../../dist1/toast/index",
+    "i-message": "../../dist1/message/index"
+  }
+}

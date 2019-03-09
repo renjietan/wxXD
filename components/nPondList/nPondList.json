@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-loading": "../../dist/loading/index",
+    "i-toast": "../../dist1/toast/index"
+  },
+  "navigationBarTitleText": "塘口列表"
+}

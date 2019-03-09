@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "请假记录",
+  "usingComponents": {
+    "van-cell": "../../../dist/cell/index",
+    "van-cell-group": "../../../dist/cell-group/index",
+    "van-button": "../../../dist/button/index",
+    "van-icon": "../../../dist/icon/index",
+    "van-toast": "../../../dist/toast/index",
+    "van-notify": "../../../dist/notify/index",
+    "van-tag": "../../../dist/tag/index",
+    "i-message": "../../../dist1/message/index",
+    "i-button": "../../../dist1/button/index",
+    "van-popup": "../../../dist/popup/index",
+    "van-checkbox": "../../../dist/checkbox/index",
+    "van-field": "../../../dist/field/index"
+  }
+}

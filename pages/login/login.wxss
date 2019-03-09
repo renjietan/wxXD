@@ -1,0 +1,94 @@
+/* pages/login/login.wxss */
+
+.wrapper {
+  height: 100vh;
+  background-color: #f2f2f2;
+  overflow: hidden;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.container {
+  width: 80%;
+  padding: 40rpx 20rpx;
+  margin: 80rpx auto 150rpx;
+}
+
+.main {
+  margin-bottom: 40rpx;
+}
+.logo{
+  height:83rpx;
+  width:128rpx;
+  display: block;
+  margin:0rpx auto 60rpx;
+}
+.inputItem {
+  margin-bottom: 40rpx;
+  border-radius: 60rpx;
+  box-shadow: 0 8rpx 16rpx rgba(153, 153, 153, 0.18);
+  padding: 15rpx 20rpx;
+  background: #fff;
+}
+
+.righttext {
+  color: #999;
+}
+
+.loginbth {
+  box-shadow: 0 8rpx 16rpx rgba(153, 153, 153, 0.18);
+  background-color: #2D8CF0 !important;
+  border: 1px solid #2D8CF0 !important;
+  letter-spacing: 4rpx;
+}
+
+.footer {
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 30rpx;
+}
+.footer text{
+  font-size:30rpx;
+  color:#2D8CF0;
+  /* font-weight: bold; */
+
+}
+.footerbox{
+  height:150rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top:-40rpx;
+} 
+.loginbtn{
+  width:75rpx;
+  height:75rpx; 
+  text-align: center;
+
+}
+.loginbtn button{
+  width:100%;
+  height:100%;
+  background: #1EA838;
+  line-height: 75rpx;
+  padding: 0;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0;
+}
+.loginbtn i{
+  font-size:48rpx;
+  line-height: 75rpx;
+  color: #fff;
+}
+.footerbox text{
+  color:#999;
+  font-size:24rpx;
+  margin-top:20rpx;
+}
+.pass{
+  font-size:28rpx;
+}

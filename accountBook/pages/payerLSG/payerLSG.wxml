@@ -1,0 +1,76 @@
+<wxs src="../../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='search_box'>
+    <van-search custom-class="search_T" value="{{ searchVal }}" placeholder="请输入工人姓名..." bind:change="handleTextChange" use-action-slot bind:search="handleSearch">
+      <view slot="action" bindtap='handleSearch'>搜索</view>
+    </van-search>
+  </view>
+  <view class='title'>结算明细</view>
+
+  <van-panel custom-class="panel_T" wx:for="{{ labInfo }}" data-type="edit" data-wsid="{{ item.wsId }}" data-id="{{ item.sId }}" wx:key="{{ index }}">
+    <icon class='deleteIcon iconfont icon-yizuofei' wx:if="{{ item.isInvalid == 1 }}"></icon>
+    <view class='header_box' slot="header">
+      <view class='header_content'>
+        <view class='header_content_name'>
+          <!-- <image class='header_content_name_img' src='../../../images/book17.png'></image> -->
+          <view class='header_content_name_img'>
+            <icon class='iconfont icon-linshigong'></icon>
+          </view>
+          <!-- <view class='header_content_name_img'></view> -->
+          <view class='header_content_name_name'>{{ item.sname }}</view>
+          <view class='header_content_name_icon'>
+            <van-tag custom-class="tag_T" type="success">临时工</van-tag>
+          </view>
+        </view>
+        <view class='header_content_num'>￥{{ filter.parserNum(item.salary) }}</view>
+      </view>
+    </view>
+    <view class='content_box'>
+      <i-grid i-class="content_box_gird">
+        <i-grid-item i-class="content_box_item">
+          <i-grid-icon i-class='content_box_title'>
+            工时(天)
+          </i-grid-icon>
+          <i-grid-label i-class='content_box_label'>{{ item.number }}</i-grid-label>
+        </i-grid-item>
+
+        <i-grid-item i-class="content_box_item">
+          <i-grid-icon i-class='content_box_title'>
+            还预支金额(元)
+          </i-grid-icon>
+          <i-grid-label i-class='content_box_label'>{{ filter.parserNum(item.advance_fee) }}</i-grid-label>
+        </i-grid-item>
+      </i-grid>
+
+
+      <i-grid i-class="content_box_gird content_box_gird2">
+        <i-grid-item i-class="content_box_item">
+          <i-grid-icon i-class='content_box_title'>
+            结算开始时间
+          </i-grid-icon>
+          <i-grid-label i-class='content_box_label'>{{ item.starting_time }}</i-grid-label>
+        </i-grid-item>
+
+        <i-grid-item i-class="content_box_item">
+          <i-grid-icon i-class='content_box_title'>
+            结算结束时间
+          </i-grid-icon>
+          <i-grid-label i-class='content_box_label'>{{ item.end_time }}</i-grid-label>
+        </i-grid-item>
+      </i-grid>
+    </view>
+    <view wx:if="{{ item.isInvalid == 0 }}" class='footer_box'>
+      <view></view>
+      <view bindtap='handleIsDelete' data-id="{{ item.wsId }}" class='right_view'>作废</view>
+    </view>
+  </van-panel>
+</view>
+<movable-area class="move" scale-area>
+  <movable-view direction="horizontal" bindchange="onChange" bindscale="onScale" data-type="add" bindtap="handleEvent" scale-min="0.5" scale-max="4" scale-value="2" class='addbtn'>
+    <i class="iconfont icon-jiahao1"></i>
+  </movable-view>
+</movable-area>
+
+<van-dialog showCancelButton="true" id="van-dialog" />
+<i-message id="message" />
+<van-toast id="van-toast" />

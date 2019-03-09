@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-cell": "../../dist/cell/index",
+    "van-cell-group": "../../dist/cell-group/index",
+    "i-button": "../../dist1/button/index",
+    "i-toast": "../../dist1/toast/index",
+    "i-action-sheet": "../../dist1/action-sheet/index"
+  },
+  "navigationBarTitleText": "更多"
+}

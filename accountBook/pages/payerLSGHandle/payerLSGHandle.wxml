@@ -1,0 +1,67 @@
+<view class='wrap'>
+  <view class='form'>
+    <van-cell-group>
+      <van-cell title='结算人' required custom-class="cell_T" value="{{ formData.workerName }}" is-link bind:click="handleIsVisableWorker" />
+      <van-cell custom-class="cell_T" required title='开始时间' value="{{ formData.startDate }}" is-link bind:click="handleIsVisableStartDate" />
+      <van-cell custom-class="cell_T" required title='结束时间' value="{{ formData.endDate }}" is-link bind:click="handleIsVisableEndDate" />
+      <van-field type="number" readonly value="{{ formData.workTime }}" input-class="input_T" data-type="workTime" bind:change="handleChangeText" placeholder="请输入累积工时..." required border="{{ true }}">
+        <view slot="label" class='input_T_label'>
+          累积工时(天)
+        </view>
+      </van-field>
+
+      <van-field type="number" value="{{ formData.money }}" input-class="input_T" data-type="money" bind:change="handleChangeText" placeholder="请输入实发金额..." required border="{{ true }}">
+        <view slot="label" class='input_T_label'>
+          实发金额(元)
+        </view>
+      </van-field>
+
+      <view wx:if="{{ money != 0}}" class='toastMoney'>未结算的预支总金额：{{ money }}</view>
+
+      <van-field type="number" wx:if="{{ money != 0}}" value="{{ formData.adMoney }}" input-class="input_T"  data-type="adMoney" bind:change="handleChangeText" placeholder="请输入实发金额..." required border="{{ true }}">
+        <view slot="label" class='input_T_label'>
+          还预支金额(元)
+        </view>
+      </van-field>
+    </van-cell-group>
+  </view>
+
+  <view class='footer'>
+    <i-button bind:click="handleSubmit" i-class='vanButton_T handleBtn_T' type="primary" long="true">确定</i-button>
+  </view>
+</view>
+
+<!--开始日期 -->
+<van-popup overlay="{{ true }}" show="{{ isVisiableStartDate }}" position="bottom">
+  <van-datetime-picker type="date" value="{{ currentStartDate }}"  bind:change="onChange" bind:confirm="handleChangeStartDate" bind:cancel="handleIsVisableStartDate" />
+</van-popup>
+
+<!--结束日期 -->
+<van-popup overlay="{{ true }}" show="{{ isVisiableEndDate }}" position="bottom">
+  <van-datetime-picker type="date" value="{{ currentEndDate }}" bind:change="onChange" bind:confirm="handleChangeEndDate" bind:cancel="handleIsVisableEndDate" />
+</van-popup>
+
+
+<!-- 人员列表 -->
+<van-popup show="{{ workerList.isVisiable }}" close-on-click-overlay="false" position="right" overlay bind:close="handleIsVisableWorker">
+  <view class='container view_T'>
+    <van-cell-group>
+      <van-cell wx:if="{{ worker.type == 2}}" wx:for="{{  workerList.data  }}" wx:key="{{ worker.sId }}" bind:click="handleWorkerCheck" data-name="{{ worker.sname }}" wx:for-item="worker" data-id='{{ worker.sId }}'>
+        <view slot="title">
+          <view class="van-cell-text_T">{{ worker.sname }}</view>
+          <van-tag  type="success">临时工</van-tag>
+          <!-- <van-tag wx:if="{{ worker.type == 1}}" type="primary">正式工</van-tag> -->
+          <!-- <van-tag color="#2d8cf0">正式工</van-tag> -->
+          <!-- <van-tag color="#f2826a" wx:else>临时工</van-tag> -->
+        </view>
+        <view slot="right-icon">
+          <van-checkbox data-name='{{ worker.sId }}' data-checkvalue="{{ worker.sname }}" value="{{ worker.checked }}"></van-checkbox>
+        </view>
+      </van-cell>
+    </van-cell-group>
+    <i-button bind:click="handleSave" i-class='vanButton_T handleBtn_T' type="primary" long="true">保存</i-button>
+  </view>
+</van-popup>
+<i-message id="message" />
+<van-toast id="van-toast" />
+<van-Notify id="van-notify" />

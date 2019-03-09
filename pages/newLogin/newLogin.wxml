@@ -1,0 +1,18 @@
+<!--pages/newLogin/newLogin.wxml-->
+<view class='container'>
+
+  <view class='header'>
+  </view>
+  <view class='loginImg'>
+    <image src='../../images/login.jpg' class='loginImage'></image>
+  </view>
+  <view class='btn'>
+    <view class='setBtn'>
+      <view class='experience' bindtap='goTo'>应用体验</view>
+    </view>
+    <view class='setBtn'>
+      <view class='use' bindtap='goUse'>正式使用</view>
+    </view>
+  </view>
+<i-toast id="toast" />
+</view>

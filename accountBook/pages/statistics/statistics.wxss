@@ -1,0 +1,77 @@
+/* accountBook/pages/summary/summary.wxss */
+
+.wrapper {
+  background: #efeff4;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.bj {
+  width: 100%;
+  height: 190rpx;
+  background-image: linear-gradient(0deg, #1ab7f9 0%, #3b93ff 100%);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.warp {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.dropyear {
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border-bottom: 1px solid #8ac8ff;
+}
+
+.dropyear text {
+  display: inline-block;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  color: #fefefe;
+  position:relative;
+  padding-right: 40rpx;
+}
+
+.dropyear text::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+  width: 0;
+  height: 0;
+  border: 10rpx solid transparent;
+  border-top: 10rpx solid #fff;
+  display: inline-block;
+}
+.boxa{
+	height: 180rpx;
+  line-height: 140rpx;
+	box-shadow: 0px 1rpx 18rpx 0rpx 
+		rgba(26, 183, 249, 0.13);
+	border-radius: 8rpx;
+  background: #fff;
+  padding:20rpx;
+  box-sizing: border-box;
+}
+.boxa text{
+  font-size:30rpx;
+}
+.header{
+  line-height: 40rpx;
+  margin: 10rpx 0;
+  font-size: 28rpx;
+  letter-spacing: 0px;
+  color: #333;
+}
+.list{
+  border:1px solid #1ab7f9;
+  height:400rpx;
+}

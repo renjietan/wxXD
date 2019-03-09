@@ -1,0 +1,46 @@
+<!--pages/register/register.wxml-->
+<view class='wrapper'>
+  <view class='container'>
+    <view class='main'>
+      <view class='inputItem'>
+        <van-field left-icon="contact" type="number" value="{{ formdata.phone }}" clearable placeholder="请输入手机号" border="{{false}}" bind:change="onChange" use-button-slot use-icon-slot data-name="phone">
+          <text slot="button" class="{{['righttext',disabled?'disabled':null]}}" bindtap='getcode'>{{disabled? time+'秒重新发送':'获取验证码'}}</text>
+        </van-field>
+      </view>
+      <view class='inputItem'>
+        <van-field left-icon="edit" type="text" value="{{ formdata.code }}" clearable placeholder="请输入验证码" border="{{false}}" bind:change="onChange" data-name="code" />
+      </view>
+      <view class='inputItem'  wx:if="{{pshow}}">
+        <van-field left-icon="password-view" type="password" value="{{ formdata.password }}" clearable placeholder="请输入密码" border="{{false}}" bind:change="onChange" data-name="password" use-icon-slot>
+        <view slot='icon' bindtap='passwordshow' data-name='pshow'><i class="{{['iconfont',pshow?'icon-close':'icon-eye']}}"></i></view>
+        </van-field>
+      </view>
+      <view class='inputItem'  wx:if="{{!pshow}}">
+        <van-field left-icon="password-view" type="text" value="{{ formdata.password }}" clearable placeholder="请输入密码" border="{{false}}" bind:change="onChange" data-name="password" use-icon-slot>
+        <view slot='icon' bindtap='passwordshow' data-name='pshow'><i class="{{['iconfont',pshow?'icon-close':'icon-eye']}}"></i></view>
+        </van-field>
+      </view>
+      <view class='inputItem' wx:if="{{ipshow}}">
+        <van-field left-icon="password-view" type="password" value="{{ formdata.ispassword }}" clearable placeholder="请确认密码" border="{{false}}" bind:change="onChange" data-name="ispassword" use-icon-slot>
+        <view slot='icon' bindtap='passwordshow' data-name='ipshow'><i class="{{['iconfont',ipshow?'icon-close':'icon-eye']}}"></i></view>
+        </van-field>
+      </view>
+      <view class='inputItem' wx:if="{{!ipshow}}">
+        <van-field left-icon="password-view" type="text" value="{{ formdata.ispassword }}" clearable placeholder="请确认密码" border="{{false}}" bind:change="onChange" data-name="ispassword" use-icon-slot>
+        <view slot='icon' bindtap='passwordshow' data-name='ipshow'><i class="{{['iconfont',ipshow?'icon-close':'icon-eye']}}"></i></view>
+        </van-field>
+      </view>
+      <view class='inputradio'>
+        <view class='radiobox' >
+          <van-radio-group value="{{formdata.radio}}" bind:change="onRadioChange">
+            <van-radio name="1" custom-class='myradio'>养殖户</van-radio>
+            <van-radio name="2" custom-class='myradio' disabled>运维人员/分销商</van-radio>
+          </van-radio-group>
+        </view>
+      </view>
+    </view>
+    <van-button round type="primary" block size='large' custom-class='loginbth' loading="{{btnloading}}" bind:click="formsubimt">注册</van-button>
+  </view>
+</view>
+<i-toast id="toast" />
+<van-notify id="van-notify" />

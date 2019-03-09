@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新用户登录",
+  "usingComponents": {
+    "i-toast": "../../dist1/toast/index"
+  }
+}

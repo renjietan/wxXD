@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "销售报表统计",
+  "usingComponents": {
+    "i-toast": "../../../dist1/toast/index",
+    "van-dialog": "../../../dist/dialog/index",
+    "van-tab": "../../../dist/tab/index",
+    "van-tabs": "../../../dist/tabs/index"
+  }
+}

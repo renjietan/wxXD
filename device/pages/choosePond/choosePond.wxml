@@ -1,0 +1,12 @@
+<view class='card'>
+  <van-cell-group>
+    <van-cell wx:for="{{obj}}" wx:key="item" title="{{item.groupname}}" bind:click="choose" data-groupname="{{item.groupname}}" data-groupid="{{item.groupid}}" />
+  </van-cell-group>
+</view>
+<view style='width:100%;height:50px;'></view>
+<view class='down'>
+  <view>
+    <van-button size="large" bind:click="next">添加塘口</van-button>
+  </view>
+</view>
+<i-toast id="toast" />

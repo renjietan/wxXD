@@ -1,0 +1,81 @@
+<view class='container'>
+  <van-cell-group>
+    <van-cell required title="操作时间" bind:click="isOpenDate" value="{{ formData.currentDate }}" is-link />
+    <van-cell title="当日天气" value="{{ formData.currentWeather }}" />
+    <view class='van-cell van-cell van-cell--clickable van-cell--clickable vanCell_T'>
+      <van-cell required title="农事操作(可多选)" />
+      <i-grid wx:for="{{ tags }}" wx:for-item="group" wx:key="index">
+        <i-grid-item i-class="itemGrid_T" wx:for="{{ group }}" wx:key="index">
+          <!-- <van-tag bindtap="handleSelectTag" data-id="{{ item.id }}" color="{{ item.checked ? 'rgb(58,147,255)' : 'rgb(178,178,178)'}}" custom-class="vanTag_T" size="large">{{ item.name }}</van-tag> -->
+          <van-tag bindtap="handleSelectTag" data-id="{{ item.id }}" custom-class="vanTag_T {{ item.checked ? 'vanTag_T_check' : '' }}" size="large">{{ item.name }}</van-tag>
+        </i-grid-item>
+      </i-grid>
+    </view>
+    <van-cell required title="操作人" bind:click="handleWorker" label="{{ currentWorkerName }}" is-link />
+    <!-- <view class='boxwarp'>
+      <view class='title'>
+        <text>补充说明</text>
+      </view>
+      <textarea value="{{formData.mark}}" class='textarea' placeholder="有哪些备注可以记录下来。。。" auto-height="true" maxlength="-1" bind:change="handleMarkChange" />
+    </view> -->
+    <!-- <i-divider color="#2d8cf0" lineColor="#2d8cf0">补充说明</i-divider>
+    <van-field clearable type="textarea" bind:change="handleMarkChange" show-confirm-bar value="{{ formData.mark }}" placeholder="需要补充的信息在此处输入..." maxlength="100" border="{{ false }}" /> -->
+
+    <view class='boxwarp'>
+      <view class='title_T'>
+        <text>补充说明</text>
+      </view>
+      <textarea wx:if="{{ !isShowWorker && !isShowDate && !isVisableHandleText }}" value="{{formData.mark}}" class='textarea' placeholder="有哪些备注可以记录下来。。。" auto-height="true" maxlength="100" bindinput="handleMarkChange" />
+    </view>
+
+    <!-- <i-card title="卡片标题" i-class="card_TTT">
+      <view slot="content" class='cardTTT_content'>
+        <textarea class="textarea" clearable type="textarea"  maxlength="-1" bindinput="handleMarkChange" show-confirm-bar value="{{ formData.mark }}" placeholder="需要补充的信息在此处输入..." maxlength="100" border="{{ false }}" />
+      </view>
+      <view slot="footer" class='cardTTT_footer'></view>
+    </i-card> -->
+  </van-cell-group>
+
+  <i-button bind:click="handleSubmit" i-class='vanButton_T' type="primary" long="true">提交</i-button>
+  <!-- <van-button size="large" custom-class='vanButton_T' bind:click="handleSubmit" type="primary">保存</van-button> -->
+  <!-- <i-drawer mode="left" visible="{{ isShowWorker }}" bind:close="toggleLeft1">
+  <view class="container">
+    <van-checkbox-group bind:change="onChange">
+      <van-checkbox wx:for="{{ workerList }}" wx:key="index" name="{{ item }}">
+        {{ item }}
+      </van-checkbox>
+    </van-checkbox-group>
+  </view>
+</i-drawer> -->
+</view>
+
+<!-- 操作时间 -->
+<van-popup show="{{ isShowDate }}" position="bottom" overlay bind:close="onClose">
+  <van-datetime-picker type="date" value="{{ currentDate }}" bind:cancel="isOpenDate" bind:change="handleDateChange" bind:confirm="handleDateConfirm" />
+</van-popup>
+
+<!-- 弹出框 -->
+<van-notify id="van-notify" />
+<i-message id="message" />
+<van-toast id="van-toast" />
+
+<!-- 操作人 -->
+<van-popup show="{{ isShowWorker }}" position="right" overlay bind:close="handleWorkerClose">
+  <view class='container view_T'>
+    <van-cell-group>
+      <van-cell wx:for="{{ workerList }}" wx:key="{{ worker.sId }}" bind:click="handleWorkerCheck" data-checkvalue="{{ worker.sname }}" wx:for-item="worker" data-name='{{ worker.sId }}'>
+        <view slot="title">
+          <view class="van-cell-text_T">{{ worker.sname }}</view>
+          <!-- <van-tag wx:if="{{ worker.stype == 2}}" type="danger">临时工</van-tag>
+          <van-tag wx:if="{{ worker.stype == 1}}" type="success">正式工</van-tag> -->
+          <van-tag color="#2d8cf0" wx:if="{{worker.type==1}}">正式工</van-tag>
+          <van-tag type="success" wx:else>临时工</van-tag>
+        </view>
+        <view slot="right-icon">
+          <van-checkbox data-name='{{ worker.sId }}' data-checkvalue="{{ worker.sname }}" value="{{ worker.checked }}"></van-checkbox>
+        </view>
+      </van-cell>
+    </van-cell-group>
+    <i-button bind:click="handleWorkerClose" i-class='vanButton_T handleBtn_T' type="primary" long="true">保存</i-button>
+  </view>
+</van-popup>

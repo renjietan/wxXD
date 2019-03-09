@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "账本",
+  "usingComponents": {
+    "van-picker": "../../dist/picker/index",
+    "van-popup": "../../dist/popup/index",
+    "dateTime": "../../dist/datetime-picker_T/index",
+    "i-toast": "../../dist1/toast/index"
+  }
+}

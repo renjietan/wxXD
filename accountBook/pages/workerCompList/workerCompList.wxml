@@ -1,0 +1,39 @@
+<!--accountBook/pages/craylist/craylist.wxml-->
+<view class='container'>
+  <view class='search_box'>
+    <van-search custom-class="search_T" value="{{ searchVal }}" placeholder="请输入工人姓名..." bind:change="handleTextChange" use-action-slot bind:search="handleSearch">
+      <view slot="action" bindtap='handleSearch'>搜索</view>
+    </van-search>
+  </view>
+  <view class='list' wx:key="{{index}}">
+    <view class='listheight'>
+      当年工时记录
+    </view>
+    <view class='listcon' data-type="detail" bindtap='handleEvent' data-typeid="{{ children.sId }}" wx:if="{{ children.amount != 0 }}" wx:for="{{ listData.data }}" wx:for-item="children" wx:key="{{ index }}">
+      <van-swipe-cell id="swipe-cell" right-width="0" bind:close="onClose">
+        <view class='item'>
+          <view class='item-pic'>
+            <icon class='iconfont icon-linshigonggongshi'></icon>
+          </view>
+          <view class='item-center'>
+            <view class='item-name'>{{children.sname}}
+              <van-tag custom-class="tag_workerType" type="success">临时工</van-tag>
+            </view>
+          </view>
+          <view class='item-right'>{{children.duration}}天</view>
+        </view>
+        <view slot="right" class='warpright'>
+          <!-- <view data-type="detail" bindtap='handleEvent' data-typeid="{{ children.sId }}" class='detail'>详情</view> -->
+        </view>
+      </van-swipe-cell>
+    </view>
+  </view>
+  <movable-area class="move" scale-area>
+    <movable-view direction="horizontal" bindchange="onChange" bindscale="onScale" data-type="add" bindtap="handleEvent" scale-min="0.5" scale-max="4" scale-value="2" class='addbtn'>
+      <i class="iconfont icon-jiahao1"></i>
+    </movable-view>
+  </movable-area>
+</view>
+<van-dialog id="van-dialog" />
+<i-message id="message" />
+<van-toast id="van-toast" />

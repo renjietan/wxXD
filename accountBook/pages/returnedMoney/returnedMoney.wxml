@@ -1,0 +1,24 @@
+<view>
+  <view class='form'>
+    <van-cell-group>
+      <van-field required input-class="font1" value="{{ formData.amount }}" data-type="amount" bind:change="handleChangeText" clearable label="收款金额（元）" placeholder="0.00"/>
+      <van-field required value="{{ formData.currentDate }}" clearable label="收款时间" disabled bindtap="handleisVisiableDate" data-name="farmingMode" icon="arrow" />
+      <van-field required value="{{ formData.payer }}" data-type="payer" bind:change="handleChangeText" clearable label="付款方" /> </van-cell-group>
+  </view>
+  <view class='remark'>
+    <van-field label="补充说明" disabled/>
+    <textarea wx:if="{{ isVisiableText && !isVisiableDate }}" data-type="remarks" bindinput="handleChangeText" placeholder='记录一些备注（限200字）' maxlength='200' value='{{formData.remarks}}'></textarea>
+  </view>
+  <view class='down'>
+    <van-button custom-class='btn' size="large" bind:click="handleSubmit">确 定</van-button>
+  </view>
+
+  <!-- 日期 -->
+  <van-action-sheet show="{{ isVisiableDate }}">
+    <van-datetime-picker type="date" value="{{ currentDate }}" bind:confirm="handleChangeDate" bind:cancel="handleisVisiableDate" />
+  </van-action-sheet>
+</view>
+
+<van-notify id="van-notify" />
+<i-message id="message" />
+<van-toast id="van-toast" />

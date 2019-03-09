@@ -1,0 +1,30 @@
+<!--accountBook/pages/summary/summary.wxml-->
+<view class='wrapper'>
+  <view class='dropyear'>
+    <text bindtap='isVisiableDate'>{{ parserCurrentDate }}年</text>
+  </view>
+  <view class='bannerpic'>
+    <image src='../../images/topbj2.jpg'></image>
+    <view class='bannertext'>
+      <view class='bannertextt'>回款额（元）</view>
+      <view class='bannertextb' wx:if="{{sum}}">￥{{sum}}</view>
+      <view class='bannertextb' wx:else>暂无数据</view>
+    </view>
+  </view>
+  <view class='warp' wx:if="{{data}}">
+    <view class='header'>回款情况（{{data.length}}）</view>
+    <view class='listwarp'>
+      <view class='list' wx:for="{{data}}" wx:key="{{index}}">
+        <view class='listicon'><i class="iconfont icon-huikuan"></i></view>
+        <view class='listright'>
+          <view class='listrightt'>{{item.name}}：￥{{item.data}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<van-popup show="{{ show }}" position="bottom" overlay="{{ true }}" bind:close="isVisiableDate">
+  <dateTime type="year" value="{{ currentDate }}" bind:confirm="handleChangeDate" bind:cancel="isVisiableDate"/>
+</van-popup>
+
+<i-message id="message" />

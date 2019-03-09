@@ -1,0 +1,50 @@
+<!--pages/login/login.wxml-->
+<view class='wrapper'>
+  <view class='container'>
+    <view class='main'>
+      <image src='../../images/loginLogo.png' class='logo'></image>
+      <view class='inputItem'>
+        <van-field left-icon="contact" type="number" value="{{ formdata.phone }}" clearable placeholder="请输入手机号" border="{{false}}" bind:change="onChange" data-name="phone">
+        </van-field>
+      </view>
+      <view class='inputItem' wx:if="{{pshow}}">
+        <van-field left-icon="goods-collect-o" type="password" value="{{ formdata.password }}" clearable placeholder="请输入密码" border="{{false}}" bind:change="onChange" data-name="password" use-icon-slot>
+          <view slot='icon' bindtap='passwordshow'>
+            <i class="{{['iconfont',pshow?'icon-close':'icon-eye']}}"></i>
+          </view>
+        </van-field>
+      </view>
+      <view class='inputItem' wx:if="{{!pshow}}">
+        <van-field left-icon="goods-collect-o" type="text" value="{{ formdata.password }}" clearable placeholder="请输入密码" border="{{false}}" bind:change="onChange" data-name="password" use-icon-slot>
+          <view slot='icon' bindtap='passwordshow'>
+            <i class="{{['iconfont',pshow?'icon-close':'icon-eye']}}"></i>
+          </view>
+        </van-field>
+      </view>
+
+    </view>
+    <van-button round type="primary" block size='large' custom-class='loginbth' loading="{{btnloading}}" bind:click="formsubimt">登录</van-button>
+    <view class='footer'>
+      <navigator url="../forgetPassWord/forgetPassWord">
+        <text>修改密码</text>
+      </navigator>
+      <navigator url="../register/register">
+        <text>用户注册</text>
+      </navigator>
+    </view>
+  </view>
+  <i-load-more tip="其他登录方式" loading="{{ false }}" />
+  <view class='footerbox'>
+    <view class='loginbtn'>
+      <!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        <i class="iconfont icon-icon-" bind:click="encryLogin"></i>
+      </button> -->
+      <button bindtap='GotoWL'>
+        <i class="iconfont icon-icon-"></i>
+      </button>
+    </view>
+    <text>微信登录</text>
+  </view>
+</view>
+<i-toast id="toast" />
+<van-notify id="van-notify" />

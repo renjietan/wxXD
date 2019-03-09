@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText":"告警信息",
+  "usingComponents": {
+    "van-tab": "../../dist/tab2/index",
+    "van-tabs": "../../dist/tabs2/index",
+    "i-toast": "../../dist1/toast/index",
+    "i-spin": "../../dist1/spin/index"
+
+  },
+  
+"onReachBottomDistance":100
+}

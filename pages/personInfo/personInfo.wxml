@@ -1,0 +1,22 @@
+<!--pages/personInfo/personInfo.wxml-->
+<view class='warp'>
+  <!-- <text>手机号：{{phone}}</text> -->
+  <view class='avatar' wx:if="{{ userInfo.avatarUrl }}">
+    <image src='../../images/userInfo_bg.jpg'></image>
+    <i-avatar i-class="photo" src="{{ userInfo.avatarUrl }}" size="large"></i-avatar>
+    <text>{{ userInfo.nickName  }}</text>
+  </view>
+  <i-cell-group>
+    <i-cell title="电话号码" wx:if="{{ userInfo.telephone }}" value="{{userInfo.telephone}}"></i-cell>
+    <i-cell title="位置" wx:if="{{userInfo.country && userInfo.province && userInfo.city}}" value="{{ userInfo.country + ' ' + userInfo.province + ' ' + userInfo.city}}"></i-cell>
+    <i-cell-group  wx:if="{{!userInfo.country || !userInfo.province || !userInfo.city}}">
+      <i-cell title="位置" wx:if="{{userInfo.country && userInfo.province}}" value="{{ userInfo.country + '-' + userInfo.province}}"></i-cell>
+      <i-cell title="位置" wx:if="{{userInfo.country && userInfo.city}}" value="{{ userInfo.country + '-' + userInfo.city}}"></i-cell>
+      <i-cell title="位置" wx:if="{{userInfo.province && userInfo.city}}" value="{{ userInfo.province + '-' + userInfo.city}}"></i-cell>
+    </i-cell-group>
+    <i-cell title="性别" wx:if="{{userInfo.sex == 1 && userInfo.sex}}" value="男"></i-cell>
+    <i-cell title="性别" wx:if="{{userInfo.sex == 2 && userInfo.sex}}" value="女"></i-cell>
+  </i-cell-group>
+</view>
+<i-message id="message" />
+<i-toast id="toast" />

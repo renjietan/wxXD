@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-icon": "../icon/index",
+    "van-button": "../button/index",
+    "van-field": "../field/index",
+    "van-cell-group": "../cell-group/index",
+    "van-panel": "../panel/index",
+    "van-tag": "../tag/index"
+  }
+}

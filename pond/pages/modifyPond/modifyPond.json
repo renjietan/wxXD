@@ -1,0 +1,13 @@
+{
+    "usingComponents": {
+        "van-button": "../../../dist/button/index",
+        "van-nav-bar": "../../../dist/nav-bar/index",
+        "van-field": "../../../dist/field/index",
+        "van-action-sheet": "../../../dist/action-sheet/index",
+        "van-cell": "../../../dist/cell/index",
+        "van-cell-group": "../../../dist/cell-group/index",
+        "van-notify": "../../../dist/notify/index",
+        "i-toast": "../../../dist1/toast/index"
+    },
+    "navigationBarTitleText": "修改塘口信息"
+}

@@ -1,0 +1,87 @@
+.container {
+  background: #efeff4;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.form {
+  padding: 12rpx 12rpx 0 12rpx;
+}
+
+.footer {
+  position: absolute;
+  bottom:  5rpx;
+  width: calc(100% - 24rpx);
+}
+
+.cell_T .van-cell__title {
+  width: 220rpx !important;
+  flex: inherit !important;
+  max-width: inherit !important;
+}
+
+.cell_T .van-cell__value {
+  width: calc(100% - 200rpx) !important;
+  text-align: left !important;
+  flex: inherit !important;
+  display: block !important;
+}
+
+.input_T .van-cell__title {
+  width: 200rpx !important;
+  flex: inherit !important;
+  max-width: inherit !important;
+}
+
+.input_T {
+  width: 100% !important;
+  flex: inherit !important;
+  margin-left:34rpx !important;
+}
+.input_T_label{
+  width: 220rpx
+}
+.worker {
+  width: 550rpx;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.container {
+  background: #efeff4;
+  min-height: 100vh;
+  /* justify-content: center; */
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  position: relative;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.view_T {
+  color: #333;
+  line-height: 24px;
+  font-size: 14px;
+  min-width: 600rpx;
+  position: relative;
+}
+
+.van-cell-text_T {
+  float: left;
+  margin-right: 30rpx;
+}
+
+.vanButton_T {
+  background: #3b93ff !important;
+  margin-top: 30rpx !important;
+}
+
+.handleBtn_T {
+  position: absolute !important;
+  bottom: 20rpx;
+  left: 3%;
+  width: 94%;
+}

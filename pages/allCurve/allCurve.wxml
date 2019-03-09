@@ -1,0 +1,28 @@
+<!--pages/allCurve/allCurve.wxml-->
+<view class="container">
+  <view class='top'>
+    <text>{{groupName}}所有设备24小时曲线</text>
+  </view>
+  <view class='center'>
+    <view class='warp' wx:for="{{echart}}" wx:key="{{index}}">
+      <text class='warptitle'>{{item.name}}</text>
+      <view class='warpbody'>
+        <view class='con'>
+          <ec-canvas id="{{'mychart'+index}}" canvas-id="{{'mychart'+index}}" ec="{{ec}}"></ec-canvas>
+        </view>
+        <view class='echarttitle'>
+          <view class='echartwarp'>
+            <view class='echartline'></view>
+            <text class='echarttext'>适宜{{item.name}}上限</text>
+          </view>
+          <view class='echartwarp'>
+            <view class='echartline linegreend'></view>
+            <text class='echarttext'>适宜{{item.name}}下限</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<i-toast id="toast" />
+<i-message id="message" />

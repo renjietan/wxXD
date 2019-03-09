@@ -1,0 +1,43 @@
+<view class='container'>
+  <van-cell-group custom-class="vanCell_T">
+    <van-field input-align="right"  disabled="{{ isEdit }}" required title-width="120px" data-name="name" label="姓名" clearable value="{{ formData.name }}" placeholder="请输入姓名..." border="{{ false }}" bind:change="handleChangeText" />
+    <van-cell required title-width="120px" title="工资结算方式" value="{{ formData.payloadMethodName }}" border="{{ false }}" bind:click="openPayload" is-link />
+        <van-cell required title-width="120px" title="工人类型" value="{{ formData.typeName }}" border="{{ false }}" bind:click="handleisVisableType" is-link />
+    <van-field input-align="right" title-width="120px" data-name="telephone" label="手机号" clearable value="{{ formData.telephone }}" placeholder="请输入手机号..." border="{{ false }}" bind:change="handleChangeText" />
+    <van-field type="number" input-align="right" required wx:if="{{ formData.type == 1 }}" data-name="holiday" title-width="120px" label="固定假期(天)" clearable value="{{ formData.holiday }}" placeholder="请填写固定假期..." border="{{ false }}" bind:change="handleChangeText"
+    />
+    <van-cell required title-width="120px" title="预计上工时间" is-link value="{{ formData.arrivalDate }}" border="{{ false }}" bind:click="isOpenArr" />
+  </van-cell-group>
+
+  <i-grid i-class="grid_TTT" wx:if="{{ !formData.sId }}">
+    <i-grid-item i-class="grid_TT">
+        <i-button bind:click="handleSubmit" data-name="save" i-class="btn_T" size="large" type="ghost">保存</i-button>
+    </i-grid-item>
+    <i-grid-item i-class="grid_TT">
+      <i-button bind:click="handleSubmit" data-name="save2" i-class="btn_T" size="large" type="primary">继续添加</i-button>
+    </i-grid-item>
+  </i-grid>
+  <i-button wx:if="{{ formData.sId }}" data-name="save3" bind:click="handleSubmit" i-class="btn_TTT" size="large" type="primary">保存</i-button>
+
+  <!-- <view class='footer_T'>
+    <i-button bind:click="handleSubmit" i-class="btn_T" size="large" type="info">提交</i-button>
+    <i-button bind:click="handleSubmit" i-class="btn_T" size="large" type="info">提交</i-button>
+  </view> -->
+</view>
+<!-- 验证提示 -->
+<van-notify id="van-notify" />
+<i-message id="message" />
+<van-toast id="van-toast" />
+
+<!-- 工资结算方式 下拉菜单-->
+<van-action-sheet show="{{ payloadList.isVisiable }}" title="请选择工资结算方式" actions="{{ payloadList.data }}" bind:close="closePayload" bind:select="handleChangePayload" />
+<!-- 工人类型下拉菜单 -->
+<van-action-sheet show="{{ workerType.isVisiable }}" title="请选择工资结算方式" actions="{{ workerType.data }}" bind:close="handleisVisableType" bind:select="handleChangeWorkerType" />
+<!-- 预计上工时间下拉菜单 -->
+<van-popup show="{{ isShowDate }}" position="bottom" overlay bind:close="onClose">
+  <van-datetime-picker type="date" value="{{ currentDate }}" min-date="{{ minDate }}" bind:cancel="isOpenArr" bind:change="" bind:confirm="handleDateConfirm" />
+</van-popup>
+<!-- 地址选择下拉菜单 -->
+<van-popup show="{{ areaInfo.isVisiable }}" position="bottom" bind:close="onClose">
+  <van-area area-list="{{ areaInfo.data }}" title="地址选择" value="{{ formData.address }}" bind:confirm="getArea" bind:cancel="cancelArea" />
+</van-popup>

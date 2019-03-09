@@ -1,0 +1,55 @@
+<!--accountBook/pages/crayadd/crayadd.wxml-->
+<view class='container'>
+  <van-cell-group>
+    <van-field value="{{ formdata.output }}" type="digit" label="龙虾销量（斤）" placeholder="0.00" placeholder-style="color:#3b93ff" required input-class='font1' bind:input="changeIn" data-name="output" clearable/>
+    <van-cell value="{{formdata.sales_time}}" is-link title="产销时间" bind:click="isOpenDate" required title-width="90px" value-class="righttext" />
+    <van-cell value="{{crayTypeName}}" is-link title="规格" bind:click="isOpenType" required title-width="90px" value-class="righttext" />
+    <van-field value="{{ formdata.unit_price }}" type="digit" label="预估价(元/斤)" required placeholder="请输入预估价" bind:input="changeIn" data-name="unit_price" input-class='inputtext' clearable/>
+    <van-field value="{{ formdata.purchaser }}" type="text" label="购买方" required placeholder="请输入购买方" bind:input="changeIn" data-name="purchaser" input-class='inputtext' clearable/>
+    <van-cell value="{{groupName}}" is-link title="塘口名称" bind:click="isOpenGroup" required title-width="90px" value-class="righttext" />
+  </van-cell-group>
+  <view class='cardwarp'>
+    <view class='title'>
+      <text>补充说明</text>
+    </view>
+    <view hidden="{{isVisiableText||isShowDate||isShowGroup||isShowType}}">
+    <van-field  input-class='textarea' value="{{ formdata.remarks }}" type="textarea" placeholder="有哪些备注可以记录下来。。。" autosize border="{{ false }}" bind:input="changeIn" data-name="remarks" />
+    </view>
+  </view>
+  <van-button loading="{{btnloading}}" type="primary" bind:click="handleClick" block custom-class='mybutton'>保存</van-button>
+</view>
+<!-- 操作时间开始 -->
+<van-popup show="{{ isShowDate }}" position="bottom" overlay bind:close="isOpenDate">
+  <van-datetime-picker type="date" value="{{ datatime }}" bind:cancel="isOpenDate" bind:confirm="handleDateConfirm" />
+</van-popup>
+<!-- 操作时间结束 -->
+<!-- 选择塘口开始 -->
+<van-action-sheet title="请选择塘口" show="{{ isShowGroup }}" actions="{{ groupData }}" bind:close="isOpenGroup" bind:select="handleGroupConfirm" />
+<!-- 选择塘口结束 -->
+<!-- 选择规格开始 -->
+<van-action-sheet title="请选择规格" show="{{ isShowType }}" actions="{{ crayTypeData }}" bind:close="isOpenType" bind:select="handleTypeConfirm" />
+<!-- 选择规格结束 -->
+<i-message id="message" />
+<i-toast id="toast" />
+<van-toast id="van-toast" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

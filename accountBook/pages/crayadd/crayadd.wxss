@@ -1,0 +1,53 @@
+/* accountBook/pages/crayadd/crayadd.wxss */
+.container{
+  background: #efeff4;
+  min-height: 100vh;
+  padding:20rpx;
+  box-sizing: border-box;
+   overflow: hidden;
+}
+.cardwarp{
+	background-color: #ffffff;
+	box-shadow: 0px 1rpx 18rpx 0rpx 
+		rgba(26, 183, 249, 0.13);
+	border-radius: 8rpx;
+  margin-top:20rpx;
+  padding:0 20rpx;
+}
+.title{
+  height:90rpx;
+  border-bottom: 1px solid #e6e6e6;
+  line-height: 90rpx;
+  color: #323333;
+  font-size: 28rpx;
+}
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 200rpx !important;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding: 10rpx;
+  color: #999;
+}
+.mybutton {
+  margin:20rpx 0 0 !important;
+  background-color: #3A93FF !important;
+  border: none !important;
+}
+.righttext{
+  text-align: left!important;
+}
+.inputtext{
+  color:#999!important;
+
+}
+.font1{
+  font-size: 44rpx !important;
+  color: #3b93ff !important;
+  font-weight: 600 !important;
+}
+.container .van-cell {
+padding:14px 15px;
+
+}

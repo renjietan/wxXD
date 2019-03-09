@@ -1,0 +1,42 @@
+<view class='container_pondList'>
+  <view class='pondList_title'>
+    <view>{{ "已有塘口(" + groupListInfo.length + ")" }}</view>
+    <van-icon color="rgb(69,163,253)" name="plus" size="16px" data-name="" bind:click="handleRouter"/>
+  </view>
+  <view class='pondList_content'>
+    <i-card i-class="card_T" wx:for="{{ groupListInfo }}" wx:key="{{ index }}"  title="{{ item.groupname }}" full>
+      <van-icon name="edit" bind:click="handleRouter" data-name="{{ item }}" custom-class="card_icon_handleEdit"  size='40rpx'  slot="icon" />
+      <!-- <van-icon name="delete" bind:click="handleDelete"  data-sid="{{ item.groupid }}" color='#ed3f14' custom-class="card_icon_handleDelete"  size='40rpx'  slot="icon" /> -->
+      <view slot="content">
+        <view class='card_row'>
+          <view style='flex:1' class='card_content_child'>
+            <text class='card_label'>{{ "养殖模式" + "   " }}</text> <text style='margin-left:30rpx'>{{ item.farmingMode }}</text>
+          </view>
+          <view style='flex:1' class='card_content_child'>
+            <text class=''>{{ "面积（亩）" + "   " }}</text><text style='margin-left:30rpx'>{{ item.area }}</text>
+          </view>
+        </view>
+
+        <view class='card_row'>
+          <view style='flex:1;' class='card_content_child'>
+            <text class='card_label'>{{ "品种" + "   " }}</text><text style='margin-left:30rpx'>{{ item.dcName }}</text>
+          </view>
+          <view style='flex:1' class='card_content_child'>
+            <text class=''>{{ "塘龄（年）" + "   " }}</text><text style='margin-left:30rpx'>{{ item.tangling }}</text>
+          </view>
+        </view>
+
+        <view class='card_row card_content_child'>
+          <view style='flex:1'>
+            <text class='card_label'>{{ "地址" + "   "}}</text><text style='margin-left:30rpx'>{{ item.province + "-" + item.city + "-" + item.county + "           详细地址：" + item.address}}</text>
+          </view>
+        </view>
+      </view>
+    </i-card>
+  </view>
+</view>
+
+<!-- 弹出框 -->
+<van-notify id="van-notify" />
+<i-message id="message" />
+<van-toast id="van-toast" />

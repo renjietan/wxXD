@@ -1,0 +1,153 @@
+/* pages/seedling/seedling.wxss */
+
+/* calendar/pages/fodder/fodder.wxss */
+
+.warp {
+  padding: 20rpx;
+  background: #efeff4;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.boxwarp {
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  box-shadow: 0 2rpx 9rpx rgba(26, 183, 249, 0.13);
+}
+
+.title {
+  height: 90rpx;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.title text {
+  font-size: 28rpx;
+  line-height: 90rpx;
+}
+
+.con {
+  padding: 30rpx 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category {
+  width: 150rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 20rpx 10rpx;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  border: solid 1rpx #b2b2b2;
+}
+
+.isclick {
+   border: solid 2rpx #3a93ff !important; 
+  color: #fff !important;
+  background: #3a93ff !important;
+}
+.zdylist {
+  display: flex;
+   height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #666666;
+   margin: 20rpx;
+}
+
+.valueinput {
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-bottom: 40rpx;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  border: solid 1rpx #b2b2b2;
+  margin-left:20rpx;
+  padding:0 10rpx;
+}
+
+/* 
+.inputwarp {
+  margin: 10px;
+  display: flex;
+}
+
+.inputwarpleft {
+  flex: 1;
+  display: flex;
+  margin-right: 10px;
+}
+
+.inputborder {
+  flex: 1;
+  height: 50rpx;
+  line-height: 50rpx;
+  border: 1px solid #f2f2f2;
+  border-radius: 50rpx;
+  font-size: 24rpx;
+  color: #666;
+  padding: 0 20rpx;
+  margin: 5rpx 0;
+}
+
+.inputwarp text {
+  font-size: 24rpx;
+  color: #666;
+  line-height: 60rpx;
+}
+
+.inputbtn {
+  width: 30%;
+  box-sizing: border-box;
+  border-radius: 30rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+} */
+
+
+
+.mybutton {
+  margin: 0 !important;
+  background-color: #2d8cf0 !important;
+  border: none !important;
+}
+
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 240rpx !important;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding: 10rpx;
+}
+
+.van-cell-text {
+  min-width: 100rpx;
+  display: inline-block;
+}
+.right{
+  width:25px;
+  height:25px;
+  flex:0 1 auto!important;
+  -webkit-flex:0 1 auto!important;
+}
+.rightwarp {
+  width: 90vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.mybutton {
+  /* margin: 0 !important; */
+  background-color: #3A93FF !important;
+  border: none !important;
+}

@@ -1,0 +1,28 @@
+{
+  "navigationBarTitleText": "工人列表",
+  "usingComponents": {
+    "van-cell": "../../../dist/cell/index",
+    "van-cell-group": "../../../dist/cell-group/index",
+    "van-button": "../../../dist/button/index",
+    "van-toast": "../../../dist/toast/index",
+    "van-notify": "../../../dist/notify/index",
+    "van-field": "../../../dist/field/index",
+    "van-icon": "../../../dist/icon/index",
+    "van-tag": "../../../dist/tag/index",
+    "van-datetime-picker": "../../../dist/datetime-picker_T/index",
+    "van-popup": "../../../dist/popup/index",
+    "van-checkbox": "../../../dist/checkbox/index",
+    "van-checkbox-group": "../../../dist/checkbox-group/index",
+    "i-message": "../../../dist1/message/index",
+    "i-page": "../../../dist1/page/index",
+    "i-grid": "../../../dist1/grid/index",
+    "i-grid-item": "../../../dist1/grid-item/index",
+    "i-divider": "../../../dist1/divider/index",
+    "i-input": "../../../dist1/input/index",
+    "i-button": "../../../dist1/button/index",
+    "i-card": "../../../dist1/card-T/index",
+    "van-collapse": "../../../dist/collapse/index",
+    "van-collapse-item": "../../../dist/collapse-item/index",
+    "van-dialog": "../../../dist/dialog/index"
+  }
+}

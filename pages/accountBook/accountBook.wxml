@@ -1,0 +1,281 @@
+<!--pages/accountBook/accountBook.wxml-->
+<view class='container'>
+  <view class='menubg'></view>
+  <view class='menu'>
+    <!--年份开始-->
+    <view class='year' bindtap='isVisiableDate'>
+      <text class='text'>{{parserCurrentDate}}年</text>
+    </view>
+    <!--年份结束-->
+    <!--总计开始-->
+    <view class='topbox'>
+      <navigator url="../../accountBook/pages/estimatedIncome/estimatedIncome">
+        <text class='topboxtext'>预估总收入（元）</text>
+        <view class='topboxvalue'>{{zsrValue}}</view>
+      </navigator>
+    </view>
+    <view class='bottombox'>
+      <view class='bottomboxitem'>
+        <navigator url="../../accountBook/pages/totalCost/totalCost">
+          <text class='bottomboxtext'>总成本（元）</text>
+          <view class='bottomboxvalue'>{{zcbValue}}</view>
+        </navigator>
+      </view>
+      <view class='bottomboxitem'>
+        <navigator url="../../accountBook/pages/totalReturnAmount/totalReturnAmount">
+          <text class='bottomboxtext'>回款额（元）</text>
+          <view class='bottomboxvalue'>{{zheValue}}</view>
+        </navigator>
+      </view>
+    </view>
+    <!--总计结束-->
+    <!--成本支出开始-->
+    <view class='cardwarp'>
+      <view class='cardheader'>
+        <text class='cardheadertext'>成本支出</text>
+        <navigator url="../../accountBook/pages/accountBookList/accountBookList">
+          <view class='cardheadermore'>更多
+            <i class="iconfont icon-jiantouarrowhead7"></i>
+          </view>
+        </navigator>
+      </view>
+      <view class='cardbody'>
+        <view class='carditem'>
+          <navigator url="../../accountBook/pages/list/list?type=drug" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>药品</view>
+              <view class='carditemleftb'>记录每次投放饲料</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'>
+                <image src="../../images/booklist1.png"></image>
+              </view>
+            </view>
+          </navigator>
+        </view>
+        <view class='carditem'>
+          <navigator url="../../accountBook/pages/list/list?type=fodder" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>饲料</view>
+              <view class='carditemleftb'>记录每次投放饲料</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'>
+                <image src="../../images/booklist2.png"></image>
+              </view>
+            </view>
+          </navigator>
+        </view>
+        <view class='carditem'>
+         <navigator url="../../accountBook/pages/list/list?type=seed" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>苗种</view>
+              <view class='carditemleftb'>记录每次投放饲料</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'>
+                <image src="../../images/booklist3.png"></image>
+              </view>
+            </view>
+          </navigator>
+        </view>
+        <view class='carditem'>
+          <navigator url="../../accountBook/pages/cldform/cldform" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>报表</view>
+              <view class='carditemleftb'>记录每次投放饲料</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'>
+                <image src="../../images/booklist4.png"></image>
+              </view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <!--成本支出结束-->
+    <!--销售记录开始-->
+    <view class='cardwarp'>
+      <view class='cardheader'>
+        <text class='cardheadertext'>销售记录</text>
+      </view>
+      <view class='cardbody'>
+        <view class='carditem'>
+          <navigator url="../../accountBook/pages/craylist/craylist" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>小龙虾</view>
+              <view class='carditemleftb'>记录小龙虾的销售</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'><image src="../../images/booklist5.png"></image></view>
+            </view>
+          </navigator>
+        </view>
+        <view class='carditem'>
+          <navigator url="../../accountBook/pages/ricelist/ricelist" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>水稻</view>
+              <view class='carditemleftb'>记录水稻的销售</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'><image src="../../images/booklist6.png"></image></view>
+            </view>
+          </navigator>
+        </view>
+        <view class='carditem'>
+          <navigator url="../../accountBook/pages/otherslist/otherslist" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>其它</view>
+              <view class='carditemleftb'>记录其它的销售</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'><image src="../../images/booklist7.png"></image></view>
+            </view>
+          </navigator>
+        </view>
+        <view class='carditem'>
+          <navigator url="../../accountBook/pages/saleslist/saleslist" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>报表</view>
+              <view class='carditemleftb'>记录每次投放饲料</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'><image src="../../images/booklist4.png"></image></view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <!--销售记录结束-->
+    <!--收入记录开始-->
+    <view class='cardwarptwo'>
+      <view class='cardheader'>
+        <text class='cardheadertext'>收入记录</text>
+      </view>
+      <view class='cardbodytwo'>
+        <view class='cardbodytwoleft'>
+          <view class='carditemtwo'>
+            <navigator url="../../accountBook/pages/list/list?type=subsidy" class='navigator'>
+              <view class='carditemleft'>
+                <view class='carditemleftt'>补贴</view>
+                <view class='carditemleftb'>记录每次投放饲料</view>
+              </view>
+              <view class='carditemright'>
+                <view class='carditemrightpic'><image src="../../images/booklist8.png"></image></view>
+              </view>
+            </navigator>
+          </view>
+          <view class='carditemtwo'>
+            <navigator url="../../accountBook/pages/list/list?type=returnedMoney" class='navigator'>
+              <view class='carditemleft'>
+                <view class='carditemleftt'>回款记录</view>
+                <view class='carditemleftb'>记录每次投放饲料</view>
+              </view>
+              <view class='carditemright'>
+                <view class='carditemrightpic'><image src="../../images/booklist9.png"></image></view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+        <view class='cardbodytworight'>
+          <view class='carditemtwo'>
+            <navigator url="../../accountBook/pages/incomeform/incomeform" class='navigator'>
+              <view class='carditemtwotop'>报表</view>
+              <view class='carditemtwopic'><image src="../../images/booklist4.png"></image></view>
+              <view class='carditemtwobom'>记录每次投放饲料</view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--收入记录结束-->
+    <!--用工开始-->
+    <view class='cardwarp'>
+      <view class='cardheader'>
+        <text class='cardheadertext'>用工</text>
+        <navigator url="../../accountBook/pages/accountBookList/accountBookList">
+          <view class='cardheadermore'>更多
+            <i class="iconfont icon-jiantouarrowhead7"></i>
+          </view>
+        </navigator>
+      </view>
+      <view class='cardbody'>
+        <view class='carditem'>
+          <navigator url="../../farmingCarlendar/pages/workerList/workerList" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>人员登记</view>
+              <view class='carditemleftb'>记录每次投放饲料</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'><image src="../../images/booklist10.png"></image></view>
+            </view>
+          </navigator>
+        </view>
+        <view class='carditem'>
+          <navigator url="../../accountBook/pages/list/list?type=holiday" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>长工请假</view>
+              <view class='carditemleftb'>记录每次投放饲料</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'><image src="../../images/booklist11.png"></image></view>
+            </view>
+          </navigator>
+        </view>
+        <view class='carditem'>
+          <navigator url="../../accountBook/pages/workerCompList/workerCompList" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>临时工工时</view>
+              <view class='carditemleftb'>记录临时工工时</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'><image src="../../images/booklist12.png"></image></view>
+            </view>
+          </navigator>
+        </view>
+        <view class='carditem'>
+          <navigator url="../../accountBook/pages/payerYZ/payerYZ" class='navigator'>
+            <view class='carditemleft'>
+              <view class='carditemleftt'>预支费用</view>
+              <view class='carditemleftb'>记录工人预支费用</view>
+            </view>
+            <view class='carditemright'>
+              <view class='carditemrightpic'><image src="../../images/booklist13.png"></image></view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <!--用工结束-->
+    <!--固定资产开始-->
+    <view class='cardwarptwo'>
+      <view class='cardheader'>
+        <text class='cardheadertext'>固定资产</text>
+      </view>
+      <view class='cardbodythree'>
+        <view class='carditemthree'>
+          <navigator url="../pondList/pondList" class='navigator'>
+            <view class='carditemtwotop'>塘口管理</view>
+            <view class='carditemtwopic'><image src="../../images/booklist14.png"></image></view>
+            <view class='carditemtwobom'>记录每次投放饲料</view>
+          </navigator>
+        </view>
+        <view class='carditemthree'>
+          <navigator url="../../accountBook/pages/machineryinfolist/machineryinfolist?type=machineryinfo" class='navigator'>
+            <view class='carditemtwotop'>农机管理</view>
+            <view class='carditemtwopic'><image src="../../images/booklist15.png"></image></view>
+            <view class='carditemtwobom'>记录每次投放饲料</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <!--固定资产结束-->
+  </view>
+</view>
+<van-popup show="{{ show }}" position="bottom" overlay="{{ true }}" bind:close="isVisiableDate">
+  <dateTime type="year" value="{{ currentDate }}" bind:confirm="handleChangeDate" bind:cancel="isVisiableDate" />
+</van-popup>
+<i-message id="message" />
+<van-toast id="van-toast" />
+<i-toast id="toast" />

@@ -1,0 +1,21 @@
+<!--pages/seeDevice/seeDevice.wxml-->
+<view class='card'>
+  <van-tabs active="{{ active }}" bind:change="onChange" color="">
+    <van-tab title="基础信息">
+      <van-cell-group>
+        <van-field value="{{ param.groupname }}" clearable label="塘口名称" disabled />
+        <van-field value="{{ param.device_type_name }}" clearable label="设备类型" disabled />
+        <van-field value="{{ param.deviceCode }}" clearable label="设备编码" disabled />
+        <van-field value="{{ param.supplier }}" clearable label="生产厂家" disabled/>
+        <van-field value="{{ param.model }}" clearable label="设备型号" disabled/>
+        <van-field value="{{ param.latitude }}" clearable label="纬度" disabled/>
+        <van-field value="{{ param.longitude }}" clearable label="经度" disabled/>
+      </van-cell-group>
+    </van-tab>
+    <van-tab title="告警信息">
+      <van-cell-group>
+        <van-field value="{{param.data_level == '1'?'高':(param.data_level=='2'?'中':'低') }}" clearable label="告警等级" disabled />
+      </van-cell-group>
+    </van-tab>
+  </van-tabs>
+</view>

@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "添加小龙虾",
+  "usingComponents": {
+    "van-field": "../../../dist/field/index",
+    "van-cell": "../../../dist/cell/index",
+    "van-cell-group": "../../../dist/cell-group/index",
+    "van-button": "../../../dist/button/index",
+    "van-popup": "../../../dist/popup/index",
+    "van-datetime-picker": "../../../dist/datetime-picker/index",
+    "van-action-sheet": "../../../dist/action-sheet/index",
+    "i-message": "../../../dist1/message/index",
+    "i-toast": "../../../dist1/toast/index",
+    "van-toast": "../../../dist/toast/index"
+  }
+}

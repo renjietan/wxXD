@@ -1,0 +1,77 @@
+<!--pages/alertInfo/alertInfo.wxml-->
+<view class='contain' bindtouchstart="touchStart" bindtouchend="touchEnd">
+  <van-tabs active="{{ active }}" color='#fff' type='card'>
+    <van-tab title="告警信息">
+      <view class='warpcon'>
+        <view class='selestWarp'>
+          <view class='selestTime'>
+            <view class="{{['selestBtn',index===selestBtnIs?'selestBtnIs':null]}}" wx:for="{{search}}" wx:key="{{index}}" bindtap='searchBtn' data-index="{{index}}">{{item}}</view>
+          </view>
+          <view class='datawarp'>
+            <view class='databox'>
+              <picker mode="date" value="{{startData}}" start="2015-09-01" end="{{maxDatas}}" bindchange="bindDatestart">
+                <text class='dataText'>{{startData}}</text>
+              </picker>
+            </view>
+            <text>-</text>
+            <view class='databox'>
+              <picker mode="date" value="{{endData}}" start="2015-09-01" end="{{maxDatas}}" bindchange="bindDateend">
+                <text class='dataText'>{{endData}}</text>
+              </picker>
+            </view>
+            <view class='databoxBtn' bindtap='queryDate'>确定</view>
+          </view>
+        </view>
+        <view class='listWarp'>
+          <view class='listItem' wx:for="{{warnMsgList}}" wx:key="{{index}}">
+            <navigator url="{{'../warningMessage/warningMessage?deviceId='+item.deviceId+'&groupName='+item.groupName+'&deviceType='+item.device_type_name+'&create_time='+item.create_time}}">
+              <view class='infolistTop'>
+                <i class="iconfont icon-iconfontjinggao iconred"></i>
+                <text>{{item.groupName}}{{item.device_type_name}}{{item.alarm_content}}</text>
+              </view>
+              <view class='listBottom'>
+                <view class='listBottomLeft'>
+                  <text class='listTime'>{{item.create_time}}</text>
+                </view>
+              </view>
+            </navigator>
+          </view>
+          <view wx-if="{{ListInfoShow}}" class='ListInfoShow'>
+            <i-spin></i-spin>
+          </view>
+          <view class='nolist' wx:if="{{warnMsgList.length==0}}">
+            <text>当前选中时间段暂无告警信息</text>
+          </view>
+          <!-- <view class='footer' wx:if="{{footer}}">
+            <text>已经到头了。。。</text>
+          </view> -->
+        </view>
+
+      </view>
+    </van-tab>
+    <van-tab title="专家意见">
+      <view class='warps'>
+        <view class='warp'>
+          <text class='listtitle'>一、池塘水温</text>
+          <text class='listtext'>1、小龙虾适宜水温为16至33度，最佳水温为20至32度；
+2、温度低于20度或高于32度时，小龙虾的生长率就会下降；
+3、水温低于10度时，便会潜入洞内过冬，生长缓慢；
+4、高于33度时，小龙虾白天进入深水区活动。</text>
+          <text class='listtitle'>二、池塘溶氧量</text>
+          <text class='listtext'>1、养殖水体的溶氧一般应保持在3-8 mg/L，至少在3 mg/L以上。
+2、轻度缺氧时，虾表现烦躁不安，呼吸加快，大多数集中在水表层活动，个别浮头，长期缺氧将严重影响对虾的生长、呼吸。
+3、严重缺氧时，大量对虾浮头，游泳无力，甚至沉底、窒息死亡。
+4、溶氧过饱和一般无危害，但有时会引起气泡病。</text>
+          <text class='listtitle'>三、水质的酸碱度</text>
+          <text class='listtext'>1、ph为7-9的水体是小龙虾生长和繁殖的最佳环境；
+2、pH值小于6，水体中有许多死藻或濒死的藻细胞，小龙虾体色明显发白；
+3、偏酸性（PH＜6.5）水质的调控，用生石灰全池泼洒提高PH值，一般用20ppm的生石灰可提高PH值0.5左右；
+4、偏碱（PH＞9.5）性水质的调控，可加入一些酸性物质进行调节，如每667M2用醋酸500ml或每667M2用盐酸400ml充分稀释后全池泼洒。</text>
+
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>
+<i-message id="message" />
+<i-toast id="toast" />

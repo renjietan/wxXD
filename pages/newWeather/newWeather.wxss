@@ -1,0 +1,208 @@
+/* pages/weather/weather.wxss */
+
+.container {
+  min-height: 100vh;
+  padding:0 20rpx;
+  background-image: linear-gradient(0deg, #1ab7f9 0%, #3b93ff 100%);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bgImag {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 20%;
+  opacity: 0.6;
+}
+
+.pondName {
+  color: #fefefe;
+  font-size: 32rpx;
+  /* overflow: hidden; */
+  margin-top:20rpx;
+  text-align: center;
+}
+.pondName .text{
+  display: inline-block;
+  position: relative;
+  padding-right: 40rpx;
+}
+.pondName .text::after {
+  content: '';
+  position: absolute;
+  top: 20rpx;
+  width: 0;
+  height: 0;
+  right:0;
+  border: 10rpx solid transparent;
+  border-top: 10rpx solid #fff;
+  display: inline-block;
+}
+
+.nowDate {
+  margin-top:20rpx;
+  height: 30rpx;
+  color: white;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Medium;
+  text-align: center;
+}
+
+.nowWeather {
+  display: flex;
+  margin-top:40rpx;
+  color: white;
+  font-size: 40rpx;
+}
+
+.nowWea {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nowTemp{
+	font-family: PingFang-SC-Bold;
+	font-size: 58rpx;
+}
+.nowImg{
+  width: 98rpx;
+	height: 70rpx;
+}
+.nowWind {
+  width:90%;
+  color: white;
+  font-size: 28rpx;
+  display: flex;
+  margin:40rpx auto;
+}
+.nowCond{
+  display: inline-block;
+  line-height:70rpx;
+	font-family: PingFang-SC-Medium;
+	font-size: 34rpx;
+
+}
+
+.nowWindWea {
+  flex: 1;
+  text-align: center;
+}
+.nowDay{
+  margin-top:40rpx;
+  position:relative;
+  z-index: 99;
+}
+.everyDay{
+  color: white;
+  font-size: 20rpx;
+  line-height: 36rpx;
+}
+.nowDay>.everyDay{
+  top:50%;
+}
+
+.hourly {
+  height: 180rpx;
+  white-space: nowrap; 
+  display: flex; 
+  color: white;
+}
+.hourlyWind{
+  font-family: PingFang-SC-Medium;
+  font-size: 24rpx;
+}
+.oneHourly {
+  height: 100%;
+  width: 122rpx;
+  display: inline-block;  
+  font-size:30rpx;  
+
+}
+.oneHourlyFlex{
+  width: 100%;
+  height: 88%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20%;
+  border-right: 1rpx solid rgba(255, 255, 255, 0.3);
+  font-size: 24rpx;
+}
+.oneDayFlex{
+  width: 100%;
+  height:160rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-right: 1rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.hourlyDate {
+  text-align: center;
+  font-family: "SFUIDisplay-Regular";
+}
+.hourlyImg {
+  width: 58rpx;
+	height: 45rpx;
+  text-align: center;
+}
+.everyDay2{
+  line-height: 40rpx;
+  width: 100%;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 30rpx;
+}
+.dayImg{
+  width: 58rpx;
+	height: 45rpx;
+}
+.Forecast{
+  
+  width:100%;
+  height:380rpx;
+  padding:20rpx 0;
+}
+.scrollwarp{
+  display: flex;
+  width:1830rpx;
+  /* height:160rpx; */
+}
+.oneDay{
+  width: 122rpx;
+  height:140rpx;
+  display: inline-block;  
+  font-size:24rpx; 
+ 
+}
+
+.canvas-container{
+  width: 100%;
+  height: 380rpx;
+  overflow: auto;
+  position: absolute;
+  /* top:200rpx; */
+  z-index: -1;
+}
+.canvas-container canvas{
+  /* min-width: 100%; */
+  width:1830rpx;
+  height: 200rpx;
+
+}
+
+.canvasImg{
+  width:102%;
+  height: 200rpx;
+  display: block;
+  /* margin-top: 12rpx; */
+  opacity: 0.7;
+}
+ 
+
+.hide{
+  display: none;
+}

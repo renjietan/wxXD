@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "van-swipe-cell": "../../../dist/swipe-cell/index",
+    "van-field": "../../../dist/field/index",
+    "van-button": "../../../dist/button/index",
+    "van-panel": "../../../dist/panel/index",
+    "van-datetime-picker": "../../../dist/datetime-picker/index",
+    "van-action-sheet": "../../../dist/action-sheet/index"
+  }
+}

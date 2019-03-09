@@ -1,0 +1,109 @@
+/* accountBook/pages/saleslist/saleslist.wxss */
+
+.container {
+  background: #efeff4;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.warp {
+  margin-bottom:30rpx;
+}
+
+.header {
+  line-height: 66rpx;
+  font-size: 28rpx;
+  color: #333;
+  padding: 0 20rpx;
+}
+
+.table {
+  display: flex;
+}
+
+.table-left {
+  min-width: 180rpx;
+  background: #fff
+}
+
+.table-right {
+  width: calc(100% - 180rpx);
+}
+.table-active .table-left{
+  width: 40%;
+}
+.table-active .table-left > view{
+  text-align: center !important
+}
+.table-active .table-right{
+  width: 60% !important
+}
+.table-active .table-tl{
+  width: 100%
+}
+.table-tl > view{
+  text-align: right;
+  margin-right: 30rpx
+}
+.table-left>view {
+  line-height: 86rpx;
+  font-size: 26rpx;
+  color: #333;
+  text-align: left;
+  padding-left:40rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #e6e6e6;
+  border-right: 1rpx solid #e6e6e6;
+}
+
+.table-left>view:nth-child(1) {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.table-left>view:nth-child(2) {
+  font-size: 28rpx;
+  color: #3a93ff;
+}
+
+.table-tk {
+  width: 100%;
+}
+
+.table-con {
+  width: 100%;
+}
+
+.table-tl {
+  width: 50%;
+  background: #fff
+}
+.table-tl-active {
+  width: 100% !important;
+  background: #fff;
+}
+.table-con {
+  display: flex;
+}
+
+.table-tl>view {
+  width: 100%;
+  font-size: 26rpx;
+  color: #333;
+  border-bottom: 1rpx solid #e6e6e6;
+  border-right: 1rpx solid #e6e6e6;
+  line-height: 86rpx;
+  box-sizing: border-box;
+  text-align: right;
+  padding-right:40rpx;
+}
+
+.table-tl>view:nth-child(1) {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.table-tl>view:nth-child(2) {
+  font-size: 28rpx;
+  color: #3a93ff;
+}

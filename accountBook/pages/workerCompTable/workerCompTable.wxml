@@ -1,0 +1,56 @@
+<!--accountBook/pages/saleslist/saleslist.wxml-->
+<wxs src="../../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='warp'>
+    <view class='header'>费用报表</view>
+    <view class='{{[ "table", tabledata2018a  == 0 ? "table-active":""]}}'>
+      <view class='table-left'>
+        <view>名称</view>
+        <view>合计</view>
+        <view wx:for="{{tablenamea}}" wx:key="{{index}}">{{item}}</view>
+      </view>
+      <view class='table-right'>
+        <view class='table-tk'>
+          <view class='table-con'>
+            <view class='table-tl'>
+              <view>{{ currYear + '年' }}</view>
+              <view>￥{{filter.parserNum(tablesum2019a)}}</view>
+              <view wx:for="{{tabledata2019a}}" wx:key="{{index}}">￥{{filter.parserNum(item)}}</view>
+            </view>
+            <view wx:if="{{ tablesum2018a != 0 }}" class='table-tl'>
+              <view>{{ currYear - 1 + '年' }}</view>
+              <view>￥{{filter.parserNum(tablesum2018a)}}</view>
+              <view wx:for="{{tabledata2018a}}" wx:key="{{index}}">￥{{filter.parserNum(item)}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='warp'>
+    <view class='header'>临时工用工报表</view>
+    <view class='{{[ "table", tabledata2018b[0] == 0 ? "table-active":""]}}'>
+      <view class='table-left'>
+        <view>名称</view>
+        <view wx:for="{{tablenameb}}" wx:key="{{index}}">{{item}}</view>
+      </view>
+      <view class='table-right'>
+        <view class='table-tk'>
+          <view class='table-con'>
+            <view class='table-tl'>
+              <view>{{ currYear + '年' }}</view>
+              <view wx:for="{{tabledata2019b}}" wx:key="{{index}}">{{item}}</view>
+            </view>
+            <view wx-if="{{ tabledata2018b[0] != 0 }}" class='table-tl'>
+              <view>{{ currYear - 1 + '年' }}</view>
+              <view wx:for="{{tabledata2018b}}" wx:key="{{index}}">{{item}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<i-message id="message" />
+<i-toast id="toast" />
+<van-dialog id="van-dialog" />

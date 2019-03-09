@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../lib/ec-canvas/ec-canvas",
+    "i-toast": "../../dist1/toast/index",
+    "i-spin": "../../dist1/spin/index"
+  },
+  "navigationBarTitleText":"设备监测情况"
+}

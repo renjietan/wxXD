@@ -1,0 +1,26 @@
+<view>
+  <view class='form'>
+    <van-cell-group>
+      <van-field input-class="font1" value="{{ form.machineName }}" clearable label="农机名称" maxlength="50" bind:change="changeIn" data-name="machineName" placeholder="请输入名称" required/>
+      <van-field value="{{ form.purchaseTime }}" clearable label="购买时间" disabled bindtap="handleClick" data-name="farmingMode" icon="arrow"/>
+      <van-field value="{{ form.amount }}" label="购买金额(元)" maxlength="10" type="digit" placeholder="请输入购买金额" bind:change="changeIn" data-name="amount" required/>
+    </van-cell-group>
+  </view>
+  <view class='remark'>
+    <van-field label="补充说明" disabled/>
+    <textarea wx:if="{{ !show }}" placeholder='记录一些备注（限200字）' maxlength='200' bindinput="changeInn" data-name="remarks" value='{{form.remarks}}'></textarea>
+  </view>
+  <view class='down'>
+    <van-button custom-class='btn' size="large" bind:click="submit">确 定</van-button>
+  </view>
+  <van-action-sheet show="{{ show }}">
+  <van-datetime-picker
+  type="date"
+  value="{{ currentDate }}"
+  bind:confirm="onOk"
+  bind:cancel="onNo"
+/>
+</van-action-sheet>
+<i-message id="message" />
+<van-toast id="van-toast" />
+</view>

@@ -1,0 +1,39 @@
+<!--pages/changeDevice/changeDevice.wxml-->
+<view>
+  <view wx:for="{{pond}}" class='card' wx:for-item='item1' wx:key="index">
+    <view class='t_left'>{{item1.groupName}}
+      <view class='t_right'>
+        <i class="iconfont icon-shebei blue"></i> 设备:{{item1.count}} |
+        <i class="iconfont icon-zaixian green"></i> 在线:{{item1.isOnline}}
+      </view>
+    </view>
+    <view class="device" wx:for="{{item1.data}}" wx:for-item='item2' wx:key="index">
+      <view class='d1'>
+        <view class='deviceName'>{{item2.device_type_name}}</view>
+        <view class='deviceCode'>{{item2.deviceCode}}</view>
+      </view>
+      <view class='d2'>
+        <view>
+          <i class="iconfont {{item2.isOnline==1?'icon-On-line green':'icon-buoumaotubiao20 silver'}}"></i>
+        </view>
+        <view class="isOnline {{item2.isOnline==1?'green':'silver'}}">{{item2.isOnline==1?'在线':'离线'}}</view>
+      </view>
+      <view class='d3'>
+        <view class='blue' bindtap='btnClick' data-name="查看" data-groupName="{{item1.groupName}}" data-groupId="{{item1.groupId}}" data-deviceCode="{{item2.deviceCode}}" data-deviceId="{{item2.deviceId}}">
+          <i class="iconfont icon-chakan blue"></i> 查看</view>
+        <view class='orange' bindtap='btnClick' data-name="编辑" data-groupName="{{item1.groupName}}" data-groupId="{{item1.groupId}}" data-deviceCode="{{item2.deviceCode}}" data-deviceId="{{item2.deviceId}}">
+          <i class="iconfont icon-shuru orange"></i> 编辑</view>
+        <view class='silver' bindtap='btnClick' data-name="删除" data-groupName="{{item1.groupName}}" data-groupId="{{item1.groupId}}" data-deviceCode="{{item2.deviceCode}}" data-deviceId="{{item2.deviceId}}">
+          <i class="iconfont icon-shanchu silver"></i> 删除</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='delbtn'>
+  <i-modal title="删除确认" visible="{{ deleteShow }}" actions="{{ deleteButtons }}" bind:click="confirm">
+    <view>删除后无法恢复哦</view>
+  </i-modal>
+</view>
+
+<van-notify id="custom-selector" />
+<i-toast id="toast" />

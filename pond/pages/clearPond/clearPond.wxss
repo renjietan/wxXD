@@ -1,0 +1,80 @@
+/* pages/clearPond/clearPond.wxss */
+
+.container {
+  background: #edeef4;
+  min-height: 100vh;
+  overflow: hidden;
+   padding: 10rpx 0;
+   box-sizing: border-box;
+}
+
+.layout {
+  width: 94%;
+  background-color: white;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  box-shadow: 10rpx 6rpx  10rpx 6rpx #e0ebf6;
+ 
+}
+.header {
+  padding: 0 8rpx 0 14rpx;
+  line-height: 80rpx;
+  display: flex;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  color: #323333;
+}
+
+
+.collapsebody {
+  overflow: hidden;
+  transition: height 0.4s;
+  padding: 0px 20rpx;
+}
+.icon-collapse{
+color: #737373;
+}
+
+.hide {
+  height: 0rpx;
+  border-bottom: none;
+}
+
+
+
+.setPond {
+  flex: 1;
+  font-size: 16px;
+}
+
+
+.content {
+  padding-bottom: 10rpx;
+  line-height: 50rpx;
+  border-top: 0;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  
+}
+
+
+
+/* 图标 */
+.setIcon {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  padding-bottom: 9rpx;
+}
+
+
+
+.icon-shanchu{
+  padding-right: 0rpx;
+  box-sizing: border-box;
+  position: absolute;
+  right:60rpx;
+}

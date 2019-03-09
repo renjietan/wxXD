@@ -1,0 +1,26 @@
+/* pages/choosePond/choosePond.wxss */
+page{
+  background-color: #efeff4
+}
+.down {
+  position: fixed;
+  bottom: 0;
+  font-size: 32rpx;
+  background-color: #efeff4;
+}
+
+.down>view {
+  width: 710rpx;
+  margin: 10rpx 20rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+.card{
+  margin: 10rpx 20rpx;
+  border-radius: 10rpx;
+  overflow: hidden
+}
+.down button{
+  background-color: #3A93FF;
+  color:#fff
+}

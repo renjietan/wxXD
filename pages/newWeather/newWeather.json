@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-toast": "../../../dist1/toast/index",
+    "van-action-sheet": "../../../dist/action-sheet/index",
+    "ec-canvas": "../../lib/ec-canvas/ec-canvas"
+  }
+}

@@ -1,0 +1,12 @@
+<!--pages/addDevice/addDevice.wxml-->
+<view class='container'>
+<view class='layout' wx:for="{{param}}" wx:key="*this">
+  <view class='content'>
+    <text>{{ index+1 }}.</text>
+    <text> {{ item.devName }}传感器
+    </text>
+  </view>
+</view>
+</view>
+<van-notify id="van-notify" />
+<i-toast id="toast" />

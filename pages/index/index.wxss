@@ -1,0 +1,694 @@
+/**index.wxss**/
+
+.container {
+  padding: 20rpx 30rpx;
+  background: #efeff4;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 类别头部开始 */
+
+.header {
+  height: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.headerLeft {
+  font-size: 28rpx;
+  color: #888;
+  line-height: 50rpx;
+}
+
+.headerLeft i {
+  display: inline-block;
+  font-size: 28rpx;
+  margin: 0px 8rpx;
+  color: #888;
+}
+
+.headerRight {
+  color: #1ab7f9;
+  font-size: 28rpx;
+  display: flex;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.headerRight .moreicon {
+  display: block;
+  font-size: 28rpx;
+  transform-origin: center center;
+  transform: rotate(-90deg);
+  margin-left: 5rpx;
+}
+
+/* 类别头部结束 */
+
+/* 农事日历开始 */
+
+.calendar {
+  margin-bottom: 30rpx;
+}
+
+.calendarbody {
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding:20rpx;
+  box-shadow: 0 2rpx 9rpx rgba(26, 183, 249, 0.13);
+  position: relative;
+}
+
+.calendarcon{
+  border-radius: 8rpx;
+  border:2px solid #3A93FF;
+
+}
+.calendarconHeader{
+  height:60rpx;
+  line-height: 60rpx;
+   border-bottom:2px solid #3A93FF;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.headeritem{
+  width:33%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #3A93FF;
+  font-weight: bold;
+}
+.hcen{
+  background-color: #3A93FF;
+  color:#fff;
+}
+.calendarconBottom{
+  /* height:280rpx; */
+  display: flex;
+}
+.bottomLeft{
+  width:50%;
+  border-right:2px solid #3A93FF;
+  /* padding:30rpx 50rpx; */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.bottomLeft .texta{
+display: block;
+color:#3A93FF;
+font-size:100rpx;
+}
+.bottomLeft .textb{
+display: block;
+color:#3f7ac3;
+font-weight: bold;
+font-size:20rpx;
+line-height:40rpx;
+}
+.bottomLeft .textc{
+display: block;
+color:#9ca7ac;
+font-size:24rpx;
+line-height:40rpx;
+}
+.bottomRight{
+  width:50%;
+  padding:30rpx 50rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.bottomRight .texta{
+display: block;
+color:#3f7ac3;
+font-size:26rpx;
+margin-bottom:20rpx;
+font-weight: bold;
+}
+.bottomRight .textb{
+display: block;
+color:#3f7ac3;
+font-size:30rpx;
+line-height: 40rpx;
+text-align: center;
+}
+/* 农事日历结束 */
+
+/* 告警信息开始 */
+
+.alertinfowarp {
+  margin-bottom: 30rpx;
+}
+
+.alertinfo {
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  box-shadow: 0 2rpx 9rpx rgba(26, 183, 249, 0.13);
+  position: relative;
+}
+
+.infolist {
+  height: 102rpx;
+  border-bottom: 2rpx solid #e6e6e6;
+  padding: 10rpx 0;
+}
+
+.alertinfo .infolist:last-child {
+  border-bottom: none;
+}
+
+.infolistTop {
+  height: 50rpx;
+  line-height: 50rpx;
+  display: flex;
+}
+
+.infolistTop text {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  color: #fa2727;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+}
+
+.infolistTop i {
+  font-size: 30rpx;
+  margin: 0 6rpx;
+}
+
+.infolistBottom {
+  height: 50rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infolistBottom text {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 告警信息结束 */
+
+/* 塘口信息开始 */
+
+.collapse {
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 0px 20rpx;
+  box-shadow: 0 2rpx 9rpx rgba(26, 183, 249, 0.13);
+}
+
+.collapseheader {
+  height: 95rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+
+.collapseHeaderLeft {
+  display: flex;
+  height: 35rpx;
+}
+
+.guanzhubtn {
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+
+.collapseHeaderLeftText {
+  font-size: 30rpx;
+  color: #323333;
+  max-width: 160rpx;
+  height: 35rpx;
+  line-height: 35rpx;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+.collapseHeaderRight {
+  justify-content: flex-end;
+  display: flex;
+  height: 35rpx;
+  line-height: 35rpx;
+  flex: 1;
+}
+
+.collapseHeaderRightBtn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerBtnItem {
+  border-right: 2rpx solid #ccc;
+  padding-right: 10rpx;
+  display: flex;
+}
+
+.collapseHeaderRightBtn>.headerBtnItem:last-child {
+  border-right: none;
+}
+
+.headerBtnItemIcon {
+  font-size: 24rpx;
+  margin: 0 10rpx;
+}
+
+.headerBtnItemText {
+  font-size: 24rpx;
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+.collapseBtn {
+  width: 55rpx;
+  height: 35rpx;
+}
+
+.collapseBtn .collapseBtnIcon {
+  width: 55rpx;
+  font-size: 30rpx;
+  line-height: 35rpx;
+  text-align: center;
+  display: block;
+  transform-origin: center center;
+  transform: rotate(0deg);
+  transition: all 0.2s;
+}
+
+.collapseBtn .downIcon {
+  transform: rotate(180deg);
+}
+
+.headerBtnItem text {
+  font-size: 24rpx;
+  color: #323333;
+}
+
+.collapsebody {
+  overflow: hidden;
+  transition: height 0.4s;
+  border-top: 1px solid #e6e6e6;
+  padding: 15rpx 0;
+  position: relative;
+}
+
+.hide {
+  height: 0rpx;
+  border-top: none;
+  padding: 0;
+}
+
+.itemList {
+  height: 60rpx;
+  margin: 15rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemListLeft {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.itemListLeftIcon {
+  font-size: 60rpx;
+  color: #1ab7f9;
+}
+
+.itemListContent {
+  flex: 1;
+  margin: 0 20rpx;
+}
+
+.itemListContentTop {
+  height: 35rpx;
+  line-height: 35rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.itemListContentTop view{
+  height:35rpx;
+line-height:35rpx;
+display: flex;
+}
+
+.itemListContentTop .deviceName{
+  width:120rpx;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 35rpx;
+  display: inline-block;
+ margin:0 5rpx;
+} 
+
+.itemListContentTop .deviceValue{
+  font-size: 22rpx;
+  color: #666;
+  line-height: 35rpx;
+  display: inline-block;
+  margin:0 10rpx;
+}
+
+.itemstate{
+  width:30rpx;
+  font-size:16rpx;
+  line-height: 35rpx;
+  color:#2C66E1;
+}
+.itemListContentTop .state {
+  font-size: 22rpx;
+  color: #17e114;
+  line-height: 35rpx;
+}
+
+.itemListContentTop .nostate {
+  font-size: 22rpx;
+  color: #c4c4c4;
+  line-height: 35rpx;
+}
+
+.itemListContentTop .state i {
+  font-size: 22rpx;
+  line-height: 35rpx;
+  margin-right: 5rpx;
+}
+
+.itemListContentTop .nostate i {
+  font-size: 22rpx;
+  line-height: 35rpx;
+  margin-right: 5rpx;
+}
+
+.itemListContentTop .state text {
+  font-size: 22rpx;
+  line-height: 35rpx;
+}
+
+.itemListContentTop .nostate text {
+  font-size: 22rpx;
+  line-height: 35rpx;
+}
+
+.itemListContentBottom {
+  height: 25rpx;
+  display: flex;
+}
+.itemListContentBottom navigator{
+  width:100%;
+  height:100%;
+  display: flex;
+}
+.itemListView {
+  flex:1;
+  height: 20rpx;
+  margin-top: 5rpx;
+  border-radius: 12rpx;
+  background-color: #e1e1e1;
+  position: relative;
+}
+
+.itemListViewValue {
+  position: absolute;
+  height: 20rpx;
+  left: 0px;
+  top: 0px;
+  background: #1ab7f9;
+  width: 30%;
+  /* border-top-left-radius: 12rpx;
+  border-bottom-left-radius: 12rpx; */
+  border-radius: 12rpx;
+  max-width:100%;
+}
+
+.minValue {
+  width: 2rpx;
+  height: 20rpx;
+  position: absolute;
+  left: 20%;
+  top: 0px;
+  background: #fff;
+  z-index: 999;
+}
+
+.maxValue {
+  width: 2rpx;
+  height: 20rpx;
+  position: absolute;
+  left: 40%;
+  top: 0px;
+  background: #fff;
+  z-index: 999;
+}
+
+
+.itemListRight {
+  width: 150rpx;
+  font-size: 22rpx;
+  line-height: 30rpx;
+  text-align: center;
+}
+
+.itemListRightTime {
+  display: block;
+  color: #808080;
+  height: 25rpx;
+  line-height: 25rpx;
+  margin-top: 35rpx;
+  overflow: hidden;
+}
+
+.itemlist {
+  height: 110rpx;
+}
+
+.listcon {
+  display: flex;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.listfooter {
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #666;
+  font-size: 28rpx;
+  display: flex;
+}
+
+.listfootertext {
+  width: 120rpx;
+  display: block;
+}
+
+.itemlisttext {
+  width: 120rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.itemlistview {
+  flex: 1;
+  height: 24rpx;
+  margin: 18rpx 0;
+  border-radius: 12rpx;
+  background-color: #e1e1e1;
+  position: relative;
+}
+
+.itemlistviewvalue {
+  position: absolute;
+  height: 24rpx;
+  left: 0px;
+  top: 0px;
+  background: #1ab7f9;
+  width: 30%;
+  border-top-left-radius: 12rpx;
+  border-bottom-left-radius: 12rpx;
+}
+
+.minvalue {
+  width: 2rpx;
+  height: 24rpx;
+  position: absolute;
+  left: 20%;
+  top: 0px;
+  background: #fff;
+  z-index: 999;
+}
+
+.maxvalue {
+  width: 2rpx;
+  height: 24rpx;
+  position: absolute;
+  left: 40%;
+  top: 0px;
+  background: #fff;
+  z-index: 999;
+}
+
+.errorbox {
+  background: #fa2727;
+}
+
+.itemlistvalue {
+  width: 100rpx;
+  color: #666;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.itemliststate {
+  width: 90rpx;
+  display: flex;
+  text-align: center;
+}
+
+.itemliststate text {
+  font-size: 24rpx;
+  color: #17e114;
+}
+
+.itemliststate i {
+  font-size: 24rpx;
+  margin-right: 5rpx;
+}
+
+.itembtn {
+  margin-top:10rpx;
+  height: 30rpx;
+  font-size: 26rpx;
+  color: #fe8a3d;
+  text-align: right;
+}
+
+/* 塘口信息结束 */
+
+.iconred {
+  color: #fa2727;
+}
+
+.iconblue {
+  color: #1ab7f9;
+}
+
+.icongreen {
+  color: #17e114;
+}
+
+.guanzhuicon {
+  color: #ffd822;
+}
+
+.noguanzhuicon {
+  color: #ccc;
+}
+
+.icongray {
+  color: #c4c4c4;
+}
+
+/*添加设备按钮*/
+
+.addbtn {
+  position: fixed;
+  right: 20rpx;
+  bottom: 40rpx;
+  z-index: 111;
+  padding: 0px 20rpx;
+  height:72rpx;
+  background-color: #3A93FF;
+  color: #fff;
+  border-radius: 72rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.2);
+  display: flex;
+}
+.iconbox{
+  margin:17rpx 0;
+  width:32rpx;
+  height:32rpx;
+  text-align: center;
+  line-height: 32rpx;
+  margin-right: 10rpx;
+}
+.addbtnIcon {
+  font-size: 28rpx;
+}
+
+.addText {
+  display:block;
+  font-size: 24rpx;
+  margin:20rpx 0;
+  line-height: 32rpx;
+  height:32rpx;
+}
+
+.addbtnhide {
+  right: -120rpx;
+}
+
+.nodevice {
+  display: flex;
+  line-height: 200rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.nodevice text {
+  font-size: 30rpx;
+  color: #888;
+}
+
+.noalertInfo {
+  display: flex;
+  line-height: 100rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.noalertInfo text {
+  font-size: 30rpx;
+  color: #888;
+}
+
+.nogroup {
+  display: flex;
+  line-height: 200rpx;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  box-shadow: 0 2rpx 9rpx rgba(26, 183, 249, 0.13);
+}
+
+.nogroup text {
+  font-size: 30rpx;
+  color: #888;
+}

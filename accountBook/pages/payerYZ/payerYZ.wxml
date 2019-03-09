@@ -1,0 +1,60 @@
+<wxs src="../../../utils/filter.wxs" module="filter" />
+<view class='container'>
+  <view class='search_box'>
+    <van-search custom-class="search_T" value="{{ searchVal }}" placeholder="请输入工人姓名..." bind:change="handleTextChange" use-action-slot bind:search="handleSearch">
+      <view slot="action" bindtap='handleSearch'>搜索</view>
+    </van-search>
+  </view>
+  <view class='title'>预支金额明细</view>
+
+  <van-panel custom-class="panel_T" wx:for="{{ costInfo }}" wx:key="{{ item.sId }}">
+    <view class='header_box' slot="header">
+      <view class='header_content'>
+        <view class='header_content_name'>
+          <view class='header_content_name_img'>
+            <icon class='iconfont icon-yuzhi'></icon>
+          </view>
+          <!-- <image class='header_content_name_img' src='../../../images/book16.png'></image> -->
+          <view class='header_content_name_name'>{{ item.name }}</view>
+          <view class='header_content_name_icon'>
+            <van-tag custom-class="tag_T" wx:if="{{ item.type == 1 }}" type="primary">正式工</van-tag>
+            <van-tag custom-class="tag_T" wx:else type="success">临时工</van-tag>
+          </view>
+        </view>
+        <view class='header_content_num'>￥{{ filter.parserNum(item.debt) }}</view>
+      </view>
+    </view>
+    <view class='content_box'>
+      <i-grid i-class="content_box_gird">
+        <i-grid-item i-class="content_box_item" data-id="{{ item.sId }}" data-type="subMoney" bindtap="handleEvent">
+          <i-grid-icon i-class='content_box_title'>
+            预支总金额
+          </i-grid-icon>
+          <i-grid-label i-class='content_box_label'>￥{{ filter.parserNum(item.advanceFee) }}</i-grid-label>
+        </i-grid-item>
+
+        <i-grid-item i-class="content_box_item" data-id="{{ item.sId }}" data-type="subMoneyed" bindtap="handleEvent">
+          <i-grid-icon i-class='content_box_title'>
+            已还金额
+          </i-grid-icon>
+          <i-grid-label i-class='content_box_label'>￥{{ filter.parserNum(item.allSum) }}</i-grid-label>
+        </i-grid-item>
+        <i-grid-item i-class="content_box_item">
+          <view class='content_box_handle'>
+            <van-button custom-class="content_box_handle_btn" wx:if="{{ item.debt > 0 }}"  data-type="edit" data-id="{{ item.sId }}" bindtap="handleEvent" plain round>还款</van-button>
+            <van-button custom-class="content_box_handle_btn_active" wx:else disabled='{{  item.debt <= 0 }}' data-type="edit" data-id="{{ item.sId }}" plain round>还款</van-button>
+          </view>
+        </i-grid-item>
+      </i-grid>
+    </view>
+  </van-panel>
+</view>
+<movable-area class="move" scale-area>
+  <movable-view direction="horizontal" bindchange="onChange" bindscale="onScale" data-type="add" bindtap="handleEvent" scale-min="0.5" scale-max="4" scale-value="2" class='addbtn'>
+    <i class="iconfont icon-jiahao1"></i>
+  </movable-view>
+</movable-area>
+
+<van-dialog id="van-dialog" />
+<i-message id="message" />
+<van-toast id="van-toast" />

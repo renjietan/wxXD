@@ -1,0 +1,137 @@
+/* farmingCarlendar/pages/handle/handle.wxss */
+
+.container {
+  background: #efeff4;
+  min-height: 100vh;
+  /* justify-content: center; */
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  position: relative;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.vanCell_T {
+  background: white;
+  margin: 30rpx 0;
+}
+
+.vanTag_T {
+  font-size: 14px !important;
+  padding: 0.4em !important;
+  background: white !important;
+  border: 1px solid #bbbec4;
+  color: rgb(102, 102, 102) !important;
+}
+
+.vanTag_T_check {
+  background: rgb(58, 147, 255) !important;
+  color: white !important;
+}
+.boxwarp {
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  box-shadow: 0 2rpx 9rpx rgba(26, 183, 249, 0.13);
+}
+.title {
+  height: 90rpx;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 0px 10rpx;
+}
+
+.title text {
+  font-size: 28rpx;
+  line-height: 90rpx;
+}
+/* .vanTag_T_check{
+  background: rgb(58,147,255);
+  color: white
+} */
+
+.itemGrid_T {
+  border: 0 !important;
+  text-align: center;
+  padding: 10px !important;
+}
+
+.title {
+  font-size: 15px;
+  margin-left: 20rpx;
+  line-height: 70rpx;
+}
+
+.input_T {
+  height: 300rpx;
+  align-items: flex-start !important;
+}
+
+.view_T {
+  color: #333;
+  line-height: 24px;
+  font-size: 14px;
+  min-width: 600rpx;
+  position: relative
+}
+.handleBtn_T{
+  position: absolute !important;
+  bottom: 20rpx;
+  left:3%;
+  width: 94%
+}
+
+.van-cell-text_T {
+  float: left;
+  margin-right: 30rpx;
+}
+
+.van-field__input {
+  height: 100rpx !important;
+}
+
+.vanButton_T {
+ background:#3a93ff!important;
+ margin-top: 30rpx !important
+}
+
+.card_TTT{
+  width: 100%;
+  margin: 16px 0 !important;
+  display: inline-block
+}
+.textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 180rpx !important;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding: 10rpx;
+}
+.cardTTT_footer{
+  padding: 0 !important
+}
+.cardTTT_content{
+  position: relative;
+}
+
+.boxwarp {
+  margin: 10px 0;
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  box-shadow: 0 2rpx 9rpx rgba(26, 183, 249, 0.13);
+}
+
+.title_T {
+  height: 60rpx;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 0px;
+}
+
+.title_T text {
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+

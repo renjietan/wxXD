@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "农事",
+  "usingComponents": {
+    "van-action-sheet": "../../dist/action-sheet/index",
+    "i-toast": "../../dist1/toast/index",
+    "van-radio": "../../dist/radio/index",
+    "van-radio-group": "../../dist/radio-group/index",
+    "van-cell": "../../dist/cell/index",
+    "van-icon": "../../dist/icon/index",
+    "van-cell-group": "../../dist/cell-group/index",
+    "van-toast": "../../dist/toast/index"
+  }
+}

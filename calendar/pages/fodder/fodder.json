@@ -1,0 +1,18 @@
+{
+  "navigationBarTitleText": "饲料投放",
+  "usingComponents":{
+    "van-field": "../../../dist/field/index",
+    "van-cell": "../../../dist/cell/index",
+    "van-cell-group": "../../../dist/cell-group/index",
+    "van-action-sheet": "../../../dist/action-sheet/index",
+    "van-dialog": "../../../dist/dialog/index",
+    "van-button": "../../../dist/button/index",
+    "van-tag": "../../../dist/tag/index",
+    "van-checkbox": "../../../dist/checkbox/index",
+    "van-checkbox-group": "../../../dist/checkbox-group/index",
+    "i-button": "../../../dist1/button/index",
+    "van-datetime-picker": "../../../dist/datetime-picker/index",
+    "van-popup": "../../../dist/popup/index"
+  }
+  
+}

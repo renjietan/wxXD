@@ -1,0 +1,175 @@
+/* farmingCarlendar/pages/addWorker/addWorker.wxss */
+
+/* farmingCarlendar/pages/addWorker/addWorker.wxss */
+
+.container {
+  background: #efeff4;
+  min-height: 100vh;
+  /* justify-content: center; */
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  position: relative;
+}
+
+.vanCell_T {
+  margin: 20rpx auto 0 auto;
+  width: 96%;
+}
+
+.vanButton_TT {
+  position: absolute !important;
+  bottom: 0;
+}
+
+.vantArea_Active_T {
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+  z-index: 2;
+}
+
+.vantArea_T {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  z-index: 2;
+  display: none;
+}
+
+.cover {
+  position: absolute;
+  z-index: 1;
+  background: rgba(76, 76, 76, 0.9);
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.workerList_T {
+  min-height: 100vh;
+  min-width: 500rpx;
+}
+
+.vantPopup_T {
+  width: 600rpx;
+}
+
+.navBtn {
+  position: fixed;
+  right: -30rpx;
+  bottom: 160rpx;
+  z-index: 11;
+  padding: 0px 50rpx 0 20rpx;
+  height: 72rpx;
+  background-color: #3a93ff;
+  color: #fff;
+  border-radius: 72rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.2);
+  display: flex;
+}
+
+.navBtnhide {
+  right: -120rpx;
+}
+
+.navBtnIcon {
+  margin: 17rpx 0;
+  width: 32rpx;
+  height: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+  margin-right: 10rpx;
+}
+
+.navBtnI {
+  font-size: 28rpx;
+}
+
+.navBtnText {
+  display: block;
+  font-size: 24rpx;
+  margin: 20rpx 0;
+  line-height: 32rpx;
+  height: 32rpx;
+}
+
+.list {
+  display: inline-block;
+  text-align: center;
+}
+
+.list_content {
+  line-height: 40px;
+  font-size: 16px;
+  border: 1px solid #efeff4;
+  padding: 0 30rpx;
+  color: white;
+  overflow: hidden;
+  background: #2d8cf0;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.list_content_l {
+  max-width: 300rpx;
+  text-align: left;
+  background: white;
+  color: #80848f;
+  box-sizing: border-box;
+}
+
+.list_content_active {
+  background: #f8f8f9;
+}
+
+
+
+.btn_T {
+  width: 90%;
+}
+
+.girdItem_T {
+  padding: 0 !important;
+}
+
+.noHasData {
+  line-height: 300rpx;
+  font-size: 16px;
+  border: 1px solid #efeff4;
+  padding: 0 30rpx;
+  color: #80848f;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.tags_T {
+  padding: 0.4em 0.7em;
+}
+
+.toolbar {
+  box-sizing: border-box;
+  text-decoration: underline;
+  color: red;
+}
+
+.btn_TTT {
+  position: absolute !important;
+  bottom: 10rpx;
+  width: 96%;
+}
+
+.grid_TTT {
+  position: absolute;
+  bottom: 10rpx;
+  width: 100%;
+}
+.grid_TT {
+  width: 100%;
+  padding: 0 !important;
+}

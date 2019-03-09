@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "van-cell": "../../../dist/cell/index",
+        "van-cell-group": "../../../dist/cell-group/index",
+        "van-dialog": "../../../dist/dialog/index",
+        "van-swipe-cell": "../../../dist/swipe-cell/index",
+        "i-modal": "../../../dist1/modal/index",
+        "i-toast": "../../../dist1/toast/index"
+    },
+    "navigationBarTitleText": "删除塘口"
+}

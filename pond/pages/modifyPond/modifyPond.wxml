@@ -1,0 +1,26 @@
+<!--pages/modifyPond/modifyPond.wxml-->
+<view class='card'>
+  <van-cell-group>
+    <van-field value="{{ param.groupname }}" clearable label="塘口名称"  placeholder="请输入塘口名称" bind:change="changeIn" data-name="groupname"/>
+    <van-field value="{{ param.area }}" clearable label="面积（亩）"  placeholder="请输入面积" bind:change="changeIn" data-name="area"/>
+    <van-field value="{{ param.dcName }}" clearable label="品种 "  placeholder="请选择品种" disabled bindtap="dcnameClick" data-name="dcname" icon="arrow" />
+    <van-field value="{{ param.farmingMode }}" clearable label="养殖模式 "  placeholder="请选择养殖模式" disabled bindtap="modelClick" data-name="farmingMode"   icon="arrow" />
+    <van-field value="{{ param.tangling }}" clearable label="塘龄(年) "  placeholder="请输入塘龄" bind:change="changeIn" data-name="tangling"/>
+     <view class="section">
+  <picker mode="region" bindchange="bindRegionChange" value="{{param.address}}" custom-item="{{customItem}}">
+    <view class="picker">
+    <van-cell is-link id="provinces"  title="地址 " clearable value=" {{param.provinces[0] + '-' +  param.provinces[1] + '-' + param.provinces[2]}}" placeholder="请选择地址" border="{{ false }}" bind:change="changeIn" />
+    </view>
+  </picker>
+</view>
+    <van-field value="{{ param.address=='null'?'':param.address }}" clearable label="详细地址"  placeholder="请填写地址" bind:change="changeIn" data-name="address"/>
+  </van-cell-group>
+</view>
+<view class='down'>
+  <van-button custom-class='btn' size="large" bind:click="submit" loading='{{ loading }}' >确  定</van-button>
+</view>
+<!-- 下拉菜单 -->
+<van-action-sheet show="{{ dcnameShow }}" actions="{{ dcnameActions }}" bind:select="dcnameSelect" bind:close="onClose" />
+<van-action-sheet show="{{ breedShow }}" actions="{{ breedActions }}" bind:select="breedSelect" bind:close="onClose" />
+<van-notify id="van-notify" />
+<i-toast id="toast" />

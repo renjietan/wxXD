@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-button": "../../../dist/button/index",
+    "van-nav-bar": "../../../dist/nav-bar/index",
+    "van-field": "../../../dist/field/index",
+    "van-action-sheet": "../../../dist/action-sheet/index",
+    "van-cell": "../../../dist/cell/index",
+    "van-cell-group": "../../../dist/cell-group/index",
+    "i-toast": "../../../dist1/toast/index"
+  },
+  "navigationBarTitleText": "选择塘口"
+}

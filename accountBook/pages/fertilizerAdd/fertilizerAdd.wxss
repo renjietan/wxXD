@@ -1,0 +1,57 @@
+/* accountBook/pages/add/add.wxss */
+page{
+  font-size: 28rpx;
+  background-color: #efeff4;
+}
+.form{
+  margin: 20rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+.form .van-cell{
+  padding: 14px 15px;
+}
+.form .font1{
+  font-size: 44rpx;
+  color: #3b93ff;
+  font-weight: 600;
+}
+.form .btn1{
+  width: 90rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  padding:0 10rpx;
+  font-size:28rpx;
+  text-align: center;
+}
+.form .input_btn+.van-field__button{
+  padding: 0;
+}
+.form .margin_btn{
+  margin-right: 120rpx
+}
+.remark{
+  margin:0 20rpx 20rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+.remark textarea{
+  width: 90%;
+  padding:20rpx 5%;
+  height: 268rpx;
+}
+.down{
+  width: 710rpx;
+  position: fixed;
+  bottom: 0;
+  margin: 10rpx 20rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+  font-size: 32rpx;
+}
+.btn{
+  background-color:#3A93FF !important;
+   color: white !important;
+}

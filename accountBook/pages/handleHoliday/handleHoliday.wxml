@@ -1,0 +1,64 @@
+<view class='wrapper'>
+  <view class='wrap'>
+    <view class='date-show'>
+      <view class='lt-arrow' bindtap='lastMonth'>
+        <van-icon name="arrow-left" />
+      </view>
+      {{year}}年{{month}}月
+      <view class='rt-arrow' bindtap='nextMonth'>
+        <!-- <image src='/images/right_arrow.png' mode='aspectFit'></image> -->
+        <van-icon name="arrow" />
+      </view>
+    </view>
+    <view class='header'>
+      <!-- <view wx:for='{{date}}' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}<view></view></view> -->
+      <view wx:for='{{date}}'>{{item}}
+        <view></view>
+      </view>
+    </view>
+    <view class='date-box'>
+      <view wx:for='{{dateArr}}' >
+        <view class='date-head'>
+          <view data-check="{{ index }}" class='{{ [ item.holiday == 0 ? "" : item.holiday == 0.5 ? "ban" : "zhen" ] }}' bindtap='handleDate'>{{ item.day }}            
+            <image wx:if="{{ item.holiday == 1 }}" src='../../images/zh38.png'></image>
+            <image wx:if="{{ item.holiday == 0.5 }}" src='../../images/zh39.png'></image>
+          </view>
+        </view>
+        <!-- <view class='date-weight'>{{item.weight}}</view> -->
+      </view>
+    </view>
+  </view>
+
+  <view style='margin-top:40rpx'>
+    <van-cell required title="请假人" value="{{ formData.workerName }}" is-link bindtap="handleIsVisableWorker" />
+  </view>
+  <view class='remark'>
+    <van-field label="补充说明" disabled/>
+    <textarea wx:if="{{ isVisiableText && !isVisiableWorker}}" data-type="remarks" bindinput="handleChangeText" placeholder='记录一些备注（限200字）' maxlength='200' value='{{formData.remarks}}'></textarea>
+  </view>
+  <i-button bind:click="handleSubmit" i-class='handleBtn_TTT' type="primary" long="true">保存</i-button>
+</view>
+<!-- 选择工人 -->
+<van-popup show="{{ isVisiableWorker }}" position="right" overlay bind:close="handleIsVisableWorker">
+  <view class='container view_T'>
+    <van-cell-group>
+      <van-cell wx:for="{{  workerList  }}" wx:key="{{ worker.sId }}" wx:if="{{worker.type == 1}}" bind:click="handleWorkerCheck" data-name="{{ worker.sname }}" wx:for-item="worker" data-id='{{ worker.sId }}'>
+        <view slot="title">
+          <view class="van-cell-text_T">{{ worker.sname }}</view>
+          <!-- <van-tag wx:if="{{ worker.stype == 2}}" type="danger">临时工</van-tag>
+          <van-tag wx:if="{{ worker.stype == 1}}" type="success">正式工</van-tag> -->
+          <van-tag color="#2d8cf0">正式工</van-tag>
+          <!-- <van-tag color="#f2826a" wx:else>临时工</van-tag> -->
+        </view>
+        <view slot="right-icon">
+          <van-checkbox data-name='{{ worker.sId }}' data-checkvalue="{{ worker.sname }}" value="{{ worker.checked }}"></van-checkbox>
+        </view>
+      </van-cell>
+    </van-cell-group>
+    <i-button bind:click="handleIsVisableWorker" i-class='vanButton_T handleBtn_T' type="primary" long="true">保存</i-button>
+  </view>
+</van-popup>
+
+<van-notify id="van-notify" />
+<i-message id="message" />
+<van-toast id="van-toast" />

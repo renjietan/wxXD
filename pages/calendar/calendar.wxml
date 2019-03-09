@@ -1,0 +1,25 @@
+<!--pages/calendar/calendar.wxml-->
+<view class='container'>
+  <view class='layout'>
+    <van-panel use-footer-slot>
+      <image mode="aspectFit" bindtap='navGroupList' class='img' src='../../images/pond.png'></image>
+      <view class='infoCount'>已有塘口({{ groupCount }})</view>
+      <view slot="footer" class="footer" bindtap="navAddGroup">
+        <text style='margin-right:10rpx'>添加塘口</text>
+        <van-icon class='icon' color="rgb(72,196,249)" name="plus" size="20px" />
+      </view>
+    </van-panel>
+  </view>
+  <view class='layout'>
+    <van-panel use-footer-slot>
+      <image mode="aspectFit" bindtap='navWorkerList' class='img' src='../../images/pond.png'></image>
+      <view class='infoCount'>已有工人({{ workerCount }})</view>
+      <view slot="footer" class="footer" bindtap="navAddWorker">
+        <text style='margin-right:10rpx'>添加工人</text>
+        <van-icon class='icon' color="rgb(72,196,249)" name="plus" size="20px" />
+      </view>
+    </van-panel>
+  </view>
+</view>
+<van-toast id="van-toast" />
+<i-message id="message" />

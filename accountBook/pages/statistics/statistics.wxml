@@ -1,0 +1,22 @@
+<!--accountBook/pages/summary/summary.wxml-->
+<view class='wrapper'>
+  <view class='bj'></view>
+  <view class='warp'>
+    <view class='dropyear'>
+      <text bindtap='isVisiableDate'>{{year}}</text>
+    </view>
+    <view class='boxa'>
+      <text>总成本：</text>
+      <text>21400元</text>
+    </view>
+    <view class='header'>
+    <text>每类成本支出：</text>
+    </view>
+    <view class='list'>
+   
+    </view>
+  </view>
+</view>
+<van-popup show="{{ show }}" position="bottom" overlay="{{ true }}" bind:close="isVisiableDate">
+  <van-picker columns="{{ columns }}" visible-item-count="4" title="请选择年份" show-toolbar="{{true}}" bind:cancel="isVisiableDate" bind:confirm="clickDate"/>
+</van-popup>

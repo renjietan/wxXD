@@ -1,0 +1,5 @@
+/**app.wxss**/
+@import 'lib/font/iconfont.wxss';
+/* text,view{
+  font-family: "PingFang-SC-Medium"
+} */

@@ -1,0 +1,39 @@
+<view class='container'>
+  <!--垂直滚动，这里必须设置高度-->
+  <!-- <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad" bindscroll="scroll"> -->
+  <van-cell-group custom-class="vanCell_T">
+    <van-field input-align="right" id="groupname" required label="塘口名称" clearable value="{{ formData.groupname }}" placeholder="请输入塘口名称..." border="{{ false }}" bind:change="handleTextChange" />
+    <van-field input-align="right" id="area" required type="number" label="面积(亩)" clearable value="{{ formData.area }}" placeholder="请输入面积..." border="{{ false }}" bind:change="handleTextChange" />
+    <van-cell is-link required title="品种" clearable value="{{ formData.kindName }}" border="{{ false }}" bind:click="isOpenKind" />
+    <van-cell is-link required title="养殖模式" clearable value="{{ formData.breedName }}" border="{{ false }}" bind:click="isOpenBreed" />
+    <van-field input-align="right" id="tangling" type="number" required label="塘龄(年)" clearable value="{{ formData.tangling }}" placeholder="请输入塘龄..." border="{{ false }}" bind:change="handleTextChange" />
+    <!-- 地址选择 -->
+    <picker mode="region" bindchange="handleAddressChange" value='{{ formData.provinces }}'>
+      <view class="picker">
+        <van-cell is-link id="provinces" value-class="cellValue_TTT" required title="地址" clearable value="{{ formData.provinces[0] + '-' +  formData.provinces[1] + '-' + formData.provinces[2] }}" placeholder="请选择地址" border="{{ false }}" />
+      </view>
+    </picker>
+    <van-field input-align="right" id="address" required label="详细地址" clearable value="{{ formData.address }}" placeholder="请输入详细地址..." border="{{ false }}" bind:change="handleTextChange" />
+  </van-cell-group>
+
+
+  <i-grid i-class="grid_TTT" wx:if="{{ !formData.groupid }}">
+    <i-grid-item i-class="grid_TT">
+        <i-button bind:click="handleSubmit" data-name="save" i-class="btn_TT" size="large" type="ghost">保存</i-button>
+    </i-grid-item>
+    <i-grid-item i-class="grid_TT">
+      <i-button bind:click="handleSubmit" data-name="save2" i-class="btn_TT" size="large" type="primary">继续添加</i-button>
+    </i-grid-item>
+  </i-grid>
+  <i-button wx:if="{{ formData.groupid }}" data-name="save3" bind:click="handleSubmit" i-class="btn_TTT" size="large" type="info">保存</i-button>
+</view>
+<!-- 验证提示 -->
+<van-notify id="van-notify" />
+<i-message id="message" />
+<van-toast id="van-toast" />
+
+
+<!-- 品种下拉菜单 -->
+<van-action-sheet show="{{ KindInfo.isVisiable }}" title="请选择品种" actions="{{ KindInfo.data }}" bind:select="handleChangeKind" bind:close="isOpenKind" />
+<!-- 养殖模式下拉菜单 -->
+<van-action-sheet show="{{ BreedInfo.isVisiable }}" title="请选择养殖模式" actions="{{ BreedInfo.data }}" bind:select="handleChangeBreed" bind:close="isOpenBreed" />
